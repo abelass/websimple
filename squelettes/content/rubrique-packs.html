@@ -9,19 +9,20 @@
             [(#LOGO_RUBRIQUE|image_reduire{200,200})]
             (#TEXTE)
             
-            </section>]
+         </section>]
     </article>
-    <section>
+
         <B_packs>
-        <div class="containeur_pack">
-        <BOUCLE_packs(ARTICLES){id_rubrique}{par num titre}>
-            <div class="pack">
-                <h2>#TITRE</h2>
-            </div>
-       
-        
-        </BOUCLE_packs>
-        </div>
+        <section class="container_pack">
+            <BOUCLE_packs(ARTICLES){id_rubrique}{par num titre}>
+                <aside class="pack">
+                    [<div class="prix">(#PRIX_HT)*</div>]
+                    <h2><a href="#URL_ARTICLE" title="#TITRE">#TITRE</a></h2>
+                    <div class="texte">#INTRODUCTION</div>
+    
+                </aside>
+            </BOUCLE_packs>
+             <div class="explication">*<:htva:></div>
+        </section>
         </B_packs>
-    </section>
 </BOUCLE_content>
