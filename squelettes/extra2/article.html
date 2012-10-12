@@ -1,0 +1,25 @@
+<BOUCLE_extra2_article(ARTICLES){id_article}>
+	[(#REM) Articles dans la meme rubrique ]
+	<B_articles_rubrique>
+	<div class="liste articles">
+		<ul class="liste-items">
+			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {0,10}>
+			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE">#TITRE</a></li>
+			</BOUCLE_articles_rubrique>
+		</ul>
+	</aside>
+	</B_articles_rubrique>
+
+  [(#REM) Menu de navigation mots-cles ]
+  <B_mots>
+  <aside class="liste mots">
+      <h2 class="h2"><:mots_clefs:></h2>
+      <ul class="liste-items">
+      <BOUCLE_mots(MOTS) {id_article} {par titre}>
+          <li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]" rel="tag"><a href="#URL_MOT" rel="tag">#TITRE</a></li>
+      </BOUCLE_mots>
+      </ul>
+  </div>
+  </B_mots>
+
+</BOUCLE_extra2_article>
