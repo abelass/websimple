@@ -1,11 +1,19 @@
   [(#REM) Menu de navigation mots-cles ]
-  <B_mots>
-  <aside class="liste mots">
-      <h2 class="h2"><:mots_clefs:></h2>
-      <ul class="liste-items">
-      <BOUCLE_mots(MOTS) {id_article} {par titre}>
-          <li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]" rel="tag"><a href="#URL_MOT" rel="tag">#TITRE</a></li>
+  
+
+ <BOUCLE_groupes(GROUPES_MOTS){id_parent=11}{par num titre}>
+   <B_mots>#SET{mult,li}
+  <div class="liste mots">
+      <h2 class="h2">#TITRE</h2>
+      [(#TOTAL_BOUCLE|>{1}|?{<ul class="liste-items">,''})]
+
+      <BOUCLE_mots(MOTS) {id_article} {id_groupe}{par titre}>
+          <[(#TOTAL_BOUCLE|>{1}|?{li#SET{mult,li},div#SET{mult,div}}) ]class="item" rel="tag"><a href="#URL_MOT" rel="tag">#TITRE</a></[(#GET{mult})]> 
       </BOUCLE_mots>
-      </ul>
+      [(#TOTAL_BOUCLE|>{1}|?{</ul>,''})]
   </div>
   </B_mots>
+ </BOUCLE_groupes>
+
+
+
