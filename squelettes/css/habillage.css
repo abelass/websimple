@@ -1,6 +1,6 @@
 /*Layout*/
 html{width:100%; background: #63b362;margin:0 auto;}
-body { width:800px; background:transparent; margin: 0 	0 0 17.5em;}
+body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 .page {
 	position: relative; 
 	width: 100%; 
@@ -67,9 +67,8 @@ body { width:800px; background:transparent; margin: 0 	0 0 17.5em;}
 	float: left;
 	clear:none;
 	font-size:2em;
-    position: absolute;
-    z-index: 200;
-	width:25%;
+    position: relative;
+    z-index: 150;
 
 }
 
@@ -180,6 +179,7 @@ ul.home {
     /*background-color: #D3E9D2;*/
     border-radius: 0.4em 0 0 0;
     behavior: url(/PIE.htc);
+    width:100%
    
  }
 
@@ -206,6 +206,7 @@ ul.home li.item{
 	border-right:none;
 	border-top:#FFFFFF 0.1em solid;
 	border-bottom:#FFFFFF 0.1em solid;
+	font-weight: normal;
 	}   
     
     
@@ -224,6 +225,7 @@ ul.home li.end{
 }
   
 .extra2 .liste-items .item{
+	position:relative;
     /* Fallback for web browsers that doesn't support RGBa */
 	background: rgb(255, 255, 255);
 	/* RGBa with 0.6 opacity */
@@ -236,7 +238,10 @@ ul.home li.end{
 	margin-left:0;
 	padding-left:0.1em;
 	border-right:#FFFFFF 0.2em solid;	
+
 }
+
+.extra2 .liste-items .item a{position:absolute; z-index: 300; }
 
 .square{
 	float:left;

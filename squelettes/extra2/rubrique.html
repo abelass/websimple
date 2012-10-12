@@ -12,8 +12,8 @@
 	<B_articles_rubrique>
 	<div class="liste articles">
 		<ul class="liste-items">
-			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {0,10}>
-			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE">#TITRE</a></li>
+			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {lang}{0,10}>
+			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE" title="#TITRE">[(#TITRE|couper{45})]</a></li>
 			</BOUCLE_articles_rubrique>
 		</ul>
 	</div>
@@ -21,8 +21,8 @@
 	<B_rubriques>
 	<div class="liste articles">
 		<ul class="liste-items">		
-		<BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}>
-			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div>  <a href="#URL_RUBRIQUE">#TITRE</a></li>
+		<BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}{lang}>
+			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div>  <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a></li>
 		</BOUCLE_rubriques>
 		</ul>
 	</div>		
