@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 IMG
 config/connect.php
+=======
+*.class
+*.pyc
+*.pyo
+.svn
+IMG
+_svn
+connect.php
+>>>>>>> 7b3a666e5e592bc7e123f78bff4242e68ff38f88
 dump
 local
 tmp
