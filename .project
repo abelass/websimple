@@ -3,6 +3,7 @@
 	<name>websimple</name>
 	<comment></comment>
 	<projects>
+		<project>plugin_websimple</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>
