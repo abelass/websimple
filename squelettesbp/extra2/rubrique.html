@@ -1,0 +1,31 @@
+<BOUCLE_racine(RUBRIQUES){id_rubrique}{tout}>#SET{id_racine,#ID_RUBRIQUE}
+	<BOUCLE_parent(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur}}{tout}>
+		#SET{id_racine,#ID_RUBRIQUE}
+		<BOUCLE_parent2(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur}}{tout}>
+			#SET{id_racine,#ID_RUBRIQUE}
+			<BOUCLE_rec(BOUCLE_parent2)></BOUCLE_rec>
+		</BOUCLE_parent2>
+	</BOUCLE_parent>
+</BOUCLE_racine>
+
+<BOUCLE_extra2_rubrique(RUBRIQUES){id_rubrique=#GET{id_racine}}{tout}>
+	<B_articles_rubrique>
+	<div class="liste articles">
+		<ul class="liste-items">
+			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {lang}{0,10}>
+			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE" title="#TITRE">[(#TITRE|couper{45})]</a></li>
+			</BOUCLE_articles_rubrique>
+		</ul>
+	</div>
+	</B_articles_rubrique>
+	<B_rubriques>
+	<div class="liste articles">
+		<ul class="liste-items">		
+		<BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}{lang}>
+			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div>  <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a></li>
+		</BOUCLE_rubriques>
+		</ul>
+	</div>		
+	</B_rubriques>
+	<//B_articles_rubrique>
+</BOUCLE_extra2_rubrique>

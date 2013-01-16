@@ -1,0 +1,9 @@
+#CACHE{0}
+[(#REM) Menu de navigation par rubriques ]
+<div class="dsjcycle" id="dsjcycle">
+<BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{par hasard}>
+	<BOUCLE_portraits(DOCUMENTS documents_liens){id_auteur}{tout}{par hasard}{0,1}>
+		[(#FICHIER|image_reduire{545,*}|inserer_attribut{alt,#NOM}|inserer_attribut{title,#NOM})]
+	</BOUCLE_portraits>
+</BOUCLE_auteur>
+</div>

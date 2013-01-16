@@ -1,0 +1,347 @@
+/*Layout*/
+html{width:100%; background: #63b362;margin:0 auto;}
+body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
+.page {
+	position: relative; 
+	width: 100%; 
+	margin: 3em 0; 
+	padding: 50px 1.5em; 
+	text-align: left;
+	border-radius: 3.5em;
+	behavior: url(/PIE.htc);
+	padding: 0 1.5em;
+	box-shadow: none;
+	border: 1px solid transparent;
+	}
+
+#header{
+	height:17em;
+	margin-top:0px;
+	text-align:center;
+	position:relative;
+}
+
+.container {
+	background-color:#63b362;
+	border-radius: 0.8em;
+	behavior: url(/PIE.htc);
+    margin: 1.2em 6em 6em 6em;
+    min-height:40em;
+
+}
+
+.home .container {
+	background-color:#FFFFFF;
+	border: 0px none;
+}
+
+.content-principal{
+	padding: 1em 0 3em 0.5em; 
+	}
+.cartouche{
+	background-color:#FFFFFF;
+	position:absolute;
+	top:19em;	
+	margin:0;
+	height:1em;
+	text-align:center;
+}
+
+
+.content {
+	float: right;
+	padding:0 1em;
+	color:#FFFFFF;
+	font-size:0.8em;
+	font-family: Helvetica, Arial, sans-serif;		
+}
+.content .home{font-family: "GoodDogRegular", "Arial", sans-serif;}
+
+.chapo{
+	color:#FFFFFF;
+	font-size:1.4em
+	
+}
+
+.home .content {
+    width: 100%;
+    background-color:#FFFFFF;
+}
+
+.extra2{
+	float: left;
+	clear:none;
+	font-size:2em;
+    position: relative;
+    z-index: 150;
+
+}
+
+.extra1{
+	position: fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	z-index:100;
+	width:42em;
+	margin:0;
+	padding:0;
+	}
+
+
+.home .extra2{
+	display:none
+}
+
+
+#footer{
+	text-align:center;
+	 margin: 0 6em 1em;
+	 position: absolute;
+	 bottom: 7em;
+    z-index: 200;
+    width:80%;
+    }
+
+
+/*Fonts*/
+
+@font-face {
+    font-family: 'GoodDogRegular';
+    src: url('gooddog-webfont.eot');
+    src: url('gooddog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gooddog-webfont.woff') format('woff'),
+         url('gooddog-webfont.ttf') format('truetype'),
+         url('gooddog-webfont.svg#gooddogregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;color: #ffffff}
+
+.texte {font-size:1.3em}
+
+/* Titraille / Intertitres */
+
+#nom_site_spip{
+	font-size:13em; 
+	text-align: center;
+	line-height:110px;
+	letter-spacing: 0.1em;
+	
+}
+
+#slogan_site_spip{
+	font-size:4.5em;
+	letter-spacing: 0.1em;
+	line-height: 0.8em;
+}
+
+
+
+
+h1.h1{
+	font-size: 2em ;
+    background-color: #63B362;
+    color: #FFFFFF;
+    line-height: normal;
+    padding: 0.01em  0.3em;
+ 	border-radius: 0.1em;
+	behavior: url(/PIE.htc);   	
+}
+
+
+
+/*Menus*/
+
+.extra2.liste-items, extra2.liste-items .item {
+    border-bottom: 0 none;
+    border-top: 0 none;
+}
+
+#nav li{
+	display:inline;
+	margin:0 5px;
+	
+}
+#nav ul{
+	margin-top:0px;
+	
+}
+
+.menu-items {
+    border-bottom: 0px ;
+}
+
+ul.home {
+	overflow: hidden;
+	padding-left:1em;
+}
+
+#extra2 .liste-items{
+    /*background-color: #D3E9D2;*/
+    border-radius: 0.4em 0 0 0;
+    behavior: url(/PIE.htc);
+    width:100%
+   
+ }
+
+.home .menu{
+	position:absolute;
+	z-index:200
+}
+
+ul.home li.item{
+	background: none repeat scroll 0 0 #63B362;
+    border-radius: 0.4em;
+    behavior: url(/PIE.htc);
+    float: left;
+    height: 6.3em;
+    margin: 0 1.2em 0.5em 0;
+    padding-top: 0.2em;
+    text-align: center;
+    width: 7.1em;
+    font-size:1.8em}
+    
+
+.extra2 .liste-items li.on{
+	background-color:transparent;
+	border-right:none;
+	border-top:#FFFFFF 0.1em solid;
+	border-bottom:#FFFFFF 0.1em solid;
+	font-weight: normal;
+	}   
+    
+    
+.extra2 .liste-items li.first{
+	border-top:none;
+	border-radius: 0.4em 0 0 0 ;
+	behavior: url(/PIE.htc);
+	}  
+	 
+.extra2 .liste-items li.last{
+	border-bottom:none;
+	}   
+    
+ul.home li.end{
+	margin-right:0
+}
+  
+.extra2 .liste-items .item{
+	position:relative;
+    /* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(255, 255, 255);
+	/* RGBa with 0.6 opacity */
+	background: rgba(255, 255, 255, 0.6);
+	/* For IE 5.5 - 7*/	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff);	
+	/* For IE 8*/	
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff)";		
+	border-bottom: 0px none;
+	margin-left:0;
+	padding-left:0.1em;
+	border-right:#FFFFFF 0.2em solid;	
+
+}
+
+.extra2 .liste-items .item a{position:absolute; z-index: 300; }
+
+.square{
+	float:left;
+	height:1em;
+	width : 1em;
+	background-color:#FFFFFF;
+	border: 1px solid #FFFFFF;
+	border-radius: 0.3em;
+	behavior: url(/PIE.htc);
+	margin-right:0.2em;
+	
+}
+
+.liste-items{
+	border-top: 0px none;
+}
+
+
+.white_box{
+	height:56%;
+	width: 90%;
+	background-color:#ffffff;
+	border: 1px solid  #ffffff;
+	border-radius:0.4em;
+	behavior: url(/PIE.htc);
+	margin:0 4% 0.2em 3%;
+}
+
+.text{
+  font-size: 140%;
+  line-height: 0.7em;
+}
+
+.hornav {
+    background-color: transparent;
+    border-left: 0px;
+    border-right:0px;
+    font-size:2em
+}
+
+
+.hornav .on {
+    background: none;
+	opacity:0.4;
+	filter: alpha(opacity = 40);
+	font-weight:normal;
+}
+
+.hornav a:hover{
+	opacity:0.4;
+	filter: alpha(opacity = 40);
+	text-decoration:none;
+	font-weight:normal;
+}
+.hornav a:active{
+	opacity:0.4;
+	bfilter: alpha(opacity = 40);
+	text-decoration:none;
+	font-weight:normal;
+}
+
+.formulaire_menu_lang {
+	padding:0.2em;
+    float:left;
+    margin-left:5em;
+    padding:0;
+    position:absolute;
+    z-index:200;
+    bottom:0;
+    font-size:1.2em;
+    width:25%;
+}
+
+/*Divers*/
+
+.container_pack{width:100%; overflow:hidden;}
+
+.pack{float:left; width:48%; margin : 0 1%}
+
+.pack .prix{float:right}
+
+/*Liens*/
+a {
+    color: #63b362;
+    text-decoration: none;
+}
+
+a:focus, a:hover, a:active { 
+	background:transparent;
+	color: #63b362;
+	opacity:0.4;
+   filter: alpha(opacity = 40);
+   text-decoration:none;
+}
+
+ul.home a, .container a, .extra2 a, #footer a {
+	color:#FFFFFF;
+}
