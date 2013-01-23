@@ -1,5 +1,9 @@
 <BOUCLE_content(ARTICLES){id_article}>
 
+[<aside class="prix">
+    (#INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,expl= (<:htva:>)})
+</aside>]
+
 <article class="content-principal">
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
@@ -15,7 +19,7 @@
 			(#TEXTE|image_reduire{500,0})</section>
 		]
 	<section class="options_packs">
-	    <INCLURE{fond=inclure/options_packs,id_article}/>
+	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article}/>
 	</section>
 	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
 	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]

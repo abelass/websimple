@@ -16,10 +16,9 @@
         <section class="container_pack">
             <BOUCLE_packs(ARTICLES){id_rubrique}{par num titre}>
                 <aside class="pack">
-                    [<div class="prix">(#PRIX_HT)*</div>]
+                    <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE}/>
                     <h2><a href="#URL_ARTICLE" title="#TITRE">#TITRE</a></h2>
                     <div class="texte">#INTRODUCTION</div>
-    
                 </aside>
             </BOUCLE_packs>
              <div class="explication">*<:htva:></div>
