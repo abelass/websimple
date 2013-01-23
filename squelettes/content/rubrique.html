@@ -15,7 +15,47 @@
 
 
 [(#REM) Gestion du portfolio et des documents ]
-[(#INCLURE{fond=inclure/documents,id_rubrique})]	
+[(#INCLURE{fond=inclure/documents,id_rubrique})]
+
+<B_articles>
+<nav class="liste articles">
+    #ANCRE_PAGINATION
+    <ul class="liste-items">
+        <BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
+        <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE}/>
+        #INCLURE{fond=inclure/article-resume,id_article}
+        </BOUCLE_articles>
+    </ul>
+    [<p class="pagination">(#PAGINATION)</p>]
+</nav>
+</B_articles>
+
+    [(#REM) Si aucun article, affiche un plan de la rubrique ]
+    <B_sous_rubriques>
+    <nav class="menu rubriques">
+        <ul class="menu-liste">
+            <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+            <li class="menu-entree">
+                <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+
+                [(#REM) Une boucle recursive pour le mini plan]
+                <B_miniplan>
+                <ul class="menu-liste">
+                    <BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
+                    <li class="menu-entree">
+                        <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+                        <BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
+                    </li>
+                    </BOUCLE_miniplan>
+                </ul>
+                </B_miniplan>
+
+            </li>
+            </BOUCLE_sous_rubriques>
+        </ul>
+        </nav>
+    </B_sous_rubriques>
+<//B_articles>	
 
 [(#REM) Breves du secteur ]
 <B_breves>
@@ -58,3 +98,4 @@
 #FORMULAIRE_SITE
 
 </BOUCLE_content>
+<br class="nettoyeur"/>
