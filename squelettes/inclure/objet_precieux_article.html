@@ -1,0 +1,13 @@
+<BOUCLE_art(ARTICLES){id_article=#ID_OBJET}>
+<dl>
+   <dt class="row_[(#COMPTEUR_BOUCLE|alterner{odd, even})]"><a href="#URL_ARTICLE">#TITRE</a></dt>
+        <dd class="prix">
+            [(#ENV{prix})] [(#ID_ARTICLE|devise_defaut|traduire_devise)] (<:shopprix:htva:>)
+       </dd>       
+        <dd class="ajouter_au_panier">
+        [(#BOUTON_ACTION{<:paniers:action_ajouter:>,#URL_ACTION_AUTEUR{remplir_panier,prix-#ID_PRIX_OBJET,#SELF},ajax})] 
+        </dd>
+   
+</dl>
+</BOUCLE_art>
+</B_art>

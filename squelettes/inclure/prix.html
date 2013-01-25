@@ -1,3 +1,10 @@
-<BOUCLE_prix(PRIX_OBJETS){id_objet}{objet}>
-    [<div class="prix">(#PRIX_HT)[(#ENV{expl}|sinon{*})]</div>]
-</BOUCLE_prix>
+<B_objets_precieux>
+    <div class="vente liste_objets_precieux">
+        <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet}{objet}{pagination}>
+        #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
+        [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]        
+            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison}/>
+        </BOUCLE_objets_precieux>
+    [<p class="pagination">(#PAGINATION)</p>]
+    </div>
+</B_objets_precieux>
