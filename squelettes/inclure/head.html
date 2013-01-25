@@ -65,3 +65,26 @@
 	<script src="#CHEMIN{scripts/html5-ie.js}"></script>
 	[<link rel="stylesheet" href="(#CSS{css/styles_ie.css})" type="text/css" />]
 <![endif]-->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+          // does cookie exist?
+          if ($.cookie('coords')) {
+                var coords = $.cookie('coords').split(',');
+          } else {
+                var coords = [50,50]; // default top and left
+          }
+          $('#mon_panier').css({top:coords[0],left:coords[1]});
+    });
+    $(function() {
+        $( "#mon_panier" ).draggable(
+            {
+            containment:'html', 
+            cursor: 'move',    
+            stop: function() {
+                    $.cookie('coords',$('#mon_panier').css('top')+','+$('#mon_panier').css('left'), { expires: 365 , path: '/' });
+                  }
+             }
+        );
+      });
+  </script>

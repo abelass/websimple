@@ -417,3 +417,26 @@ ul.home a, .container a, .extra2 a, #footer a {
 
 .faq dt.close span.closed{display:inline;}
 .faq dt.close span.open{display:none;}
+
+/*Panier*/
+
+#mon_panier{
+	position:fixed;	
+	right:1em;
+	top: 1em;	
+	z-index:700;
+	width : 20em;
+}
+#panier_wrap{
+	color:#63b362;
+	background:#ffffff;
+	border:#63b362 2px solid;
+  	border-radius:5px;
+	position: absolute;
+	}
+
+#panier_wrap h2{
+	color:#63b362;
+  line-height:normal;
+  margin-bottom: 0.2em;
+	}
