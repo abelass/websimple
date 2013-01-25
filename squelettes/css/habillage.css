@@ -15,8 +15,7 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 	}
 
 #header{
-	height:17em;
-	margin-top:0px;
+	margin-top:1em;
 	text-align:center;
 	position:relative;
 }
@@ -39,11 +38,7 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 	padding: 1em 0 3em 0.5em; 
 	}
 .cartouche{
-	background-color:#FFFFFF;
-	position:absolute;
-	top:19em;	
 	margin:0;
-	height:1em;
 	text-align:center;
 }
 
@@ -137,24 +132,20 @@ h2, .h2{font-size:2.5em}
 }
 
 #slogan_site_spip{
-	font-size:4.5em;
+	font-size:3.5em;
 	letter-spacing: 0.1em;
-	line-height: 0.8em;
+	line-height: normal;
+	color:#63B362;
+	margin-top:0.3em;
 }
-
-
-
 
 h1.h1{
-	font-size: 2em ;
-    background-color: #63B362;
+	font-size: 2.5em ;
     color: #FFFFFF;
     line-height: normal;
-    padding: 0.01em  0.3em;
- 	border-radius: 0.1em;
-	behavior: url(/PIE.htc);   	
+    padding: 0.01em  0.3em;  
+	font-weight:bold;	
 }
-
 
 
 /*Menus*/
@@ -290,11 +281,16 @@ ul.home li.end{
     font-size:2em
 }
 
+#header .hornav {
+    margin-left: 25%;
+    width: 75%;
+    margin-top:1em;
+}
 
 .hornav .on {
     background: none;
-	opacity:0.4;
-	filter: alpha(opacity = 40);
+	/*opacity:0.4;*/
+	/*filter: alpha(opacity = 40);*/
 	font-weight:normal;
 }
 
@@ -311,26 +307,61 @@ ul.home li.end{
 	font-weight:normal;
 }
 
-.formulaire_menu_lang {
-	padding:0.2em;
-    float:left;
-    margin-left:5em;
-    padding:0;
-    position:absolute;
-    z-index:200;
-    bottom:0;
-    font-size:1.2em;
-    width:25%;
+/* Barre de navigation top*/
+.menuder li { 
+float: left;
+padding: 0px;
+width: auto;
 }
 
-.liste {padding-bottom:2.5em}
+.menuder a { 
+width: auto;
+}
+
+.hornav .item a { 
+font-weight:bold;
+padding: 0.2em;	
+color: #63B362;
+}
+
+
+.menuder li:hover { 
+background:white;
+}
+
+.menuder, .menuder ul {
+    border-color: #63B362;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 0;
+
+}
+
+.menuder li ul{
+    z-index:2000;	
+}
+
+.formulaire_menu_lang {
+	padding:0.2em;
+    position:absolute;
+    right:0;
+    top:1em;
+    z-index:200;
+    font-size:1.2em;
+    width:10%;
+    color:#63B362;
+    text-align:right;
+}
+
+
+
+.liste{padding-bottom:2.5em}
 
 .liste-items .item:hover{background:none}
 
 
 .liste-items .item .info-publi {
     background: none ;
-
 }
 
 /*Divers*/
@@ -339,7 +370,7 @@ ul.home li.end{
 
 .pack{float:left; width:48%; margin : 0 1%}
 
-.pack .prix, aside.prix{
+.pack .liste_objets_precieux, aside.prix{
 	float:right;
 	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.6);
 	padding: 1em;
@@ -350,7 +381,7 @@ ul.home li.end{
 	border-left: 0.2em solid #FFFFFF;
 	}
 	
-.pack .prix {border-radius: 0 10px 0 0}
+.pack .liste_objets_precieux {border-radius: 0 10px 0 0}
 
 aside.prix {
 	font-size: 110%;
