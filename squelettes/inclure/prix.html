@@ -3,7 +3,7 @@
         <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet}{objet}{pagination}>
         #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]        
-            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison}/>
+            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ajax}/>
         </BOUCLE_objets_precieux>
     [<p class="pagination">(#PAGINATION)</p>]
     </div>
