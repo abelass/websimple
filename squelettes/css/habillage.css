@@ -1,3 +1,27 @@
+/*Fonts*/
+
+@font-face {
+    font-family: 'GoodDogRegular';
+    src: url('gooddog-webfont.eot');
+    src: url('gooddog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('gooddog-webfont.woff') format('woff'),
+         url('gooddog-webfont.ttf') format('truetype'),
+         url('gooddog-webfont.svg#gooddogregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Titraille / Intertitres */
+body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;color: #ffffff}
+
+extra2 h3{font-size:1em}
+
+h1, .h1{font-size:2.5em}
+
+h2, .h2{font-size:2em}
+
+
 /*Layout*/
 html{width:100%; background: #63b362;margin:0 auto;}
 body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
@@ -67,11 +91,13 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 .extra2{
 	float: left;
 	clear:none;
-	font-size:2em;
     position: relative;
     z-index: 150;
-
 }
+
+.extra2 li a{font-size:2em}
+
+#extra2 h3{margin:0.5em}
 
 .extra1{
 	position: fixed;
@@ -100,28 +126,6 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
     }
 
 
-/*Fonts*/
-
-@font-face {
-    font-family: 'GoodDogRegular';
-    src: url('gooddog-webfont.eot');
-    src: url('gooddog-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gooddog-webfont.woff') format('woff'),
-         url('gooddog-webfont.ttf') format('truetype'),
-         url('gooddog-webfont.svg#gooddogregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;color: #ffffff}
-
-h2, .h2{font-size:2.5em}
-
-.texte {font-size:1.3em}
-
-/* Titraille / Intertitres */
 
 #nom_site_spip{
 	font-size:13em; 
@@ -272,6 +276,7 @@ ul.home li.end{
 .text{
   font-size: 140%;
   line-height: 0.7em;
+  font-size:1.3em
 }
 
 .hornav {
@@ -426,6 +431,7 @@ ul.home a, .container a, .extra2 a, #footer a {
 	top: 1em;	
 	z-index:700;
 	width : 20em;
+	cursor:move;
 }
 #panier_wrap{
 	color:#63b362;
