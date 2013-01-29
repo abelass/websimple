@@ -1,6 +1,7 @@
 <B_objets>
+<h2><:websimple:pack_compose_par:></h2>
 <dl class="faq">
-<BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien!=utilise_pack}{par ordre}>
+<BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement}{par ordre}>
     <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{si #OBJET=article}>
     #SET{intro,''}
      [(#INTRODUCTION|oui)#SET{intro,oui}]
@@ -10,7 +11,11 @@
             <span class="closed">+</span>] 
             <span class="#EDIT{titre} titre">#TITRE</span>
         </dt>     
-        <dd class="#EDIT{introduction} introduction">[(#INTRODUCTION)]</dd>
+        <dd class="#EDIT{introduction} introduction">
+            [(#INTRODUCTION)]
+            <a href="#URL_ARTICLE" rel="nofollow" target="_blank"
+    onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_ARTICLE|parametre_url{var_zajax,content})]');return false;}" ><:zpip:lire_la_suite_de:></a>
+            </dd>
     </BOUCLE_article>
 </BOUCLE_objets>
 </dl>
