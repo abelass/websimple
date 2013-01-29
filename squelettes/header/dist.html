@@ -1,9 +1,21 @@
 <div class="accueil clearfix">
+    <aside class="tools">
+        [(#CONFIG{multilingue/menu_langue}|oui)#SET{select,_select}]
+        <INCLURE{fond=inclure/menu_langues,env}/>
+        <div class="login">
+            [<span class="sep">
+            (#SESSION{id_auteur}|oui)</span><a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>][<span class="sep">
+            (#SESSION{id_auteur}|non)</span><a href="[(#URL_PAGE{login}|parametre_url{url,#SELF|parametre_url{url,''}})]" rel="nofollow" class='login_modal'><:lien_connecter:></a>][<span class="sep">
+            (#AUTORISER{ecrire})</span><a href="#EVAL{_DIR_RESTREINT_ABS}"><:espace_prive:></a>]
+        </div>    
+    </aside>
+
 	[<a rel="start home" href="#URL_SITE_SPIP/" title="<:accueil_site:>">(#LOGO_SITE_SPIP|image_reduire{300,100})</a>]
 	<strong id="nom_site_spip" class="h1"><a rel="start home" href="#URL_SITE_SPIP/" title="<:accueil_site:>">#NOM_SITE_SPIP</a></strong>
 	[<div id='slogan_site_spip'>(#SLOGAN_SITE_SPIP|PtoBR)</div>]
-[(#CONFIG{multilingue/menu_langue}|oui)#SET{select,_select}]
-<INCLURE{fond=inclure/menu_langues,env}/>
+
+
+
 </div>
 [(#COMPOSITION|!={home}|oui)
 <nav class="hornav clearfix" id="nav">
