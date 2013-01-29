@@ -346,9 +346,6 @@ background:white;
     z-index:2000;	
 }
 
-.formulaire_menu_lang {
-
-}
 
 
 
@@ -360,6 +357,10 @@ background:white;
 .liste-items .item .info-publi {
     background: none ;
 }
+
+/*Formulaires*/
+
+
 
 /*Divers*/
 
