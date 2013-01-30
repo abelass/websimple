@@ -2,6 +2,7 @@
 <h2><:websimple:pack_compose_par:></h2>
 <dl class="faq">
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement}{par ordre}>
+#SET{compteur,#COMPTEUR_BOUCLE}
     <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{si #OBJET=article}>
     #SET{intro,''}
      [(#INTRODUCTION|oui)#SET{intro,oui}]
@@ -11,12 +12,48 @@
             <span class="closed">+</span>] 
             <span class="#EDIT{titre} titre">#TITRE</span>
         </dt>     
-        <dd class="#EDIT{introduction} introduction">
-            [(#INTRODUCTION)]
-            <a href="#URL_ARTICLE" rel="nofollow" target="_blank"
-    onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_ARTICLE|parametre_url{var_zajax,content})]');return false;}" ><:zpip:lire_la_suite_de:></a>
-            </dd>
+        [<dd class="introduction" id="introduction_#ID_ARTICLE">
+            (#INCLURE{fond=content/article-packs,env,id_article})
+        </dd>]
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('dd#introduction_#ID_ARTICLE  h1').before('<div class="close">x</div>');
+          // does cookie exist?
+          if ($.cookie('introduction_#ID_ARTICLE')) {
+                var coords = $.cookie('introduction_#ID_ARTICLE').split(',');
+          } else {
+                var coords = [0,[(#GET{compteur})]+'%',1,[(#GET{compteur}|mult{3})]]; // default top and left
+          }
+          $('#introduction_#ID_ARTICLE').css({top:coords[0],left:coords[1]});
+    });
+    $(function() {
+        $( "#introduction_#ID_ARTICLE" ).draggable(
+            {
+            containment:'html', 
+            opacity: 0.35, 
+            cursor: 'move',    
+            stop: function() {
+                    $.cookie('introduction_#ID_ARTICLE',$('#introduction_#ID_ARTICLE').css('top')+','+$('#introduction_#ID_ARTICLE').css('left'), { expires: 365 , path: '/' });
+                  }
+             }
+        );
+      });
+  </script>       
     </BOUCLE_article>
 </BOUCLE_objets>
 </dl>
 </B_objets>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    /*$('dl.faq dt').click(function(){
+     $('dd.introduction h1').before('<div class="close">x</div>');     
+    });*/
+
+    $('dl.faq > dd div.close').click(function(){
+        $('dt').before().addClass("close");        
+        $(this).closest('dd').hide('slow');
+        return false;
+    })
+});
+  </script>  

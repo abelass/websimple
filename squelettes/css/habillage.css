@@ -13,7 +13,7 @@
 }
 
 /* Titraille / Intertitres */
-body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;color: #ffffff}
+body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;}
 
 extra2 h3{font-size:1em}
 
@@ -49,7 +49,6 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 	border-radius: 0.8em;
 	behavior: url(/PIE.htc);
     margin: 1.2em 6em 6em 6em;
-    min-height:40em;
 
 }
 
@@ -68,10 +67,13 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 
 
 .content {
+	background-color:#FFFFFF;
 	float: right;
 	padding:0 1em;
-	color:#FFFFFF;
-	font-family: Helvetica, Arial, sans-serif;		
+	font-family: Helvetica, Arial, sans-serif;	
+	border-radius:7px;
+	margin:1%;
+	width:64%
 }
 
 .content p, .content dl{	font-size:1.2em;}
@@ -84,15 +86,13 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 .content .home{font-family: "GoodDogRegular", "Arial", sans-serif;}
 
 .chapo{
-	color:#FFFFFF;
-	font-size:1.4em;
 	font-weight:normal;
 	
 }
 
 .home .content {
     width: 100%;
-    background-color:#FFFFFF;
+    min-height: 40em
 }
 
 .extra2{
@@ -152,7 +152,6 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 
 h1.h1{
 	font-size: 2.5em ;
-    color: #FFFFFF;
     line-height: normal;
     padding: 0.01em  0.3em;  
 	font-weight:bold;	
@@ -384,12 +383,27 @@ background:white;
 	border-left: 0.2em solid #FFFFFF;
 	}
 	
-.pack .liste_objets_precieux {border-radius: 0 10px 0 0}
+.liste_objets_precieux  {
+	font-size:80%
+	}
+	
+.liste_objets_precieux  dd{
+	margin-bottom:0.1em;
+}
+
+.liste_objets_precieux dl{
+	margin-bottom:0.8em;
+}
+
+.pack .vente .ajouter_au_panier { 
+height:auto;
+}
 
 aside.prix {
     margin-right: -1em;
     padding: 1em;
 	}
+	
 
 .tools{
 	padding:0.2em;
@@ -412,7 +426,7 @@ a:focus, a:hover, a:active {
    text-decoration:none;
 }
 
-ul.home a, .container a, .extra2 a, #footer a {
+ul.home a, .extra2 a, #footer a {
 	color:#FFFFFF;
 }
 
@@ -426,6 +440,25 @@ ul.home a, .container a, .extra2 a, #footer a {
 .faq dt.close span.closed{display:inline;}
 .faq dt.close span.open{display:none;}
 
+.faq dd.introduction{
+	background:#FFFFFF;
+	width:25em;
+	padding:0.5em;
+	position:fixed;
+	z-index:500;
+	max-height:30em;
+	overflow:auto;
+	border: #63b362 2px solid;
+	border-radius:5px;
+	}
+
+div.close{
+	font-weight:bold; 
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	right:0;
+	width:10px}
 /*Panier*/
 
 #mon_panier{
