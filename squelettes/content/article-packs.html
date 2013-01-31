@@ -1,3 +1,4 @@
+<div class="load"></div>
 <BOUCLE_content(ARTICLES){id_article}>
 
 [<aside class="prix">
@@ -10,16 +11,13 @@
 		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
-	
-
-
 	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
 	[<section class="#EDIT{texte} texte surlignable">
 			[(#LOGO_ARTICLE|image_reduire{200,200})]
 			(#TEXTE|image_reduire{500,0})</section>
 		]
 	<section class="options_packs">
-	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article}/>
+	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article,env,url=#URL_ARTICLE,ajax=options_packs}/>
 	</section>
 	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
 	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]

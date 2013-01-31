@@ -431,16 +431,16 @@ ul.home a, .extra2 a, #footer a {
 }
 
 
-/*faq*/
-.faq dt, .aide{cursor: pointer;}
+/*options*/
+.options dt, .aide{cursor: pointer;}
 
-.faq dt span.open{display:inline;}
-.faq dt span.closed{display:none;}
+.options dt span.open{display:inline;}
+.options dt span.closed{display:none;}
 
-.faq dt.close span.closed{display:inline;}
-.faq dt.close span.open{display:none;}
+.options dt.close span.closed{display:inline;}
+.options dt.close span.open{display:none;}
 
-.faq dd.introduction{
+.options dd.introduction{
 	background:#FFFFFF;
 	width:25em;
 	padding:0.5em;
