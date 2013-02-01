@@ -441,17 +441,20 @@ ul.home a, .extra2 a, #footer a {
 .options dt.close span.open{display:none;}
 
 .options dd.introduction{
-	background:#FFFFFF;
 	width:25em;
 	padding:0.5em;
-	position:fixed;
+	position:relative;
 	z-index:500;
 	max-height:30em;
 	overflow:auto;
+
+	}
+.floating_box{
+	background:#FFFFFF;
 	border: #63b362 2px solid;
 	border-radius:5px;
-	}
-
+	left:0;
+}
 div.close{
 	font-weight:bold; 
 	cursor:pointer;

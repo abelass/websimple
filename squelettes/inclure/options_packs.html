@@ -14,13 +14,13 @@
  
         <dt class="row">
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
-                    <a class="open" id="introduction_#ID_ARTICLE" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
+                    <a class="open" id="link_#ID_ARTICLE" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
                      <span class="closed">-</span>
                      #SET{id_article,#ID_ARTICLE}
                      ]
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
                     #SET{id_article,''}
-                    <a  class="closed" id="introduction_#ID_ARTICLE"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}})]">
+                    <a  class="closed" id="link_#ID_ARTICLE"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}})]">
                     <span class="open">+</span>
                 ]
                 <span class="#EDIT{titre} titre">#TITRE</span>
@@ -36,80 +36,23 @@
 </B_objets>
 
 <script type="text/javascript">
-jQuery.extend({
-    getUrlVars: function(){
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for(var i = 0; i < hashes.length; i++)
-        {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
-    },
-    getUrlVar: function(name){
-        return jQuery.getUrlVars()[name];
-    }
-});
-
-  if($.getUrlVars()['fonct_compris'])
-{
-    var fonct_compris_tout = $.getUrlVars()['fonct_compris'];
-}
-else var fonct_compris_tout ='';
 
 
 $(document).ready(function(){
-     $("dd.introduction" ).each(function(){          
+// Fermer une fenetre
+
+    $('.action_close').click(function(){
         var id=$(this).attr('id').split('_');   
         var id_article=id[1];
-        var fonct_compris = fonct_compris_tout.replace(id_article,'');
+       $('#floating_box_'+id_article).hide(800);
+       $('#link_'+id_article+' span.close').replaceWith('<span class="open">+</span>');       
+       $('#link_'+id_article).removeClass("open").addClass("closed");
 
-          // does cookie exist?
-          if ($.cookie('article_'+id_article)) {
-                var coords = $.cookie('article_'+id_article).split(',');
-          } else {
-                var coords = [0,[(#GET{compteur})]+'%',1,[(#GET{compteur}|mult{3})]]; // default top and left
-          }
-          $('#article_'+id_article).css({top:coords[0],left:coords[1]});
-
-    $(function() {
-        $("#article_"+id_article).draggable(
-            {
-            containment:'html', 
-            opacity: 0.35, 
-            cursor: 'move',    
-            stop: function() {
-                    $.cookie('article_'+id_article,$('#article_'+id_article).css('top')+','+$('#article_'+id_article).css('left'), { expires: 365 , path: '/' });
-                  }
-             }
-        );
-      });
-      });
-      
-    $('a.closed').click(function(){
-        var id=$(this).attr('id').split('_');   
-        var id_article=id[1];
-        $('#article_'+id_article).load('/spip.php?action=charger_squelette&squelette=content/article-packs&id_article='+id_article,{},function(){$('#article_'+id_article+' div.load').replaceWith('<div class="close"><a id="'+id_article+'"  href="#">x</a></div>')});
-        
-        
-           return false;
-    });
-
-    $('.close a').click(function(){
-       var id_article = $(this).attr('id'); 
-        $('#article_'+id_article).load('/spip.php?action=charger_squelette&squelette=content/article-packs');
-           return false;
-       return false; 
-    });
     
-    $('dl.faq > dd div.close').click(function(){
-        $('dt').before().addClass("close");        
-        $(this).closest('dd').hide('slow');
-        return false;
+    });
+
+    $('dt a.open').click(function(){
+
     })
 });
-
-
-  </script>  
+</script>  

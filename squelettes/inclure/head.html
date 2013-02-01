@@ -55,7 +55,7 @@
 	A noter par defaut cette css n'existe pas
 ]
 [<link rel="stylesheet" href="(#CSS{css/perso.css})" type="text/css" />]
-<link rel="stylesheet" href="#URL_PAGE{styles_dyn}" type="text/css" />
+
 
 [(#REM) Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons ]
 [<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />
@@ -66,25 +66,4 @@
 	[<link rel="stylesheet" href="(#CSS{css/styles_ie.css})" type="text/css" />]
 <![endif]-->
 
-<script type="text/javascript">
-    $(document).ready(function(){
-          // does cookie exist?
-          if ($.cookie('coords')) {
-                var coords = $.cookie('coords').split(',');
-          } else {
-                var coords = [50,50]; // default top and left
-          }
-          $('#mon_panier').css({top:coords[0],left:coords[1]});
-    });
-    $(function() {
-        $( "#mon_panier" ).draggable(
-            {
-            containment:'html', 
-            cursor: 'move',    
-            stop: function() {
-                    $.cookie('coords',$('#mon_panier').css('top')+','+$('#mon_panier').css('left'), { expires: 365 , path: '/' });
-                  }
-             }
-        );
-      });
-  </script>
+<script type="text/javascript"  src="#CHEMIN{javascript/websimple.js}"></script>
