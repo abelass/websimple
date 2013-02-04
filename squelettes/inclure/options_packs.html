@@ -40,19 +40,12 @@
 
 $(document).ready(function(){
 // Fermer une fenetre
-
     $('.action_close').click(function(){
         var id=$(this).attr('id').split('_');   
         var id_article=id[1];
        $('#floating_box_'+id_article).hide(800);
        $('#link_'+id_article+' span.close').replaceWith('<span class="open">+</span>');       
        $('#link_'+id_article).removeClass("open").addClass("closed");
-
-    
     });
-
-    $('dt a.open').click(function(){
-
-    })
 });
 </script>  
