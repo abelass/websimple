@@ -1,8 +1,8 @@
 #CACHE{0}
 <B_objets>
 <h2><:websimple:pack_compose_par:></h2>
-<dl class="options">  
-<BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement}{par ordre}>
+<dl class="#ENV{faq,options}">  
+<BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement,pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
     #SET{articles,#ARRAY}
     <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{si #OBJET|=={article}|oui}>
@@ -11,20 +11,25 @@
        [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
             #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
             ]
- 
-        <dt class="row">
+        <dt>
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
-                    <a class="open" id="link_#ID_ARTICLE" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
+                [(#ENV{faq}|non)
+                    <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">]
                      <span class="closed">-</span>
                      #SET{id_article,#ID_ARTICLE}
                      ]
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
                     #SET{id_article,''}
-                    <a  class="closed" id="link_#ID_ARTICLE"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}})]">
+                     [(#ENV{faq}|?{
+                         #SET{id_article,#ID_ARTICLE},
+                         <a  class="closed" id="link_[(#ID_ARTICLE)]_[(#ID_OBJET_DEST)]"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
+                     }) 
+                    
+                        ]
                     <span class="open">+</span>
                 ]
                 <span class="#EDIT{titre} titre">#TITRE</span>
-            </a>
+            [(#ENV{faq}|non)</a>]
         </dt>     
         <dd class="introduction"  id="article_#ID_ARTICLE">
             <INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},ajax=articles_packs_#ID_ARTICLE}/>
@@ -35,17 +40,68 @@
 </dl>
 </B_objets>
 
+<B_pack_base>
+<h2><:websimple:plus_fonctionnalites_pack_base:></h2>
+<dl class="options">  
+<BOUCLE_pack_base(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien=pack_base}{par ordre}>
+#SET{compteur,#COMPTEUR_BOUCLE}
+    #SET{articles,#ARRAY}
+    <BOUCLE_article_pack_base(ARTICLES){id_article=#ID_OBJET}{si #OBJET|=={article}|oui}>
+       #SET{articles_env,#ENV{fonct_compris}|explode{-}}
+       #SET{articles_enlever,#GET{articles_env}|array_diff{#LISTE{#ID_ARTICLE}}|implode{-}}       
+       [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
+            #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
+            ]
+        <dt>
+                [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
+                    <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" data-panier="non" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
+                     <span class="closed">-</span>
+                     #SET{id_article,#ID_ARTICLE}
+                     ]
+                [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
+                    #SET{id_article,''}
+                    <a  class="closed" id="link_[(#ID_ARTICLE)]_[(#ID_OBJET_DEST)]" data-panier="non" data-faq="faq" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST}|parametre_url{panier,faq}|parametre_url{faq,oui})]">
+                    <span class="open">+</span>
+                ]
+                <span class="#EDIT{titre} titre">#TITRE</span>
+            </a>
+        </dt>     
+        <dd class="introduction"  id="article_#ID_ARTICLE">
+            <INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},ajax=articles_packs_#ID_ARTICLE}/>
+        </dd>
+      
+    </BOUCLE_article_pack_base>
+</BOUCLE_pack_base>
+</dl>
+</B_pack_base>
+
+
+
 <script type="text/javascript">
-
-
-$(document).ready(function(){
-// Fermer une fenetre
-    $('.action_close').click(function(){
-        var id=$(this).attr('id').split('_');   
-        var id_article=id[1];
-       $('#floating_box_'+id_article).hide(800);
-       $('#link_'+id_article+' span.close').replaceWith('<span class="open">+</span>');       
-       $('#link_'+id_article).removeClass("open").addClass("closed");
-    });
+    $(document).ready(function(){
+    // Fermer une fenetre
+        $('.action_close').click(function(){
+            var id=$(this).attr('id').split('_');   
+            var id_article=id[1];
+           $('#floating_box_'+id_article).hide(800);
+           $('#link_'+id_article+' span.close').replaceWith('<span class="open">+</span>');       
+           $('#link_'+id_article).removeClass("open").addClass("closed");
+        });
+    [(#ENV{faq}|oui)
+    $('dl.faq  dt').removeClass('open').addClass("close").bind('click',function(event){
+     
+        event.stopPropagation();       
+        var statut=$(this).attr('class');
+        if(statut='close'){
+           $(this).addClass("open").removeClass('close').next().show('fast'); 
+        }
+        else{
+            alert(statut);
+             $(this).addClass("close").removeClass('open').next().hide('fast');
+        }
+       
+        return false;
+    }).next().hide();
 });
+    ]
 </script>  
