@@ -5,14 +5,10 @@
             [(#ENV{prix})] [(#ID_ARTICLE|devise_defaut|traduire_devise)] ([(#TAXE|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
        </dd>       
         <dd class="ajouter_au_panier">
-        [(#BOUTON_ACTION{<:websimple:action_ajouter:>,#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#SELF},ajax})] 
+            #SET{retour,#URL_ACTION_AUTEUR{charger_squelette,-}|parametre_url{squelette,inclure/ajaxreload}}
+        [(#BOUTON_ACTION{<:websimple:action_ajouter:>,#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})] 
         </dd>
    
 </dl>
 </BOUCLE_art>
 </B_art>
-<script type="text/javascript">
-jQuery(document).ready(function(){
- ajaxReload('mon_panier', { });
- });
-</script>
