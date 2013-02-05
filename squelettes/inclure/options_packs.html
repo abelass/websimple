@@ -11,7 +11,7 @@
        [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
             #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
             ]
-        <dt>
+        <dt class="row">
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
                 [(#ENV{faq}|non)
                     <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">]
@@ -21,12 +21,12 @@
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
                     #SET{id_article,''}
                      [(#ENV{faq}|?{
-                         #SET{id_article,#ID_ARTICLE},
+                         #SET{id_article,#ID_ARTICLE}
+                          <span class="open">-</span>
+                         ,
                          <a  class="closed" id="link_[(#ID_ARTICLE)]_[(#ID_OBJET_DEST)]"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
-                     }) 
-                    
-                        ]
-                    <span class="open">+</span>
+                     })]
+                    <span class="close">+</span>
                 ]
                 <span class="#EDIT{titre} titre">#TITRE</span>
             [(#ENV{faq}|non)</a>]
@@ -52,7 +52,7 @@
        [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
             #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
             ]
-        <dt>
+        <dt class="row">
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
                     <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" data-panier="non" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
                      <span class="closed">-</span>
@@ -74,34 +74,3 @@
 </BOUCLE_pack_base>
 </dl>
 </B_pack_base>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-    // Fermer une fenetre
-        $('.action_close').click(function(){
-            var id=$(this).attr('id').split('_');   
-            var id_article=id[1];
-           $('#floating_box_'+id_article).hide(800);
-           $('#link_'+id_article+' span.close').replaceWith('<span class="open">+</span>');       
-           $('#link_'+id_article).removeClass("open").addClass("closed");
-        });
-    [(#ENV{faq}|oui)
-    $('dl.faq  dt').removeClass('open').addClass("close").bind('click',function(event){
-     
-        event.stopPropagation();       
-        var statut=$(this).attr('class');
-        if(statut='close'){
-           $(this).addClass("open").removeClass('close').next().show('fast'); 
-        }
-        else{
-            alert(statut);
-             $(this).addClass("close").removeClass('open').next().hide('fast');
-        }
-       
-        return false;
-    }).next().hide();
-});
-    ]
-</script>  
