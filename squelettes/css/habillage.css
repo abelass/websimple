@@ -440,15 +440,13 @@ ul.home a, .extra2 a, #footer a {
 .options dt.close span.open,.faq dt.close span.open{display:none;}
 
 .options dd.introduction{
-	width:25em;
 	padding:0.5em;
 	position:relative;
 	z-index:500;
 	max-height:30em;
-	overflow:auto;
-
 	}
 .floating_box{
+	width:25em;
 	background:#FFFFFF;
 	border: #63b362 2px solid;
 	border-radius:5px;
@@ -484,3 +482,7 @@ div.close{
   line-height:normal;
   margin-bottom: 0.2em;
 	}
+	
+.panneau{height:1.5em; background:#e5e5e5;clear:both}
+.panneau div {float:right;width:auto;margin-left:0.1em;background:#f3f3f3;padding:0.2em}
+
