@@ -430,15 +430,14 @@ ul.home a, .extra2 a, #footer a {
 	color:#FFFFFF;
 }
 
-
 /*options*/
 .options dt, .aide{cursor: pointer;}
 
-.options dt span.open{display:inline;}
-.options dt span.closed{display:none;}
+.options dt span.open,.faq dt span.open{display:inline;}
+.options dt span.closed,.faq dt span.close{display:none;}
 
-.options dt.close span.closed{display:inline;}
-.options dt.close span.open{display:none;}
+.options dt.close span.closed, .faq dt.close span.close{display:inline;}
+.options dt.close span.open,.faq dt.close span.open{display:none;}
 
 .options dd.introduction{
 	width:25em;
