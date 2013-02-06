@@ -486,3 +486,9 @@ div.close{
 .panneau{height:1.5em; background:#e5e5e5;clear:both}
 .panneau div {float:right;width:auto;margin-left:0.1em;background:#f3f3f3;padding:0.2em}
 
+/*panneau move*/
+
+.control_box{position:fixed;right:1em; top:1em;}
+.control_box div{cursor:pointer;width:24px;height:24px}
+.control_box .off{background:url(images/not_move.png) no-repeat;}
+.control_box .on{background:url(images/move.png) no-repeat;}
