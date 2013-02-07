@@ -1,7 +1,7 @@
 #CACHE{0}
 <B_objets>
 <h2><:websimple:pack_compose_par:></h2>
-<dl class="#ENV{faq,options}">  
+<dl class="[(#ENV{faq,flottable}) options]">  
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement,pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
     #SET{articles,#ARRAY}
@@ -14,7 +14,7 @@
         <dt class="row">
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
                 [(#ENV{faq}|non)
-                    <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">]
+                    <a class="open" id="link_#ID_ARTICLE" data-base="#ID_OBJET_DEST" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">]
                      <span class="closed">-</span>
                      #SET{id_article,#ID_ARTICLE}
                      ]
@@ -24,7 +24,7 @@
                          #SET{id_article,#ID_ARTICLE}
                           <span class="open">-</span>
                          ,
-                         <a  class="closed" id="link_[(#ID_ARTICLE)]_[(#ID_OBJET_DEST)]"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
+                         <a  class="closed" id="link_#ID_ARTICLE" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
                      })]
                     <span class="close">+</span>
                 ]
@@ -42,7 +42,7 @@
 
 <B_pack_base>
 <h2><:websimple:plus_fonctionnalites_pack_base:></h2>
-<dl class="options">  
+<dl class="[(#ENV{faq,flottable}) options]">  
 <BOUCLE_pack_base(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien=pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
     #SET{articles,#ARRAY}
@@ -54,13 +54,13 @@
             ]
         <dt class="row">
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
-                    <a class="open" id="link_#ID_ARTICLE_#ID_OBJET_DEST" data-panier="non" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
+                    <a class="open" id="link_#ID_ARTICLE" data-base="#ID_OBJET_DEST" data-panier="non" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
                      <span class="closed">-</span>
                      #SET{id_article,#ID_ARTICLE}
                      ]
                 [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
                     #SET{id_article,''}
-                    <a  class="closed" id="link_[(#ID_ARTICLE)]_[(#ID_OBJET_DEST)]" data-panier="non" data-faq="faq" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST}|parametre_url{panier,faq}|parametre_url{faq,oui})]">
+                    <a  class="closed" id="link_#ID_ARTICLE" data-base="#ID_OBJET_DEST" data-panier="non" data-faq="faq" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST}|parametre_url{panier,faq}|parametre_url{faq,oui})]">
                     <span class="open">+</span>
                 ]
                 <span class="#EDIT{titre} titre">#TITRE</span>
