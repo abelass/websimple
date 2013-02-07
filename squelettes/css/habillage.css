@@ -446,11 +446,11 @@ ul.home a, .extra2 a, #footer a {
 	max-height:30em;
 	}
 .floating_box{
-	width:25em;
 	background:#FFFFFF;
 	border: #63b362 2px solid;
 	border-radius:5px;
 	left:0;
+	width:100%;
 }
 div.close{
 	font-weight:bold; 
@@ -459,6 +459,12 @@ div.close{
 	top:0;
 	right:0;
 	width:10px}
+	
+.action_close{cursor: pointer}
+
+.fenetre_container{position:relative;}
+
+.fenetre{position:absolute;width:20%;}	
 /*Panier*/
 
 #mon_panier{
@@ -482,11 +488,11 @@ div.close{
   line-height:normal;
   margin-bottom: 0.2em;
 	}
-	
+
+/*panneau move*/	
 .panneau{height:1.5em; background:#e5e5e5;clear:both}
 .panneau div {float:right;width:auto;margin-left:0.1em;background:#f3f3f3;padding:0.2em}
 
-/*panneau move*/
 
 .control_box{position:fixed;right:1em; top:1em;}
 .control_box div{cursor:pointer;width:24px;height:24px}
