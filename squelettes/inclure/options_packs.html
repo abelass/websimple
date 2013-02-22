@@ -31,9 +31,9 @@
                 <span class="#EDIT{titre} titre">#TITRE</span>
             [(#ENV{faq}|non)</a>]
         </dt>     
-        [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},edit=non})]
-        </dd>]
+       <dd class="introduction"  id="article_#ID_ARTICLE">
+         [(#GET{id_article}|oui)[(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},edit=non})]]
+        </dd>
       
     </BOUCLE_article>
 </BOUCLE_objets>
