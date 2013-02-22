@@ -6,7 +6,9 @@
 <article class="content-principal">
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
-		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+		#SET{h,1}
+		[(#ENV{faq}|oui)#SET{h,2}]
+		<h[(#ENV{h,1}) ]class="h[(#ENV{h,1}) ]#EDIT{titre}">#TITRE</h#ENV{h,1}>
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
 	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
@@ -15,7 +17,7 @@
 			(#TEXTE|image_reduire{500,0})</section>
 		]
 	<section class="options_packs">
-	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article,env,url=#URL_ARTICLE,ajax}/>
+	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article,env,url=#URL_ARTICLE,ajax,h=#GET{h}}/>
 	</section>
 	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
 	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]

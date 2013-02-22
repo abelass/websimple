@@ -490,9 +490,11 @@ div.close{
 	}
 
 /*panneau move*/	
-.panneau{height:1.5em; background:#e5e5e5;clear:both}
+.panneau{height:1.5em; background:#e5e5e5;clear:both;text-align:center}
 .panneau div {float:right;width:auto;margin-left:0.1em;background:#f3f3f3;padding:0.2em}
+.panneau h1, .panneau h1{font-size:1em; margin:0;padding:0;}
 
+.floating_box{text-align:left;font-family: Helvetica, Arial, sans-serif;	}
 
 .control_box{position:fixed;right:1em; top:1em;}
 .control_box div{cursor:pointer;width:24px;height:24px}

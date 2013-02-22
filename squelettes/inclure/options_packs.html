@@ -67,7 +67,7 @@
             </a>
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-           [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},ajax=articles_packs_#ID_ARTICLE})]
+           [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},env)]
         </dd>]
       
     </BOUCLE_article_pack_base>
