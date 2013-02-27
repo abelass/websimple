@@ -31,9 +31,9 @@
                 <span class="#EDIT{titre} titre">#TITRE</span>
             [(#ENV{faq}|non)</a>]
         </dt>     
-       <dd class="introduction"  id="article_#ID_ARTICLE">
-         [(#GET{id_article}|oui)[(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},edit=non})]]
-        </dd>
+        [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
+            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},edit=non})]
+        </dd>]
       
     </BOUCLE_article>
 </BOUCLE_objets>
@@ -67,7 +67,7 @@
             </a>
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-           [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},env)]
+           [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},env})]
         </dd>]
       
     </BOUCLE_article_pack_base>
