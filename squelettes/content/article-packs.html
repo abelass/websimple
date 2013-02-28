@@ -17,7 +17,7 @@
 			(#TEXTE|image_reduire{500,0})</section>
 		]
 	<section class="options_packs">
-	    <INCLURE{fond=inclure/options_packs,id_objet_dest=#ID_ARTICLE,objet_dest=article,env,url=#URL_ARTICLE,ajax,h=#GET{h}}/>
+	    <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,env,url=#URL_ARTICLE,ajax,h=#GET{h}}/>
 	</section>
 	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
 	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
