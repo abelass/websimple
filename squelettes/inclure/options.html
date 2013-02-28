@@ -32,7 +32,8 @@
             [(#ENV{faq}|non)</a>]
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},edit=non})]
+            [<div>(#INTRODUCTION)</div>]
+            <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
         </dd>]
       
     </BOUCLE_article>
@@ -67,9 +68,9 @@
             </a>
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-           [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},env})]
+            [<div>(#INTRODUCTION)</div>]
+            <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
         </dd>]
-      
     </BOUCLE_article_pack_base>
 </BOUCLE_pack_base>
 </dl>
