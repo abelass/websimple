@@ -496,7 +496,7 @@ div.close{
 
 .floating_box{text-align:left;font-family: Helvetica, Arial, sans-serif;	}
 
-.control_box{position:fixed;right:1em; top:1em;}
+.control_box{position:fixed;right:1em; top:1em;z-index:2000}
 .control_box div{cursor:pointer;width:24px;height:24px}
 .control_box .off{background:url(images/not_move.png) no-repeat;}
 .control_box .on{background:url(images/move.png) no-repeat;}
