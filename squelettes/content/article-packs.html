@@ -6,9 +6,7 @@
 <article class="content-principal">
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
-
-
-		<h1 class="h[(#ENV{h,1}) ]#EDIT{titre}">#TITRE</h1>
+		[(#ENV{titre}|!={non}|oui)<h1 class="h1 #EDIT{titre}">#TITRE</h1>]
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
 	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
@@ -38,11 +36,12 @@ et pourquoi pas ajax
 ][(#PETITION|oui)<INCLURE{fond=inclure/petition,id_article,env,ajax} />]
 
 
-
+[(#ENV{faq}|ou{#ENV{titre}}|non)
 [(#REM) Forum de l'article
 NB : pour desactiver les forums de l'article, supprimez simplement la ligne ci-dessous ]
 [(#ENV{forum}|=={non}|non)
     #SET{retour,#PARAMETRES_FORUM|url_reponse_forum}
     <INCLURE{fond=inclure/forum,id_article,repondre_url=#GET{retour},repondre_titre=<:repondre_article:>} />
     ]
+]
 </BOUCLE_content>
