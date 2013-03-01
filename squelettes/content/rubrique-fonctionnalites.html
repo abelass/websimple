@@ -1,0 +1,16 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+    <article class="content-principal">
+        <header class="cartouche">
+            <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+        </header>
+        [<section class="#EDIT{texte} chapo">
+            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+            (#TEXTE)
+         </section>]
+    </article>
+        <B_packs>
+        <section class="container_pack">
+            <INCLURE{fond=inclure/fonctionnalites,env,id_rubrique}/>
+        </section>
+        </B_packs>
+</BOUCLE_content>
