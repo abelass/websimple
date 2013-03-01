@@ -1,0 +1,28 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+    <article class="content-principal">
+        <header class="cartouche">
+            <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+        </header>
+        [<section class="#EDIT{texte} chapo">
+            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+            (#TEXTE)
+         </section>]
+    </article>
+
+        <section class="realisations">
+            <nav class="menu_porfolio">
+                <a class="ajax[ (#ENV{id_groupe}|non)on]" href="#URL_RUBRIQUE{#ID_RUBRIQUE}"><:portafolio_sites:></a>
+                <a  class="ajax[ (#ENV{id_groupe}|oui)on]" href="[(#SELF|parametre_url{id_groupe,9})]"><:portafolio_developpements:></a>
+            </nav>
+                        
+            
+            <BOUCLE_groupes(MOTS){id_groupe}>
+                [(#REM) Sites de la rubrique ]
+                <INCLURE{fond=inclure/inc-portafolio_articles}{env}{id_mot}/>
+            </BOUCLE_groupes>
+            </B_groupes>
+                <INCLURE{fond=inclure/inc-sites}{id_rubrique}{env}>
+            <//B_groupes>
+        </section>
+
+</BOUCLE_content>

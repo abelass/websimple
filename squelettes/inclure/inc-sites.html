@@ -1,0 +1,24 @@
+[(#REM) Sites de la rubrique ]
+<B_sites>
+<section class="liste sites">
+[<p class="pagination">(#PAGINATION)</p>]
+	<ul>
+		<BOUCLE_sites(SITES) {id_rubrique} {!par date}{pagination}>
+		<li class="item hentry">
+		    <article>
+			<h3><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT}|parametre_url{lang,#LANG})]">#NOM_SITE</a></h3>
+			<div class="thumbnails">
+				<a href="[(#ID_SYNDIC||generer_url_entite{site,'','',#CONNECT}|entites_html|parametre_url{lang,#LANG})]">[(#LOGO_SITE|image_reduire{120})]</a>
+			</div>
+            <div class="introduction entry-content">                                    
+                 [<div class="#EDIT{introduction} descriptif">(#DESCRIPTIF|couper{250})</div>]
+              </div>
+			</article>
+		</li>										
+		</BOUCLE_sites>
+
+	</ul>
+[<br class="nettoyeur"/>
+<p class="pagination">(#PAGINATION)</p>]	
+</section>
+</B_sites>
