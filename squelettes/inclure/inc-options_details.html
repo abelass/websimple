@@ -1,0 +1,20 @@
+<BOUCLE_article(ARTICLES){id_article}>
+
+    <dt class="row">
+                #SET{id_article,''}
+                 [(#ENV{faq}|=={faq}|?{
+                     #SET{id_article,#ID_ARTICLE}
+                      <span class="open">-</span>
+                     ,
+                     <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
+                 })]
+                <span class="close">+</span>
+            <span class="#EDIT{titre} titre">#TITRE</span>
+        [(#ENV{faq}|=={faq}|non)</a>]
+    </dt>     
+    [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
+        [<div>(#INTRODUCTION)</div>]
+        <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
+    </dd>]
+  
+</BOUCLE_article>

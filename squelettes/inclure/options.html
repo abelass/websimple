@@ -2,51 +2,20 @@
 #SET{cookie_move,#EVAL{$_COOKIE['move']}}
 [(#GET{cookie_move}|=={off}|oui|ou{#GET{cookie_move}|non})#SET{faq,faq}]
 #SET{faq,#ENV{faq,#GET{faq}}}
+[(#GET{faq}|=={undefined}|oui)#SET{faq,faq}]
 <B_objets>
 <h2><:websimple:pack_compose_par:></h2>
 <dl class="[(#GET{faq,flottable}) options]">  
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien !IN utilise_pack,hebergement,pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
-    #SET{articles,#ARRAY}
-    <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{si #OBJET|=={article}|oui}>
-       #SET{articles_env,#ENV{fonct_compris}|explode{-}}
-       #SET{articles_enlever,#GET{articles_env}|array_diff{#LISTE{#ID_ARTICLE}}|implode{-}}       
-       [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
-            #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
-            ]
-        <dt class="row">
-                [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
-                [(#GET{faq}|non)
-                    <a class="open" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">]
-                     <span class="closed">-</span>
-                     #SET{id_article,#ID_ARTICLE}
-                     ]
-                [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
-                    #SET{id_article,''}
-                     [(#GET{faq}|=={faq}|?{
-                         #SET{id_article,#ID_ARTICLE}
-                          <span class="open">-</span>
-                         ,
-                         <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
-                     })]
-                    <span class="close">+</span>
-                ]
-                <span class="#EDIT{titre} titre">#TITRE</span>
-            [(#GET{faq}|=={faq}|non)</a>]
-        </dt>     
-        [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [<div>(#INTRODUCTION)</div>]
-            <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
-        </dd>]
-      
-    </BOUCLE_article>
+    [(#OBJET|=={article}|oui)<INCLURE{fond=inclure/inc-options_details,id_article=#ID_OBJET,faq=#GET{faq},env}/>]
 </BOUCLE_objets>
 </dl>
 </B_objets>
 
 <B_pack_base>
 <h2><:websimple:plus_fonctionnalites_pack_base:></h2>
-<dl class="[(#ENV{faq,flottable}) options]">  
+<dl class="[(#GET{faq,flottable}) options]">  
 <BOUCLE_pack_base(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien=pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
     #SET{articles,#ARRAY}
@@ -57,24 +26,22 @@
             #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
             ]
         <dt class="row">
-                [(#ID_ARTICLE|in_array{#GET{articles_env}}|oui)
-                    <a class="open" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST" data-panier="non" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles_enlever}})]">
-                     <span class="closed">-</span>
+                #SET{id_article,''}
+                 [(#GET{faq}|=={faq}|?{
                      #SET{id_article,#ID_ARTICLE}
-                     ]
-                [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
-                    #SET{id_article,''}
-                    <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST" data-panier="non" data-faq="faq" href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST}|parametre_url{panier,faq}|parametre_url{faq,oui})]">
-                    <span class="open">+</span>
-                ]
-                <span class="#EDIT{titre} titre">#TITRE</span>
-            </a>
+                      <span class="open">-</span>
+                     ,
+                     <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
+                 })]
+                <span class="close">+</span>
+            <span class="#EDIT{titre} titre">#TITRE</span>
+        [(#GET{faq}|=={faq}|non)</a>]
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [<div>(#INTRODUCTION)</div>]
-            <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
+            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},titre=non,env,id_article_base=#ID_OBJET_DEST})]        
         </dd>]
     </BOUCLE_article_pack_base>
 </BOUCLE_pack_base>
 </dl>
+<br class="nettoyeur"/>
 </B_pack_base>
