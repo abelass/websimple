@@ -1,7 +1,7 @@
 <nav class="menu rubriques">
 	<ul class="menu-items menu-liste home">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{par ordre}>
-		<li class="item menu-entree[ (#COMPTEUR_BOUCLE|modulo{5}|=={0}|oui)end]">
+		<li class="item menu-entree[ (#COMPTEUR_BOUCLE|modulo{4}|=={0}|oui)end]">
 			<div class="white_box"></div>
 			<div class="text">
 			<BOUCLE_rubriques(RUBRIQUES) {id_rubrique=#ID_OBJET} {si #OBJET|=={rubrique}|oui} {tout} >
