@@ -1,0 +1,56 @@
+
+ 
+<ul>
+    <BOUCLE_rub(RUBRIQUES){par num titre}{tout}{lang}>
+       <li><a class="ajax" href="[(#SELF|parametre_url{id_rubrique,#ID_RUBRIQUE})]">#TITRE</a></li>
+    </BOUCLE_rub>
+ </ul>
+
+
+
+<article class="content-principal">
+	<header class="cartouche">
+
+	</header>
+
+
+
+	</B_articles_racine>
+
+	<B_rubriques>
+	<ul class="plan">
+		<BOUCLE_rubriques(RUBRIQUES){id_rubrique}{par num titre}{tout}{lang}>
+		<li>
+            <header class="cartouche">
+                <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+            </header>
+        
+            [<section class="#EDIT{descriptif} chapo surlignable">(#DESCRIPTIF|image_reduire{500,0})</section>]
+            [<section class="#EDIT{texte} texte surlignable">
+                    (#TEXTE|image_reduire{500,0})</section>
+                ]
+               <a href="#URL_ECRIRE{rubrique,id_rubrique=#ID_RUBRIQUE}">#TITRE</a>  
+			<B_articles>
+			<ul>
+				<BOUCLE_articles(ARTICLES) {id_rubrique} {par titre}>
+				<li>
+				<header class="cartouche">
+                 <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+                </header>
+            
+                [<section class="#EDIT{descriptif} chapo surlignable">(#DESCRIPTIF|image_reduire{500,0})</section>]
+                [<section class="#EDIT{texte} texte surlignable">
+                        (#TEXTE|image_reduire{500,0})</section>
+                    ]
+				    <a href="#URL_ECRIRE{article,id_article=#ID_ARTICLE}">#TITRE</a>
+				</li>
+				</BOUCLE_articles>
+			</ul>
+			</B_articles>
+			
+		</li>
+		</BOUCLE_rubriques>
+	</ul>
+	</B_rubriques>
+
+</article>
