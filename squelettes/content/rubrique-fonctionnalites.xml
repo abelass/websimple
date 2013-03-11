@@ -1,4 +1,5 @@
 <composition>
         <nom>Rubrique Fonctionnalités</nom>
         <description>Rubrique Fonctionalités</description>
+        <section type="article" composition="-" />
 </composition>
