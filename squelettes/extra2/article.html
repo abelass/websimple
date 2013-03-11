@@ -3,7 +3,7 @@
 	<B_articles_rubrique>
 	<div class="liste articles">
 		<ul class="liste-items">
-			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {0,10}>
+			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par num titre, titre}>
 			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE">#TITRE</a></li>
 			</BOUCLE_articles_rubrique>
 		</ul>
