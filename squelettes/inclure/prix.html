@@ -11,7 +11,7 @@
         #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
         [(#PRIX|>{0}|?{#SET{ttc,oui},#SET{ttc,''})}]   
-            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env,ajax}/>
+            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env}/>
         </BOUCLE_objets_precieux>
         <BOUCLE_objets_add(SELECTION_OBJETS){objet_dest=#OBJET}{id_objet_dest=#ID_OBJET}{type_lien=hebergement}>
         #SET{prix_ht,''}
@@ -19,7 +19,7 @@
         <BOUCLE_objets_precieux_add(PRIX_OBJETS){id_objet}{objet}>
             #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
-            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env,ajax}/>
+            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env}/>
         </BOUCLE_objets_precieux_add>
         </BOUCLE_objets_add>
     </div>

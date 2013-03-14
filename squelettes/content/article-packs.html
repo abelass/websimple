@@ -2,7 +2,7 @@
 <BOUCLE_content(ARTICLES){id_article}>
 <aside class="right">
     [(#REM)Bouton ajouter panier]
-    <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>)}/>
+    <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>),ajax}/>
     [(#REM)Les Contenus liés]
     <INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#ID_ARTICLE,type_lien=utilise_par_site,class=last,env}/>
 </aside>
