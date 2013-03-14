@@ -1,4 +1,8 @@
 <BOUCLE_content(SITES){id_syndic}>
+<aside class="right">
+    [(#REM)Les Contenus liés]
+    <INCLURE{fond=inclure/contenu_lie_a,objet=site,id_objet=#ID_SYNDIC,class=last,env}/>
+</aside>
 <article class="content-principal">
 
   <header class="cartouche">
