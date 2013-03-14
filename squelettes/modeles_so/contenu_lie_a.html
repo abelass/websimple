@@ -1,5 +1,2 @@
 #SET{titre,(#OBJET_DEST|info_objet{#ID_OBJET_DEST,titre}|couper{40})}
-
-<a href="[(#URL|sinon{#ID_OBJET_DEST|generer_url_entite{#OBJET_DEST}})]" title="[(#GET{titre}|textebrut)]">[(#GET{titre}|couper{40})]
- 
-    </a>
+<a href="[(#URL|sinon{#ID_OBJET_DEST|generer_url_entite{#OBJET_DEST}})]" title="[(#GET{titre}|textebrut)]">[(#GET{titre}|couper{40})]</a>
