@@ -69,7 +69,6 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 .content {
 	background-color:#FFFFFF;
 	float: right;
-	padding:0 1em;
 	font-family: Helvetica, Arial, sans-serif;	
 	border-radius:7px;
 	margin:1%;
@@ -366,7 +365,43 @@ background:white;
 
 /*Formulaires*/
 
+/*Colonne droite*/
+
+aside.right{
+	float:right; 
+	width:30%;
+	border-left:#63b362 2px solid;
+	border-bottom:#63b362 2px solid;
+	border-top-right-radius: 12px;	
+	border-bottom-left-radius: 12px;
+	background-color:#fdfdfd;
+	margin:0 0 1% 1%
+	
+}
+
+aside.right h2{
+	font-size:1.5em;
+	line-height: normal;
+    margin: 0.5em 0;
+}
+aside.right section{
+	margin:0 5%;
+	border-bottom:#63b362 2px dotted;
+	}
+aside.right section.last{
+	border-bottom:none;
+}	
+	
+/*Contenus liées*/
+
+aside.contenu_lie{float:right;}
+
 /*Divers*/
+
+.spip_documents_center {
+    clear: none;
+
+}
 
 .container_pack{width:100%; overflow:hidden;}
 

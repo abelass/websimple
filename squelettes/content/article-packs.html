@@ -1,8 +1,14 @@
 
 <BOUCLE_content(ARTICLES){id_article}>
-[<aside class="prix">
-    (#INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>)})
-</aside>]
+<aside class="right">
+    [(#REM)Bouton ajouter panier]
+    <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>)}/>
+    [(#REM)Les Contenus liés]
+    <INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#ID_ARTICLE,type_lien=utilise_par_site,class=last,env}/>
+</aside>
+
+
+
 <article class="content-principal">
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
