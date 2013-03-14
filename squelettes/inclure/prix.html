@@ -4,6 +4,8 @@
 </BOUCLE_objets>
 
 <B_objets_precieux>
+<section class="prix">
+    <h2><:paniers:titre_panier:></h2>
     <div class="vente liste_objets_precieux">
         <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet}{objet}>
         #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
@@ -21,4 +23,5 @@
         </BOUCLE_objets_precieux_add>
         </BOUCLE_objets_add>
     </div>
+</section>
 </B_objets_precieux>
