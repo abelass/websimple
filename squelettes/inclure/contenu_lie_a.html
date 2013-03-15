@@ -2,7 +2,7 @@
 <section class="contenu_lie[ (#ENV{class})]">
     <h2><:websimple:site_utilise:></h2>
     <ul>
-    <BOUCLE_sites_lies(SELECTION_OBJETS){objet}{id_objet}{type_lien ?}{!par ordre,titre}>
+    <BOUCLE_sites_lies(SELECTION_OBJETS){objet}{id_objet}{type_lien ?}{par ordre_objet,titre}>
     [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#ID_OBJET|generer_modele{#OBJET,modeles_so/contenu_lie_a,#ARRAY{
         ordre,#ORDRE,
         id_selection_objet,#ID_SELECTION_OBJET,
