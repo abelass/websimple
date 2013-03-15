@@ -12,7 +12,10 @@
         [(#ENV{faq}|=={faq}|non)</a>]
     </dt>     
     [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-        [<div>(#INTRODUCTION)</div>]
+         <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>),ajax}/>
+        [<div>
+            (#INTRODUCTION)
+            </div>]
         <div><a href="#URL_ARTICLE" title="TITRE"><:zcore:lire_la_suite:></a></div>            
     </dd>]
 </BOUCLE_article>

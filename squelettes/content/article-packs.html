@@ -23,7 +23,7 @@
 	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
 
     <section class="options_packs">
-        <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,url=#URL_ARTICLE,env,ajax}/>
+        <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
      
      <BOUCLE_fonctionnalits(RUBRIQUES){id_rubrique!=#ID_RUBRIQUE}{id_trad=7}{lang}>
         <a class="h2" href="#URL_RUBRIQUE" title="#TITRE"><:websimple:ajouter_fonctionnalites:></a>

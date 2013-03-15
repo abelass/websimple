@@ -369,7 +369,7 @@ background:white;
 
 /*Colonne droite*/
 
-aside.right{
+aside.right,.options section.prix{
 	float:right; 
 	width:30%;
 	border-left:#63b362 2px solid;
@@ -381,7 +381,7 @@ aside.right{
 	
 }
 
-aside.right h2{
+aside.right h2,.options section.prix h2{
 	font-size:1.5em;
 	line-height: normal;
     margin: 0.5em 0;
@@ -393,7 +393,13 @@ aside.right section{
 aside.right section.last{
 	border-bottom:none;
 }	
-	
+.options section.prix{
+	border-top-right-radius: 0;	
+	border-top:#63b362 2px solid;
+	border-top-left-radius: 12px;	
+	width:20%;
+	padding:0 2%;	
+}
 /*Contenus liées*/
 
 aside.contenu_lie{float:right;}
@@ -405,7 +411,7 @@ aside.contenu_lie{float:right;}
 
 }
 
-.container_pack{width:100%; overflow:hidden;}
+.container_pack{overflow:hidden;}
 
 .pack{float:left; width:48%; margin : 0 1%}
 
@@ -481,7 +487,7 @@ ul.home a, .extra2 a, #footer a {
 .options dt.close span.open,.faq dt.close span.open{display:none;}
 
 .options dd.introduction{
-	padding:0.5em;
+	padding:0.5em 0 0.5em 0.5em;
 	position:relative;
 	z-index:500;
 	max-height:30em;
