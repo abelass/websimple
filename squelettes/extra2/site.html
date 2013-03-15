@@ -1,0 +1,11 @@
+[(#REM) Autres sites web ]
+<B_sites>
+<div class="liste sites">
+    <h2 class="h2"><:sites_web:></h2>
+    <ul class="liste-items">
+        <BOUCLE_sites(SITES) {!par date} {0,15}>
+        <li class="item"><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]"[ class="(#EXPOSE)"]>#NOM_SITE</a></li>
+        </BOUCLE_sites>
+    </ul>
+</div>
+</B_sites>
