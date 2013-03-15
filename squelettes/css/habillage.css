@@ -249,7 +249,9 @@ ul.home li.end{
 
 }
 
-.extra2 .liste-items .item a{position:absolute; z-index: 300; }
+.extra2 .liste-items .item a{
+	/*position:absolute; */
+	z-index: 300; }
 
 .square{
 	float:left;
