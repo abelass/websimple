@@ -1,3 +1,11 @@
+#SET{exclus,#ARRAY}
+[(#REM)Les produits dans le panier]
+    <BOUCLE_panier(PANIERS_LIENS){id_panier=#SESSION{id_panier}}{objet=prix_objet}>
+        <BOUCLE_article(PRIX_OBJETS){id_prix_objet=#ID_OBJET}{objet=article}>
+        #SET{exclus,#GET{exclus}|push{#ID_OBJET}}
+        </BOUCLE_article>
+    </BOUCLE_panier>
+
 <BOUCLE_art(ARTICLES){id_article=#ID_OBJET}>
 <dl>
    <dt class="row_[(#COMPTEUR_BOUCLE|alterner{odd, even})]"><a href="#URL_ARTICLE">#TITRE</a></dt>
@@ -9,9 +17,14 @@
             <dd class="compris_pack">
             <:websimple:compris_pack:>
             ,
-            <dd class="ajouter_au_panier">
+            [(#ID_ARTICLE|in_array{#GET{exclus}}|?{
+                <img src="[(#CHEMIN{images/tick_16.png})]" alt="ok"/>
+                ,
+                  <dd class="ajouter_au_panier">
             #SET{retour,#SELF|parametre_url{retour,ok}}
-            [(#BOUTON_ACTION{<:websimple:action_ajouter:>,#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})] 
+            [(#BOUTON_ACTION{<:websimple:action_ajouter:>,#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})]          
+                })]
+ 
             })]
 
         </dd>
