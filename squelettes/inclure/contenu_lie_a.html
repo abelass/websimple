@@ -4,17 +4,7 @@
     <ul>
     <BOUCLE_sites_lies(SELECTION_OBJETS){objet}{id_objet}{type_lien ?}{par ordre_objet,titre}>
     [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#ID_OBJET_DEST|generer_modele{#OBJET_DEST,modeles_so/contenu_lie,#ARRAY{
-        ordre,#ORDRE,
-        id_selection_objet,#ID_SELECTION_OBJET,
-        langue,#ENV{l},
-        objet_dest,#OBJET_DEST,
-        id_objet_dest,#ID_OBJET_DEST,
-        total_boucle,#TOTAL_BOUCLE,
-        id_selection_objet,#ID_SELECTION_OBJET,
-        titre,#TITRE,
-        compteur_boucle,#COMPTEUR_BOUCLE,
-        date,#DATE,
-        type_lien,#TYPE_LIEN,   
+        url,#URL 
         }})</li>]
     </BOUCLE_sites_lies>
     </ul>
