@@ -1,31 +1,44 @@
-<BOUCLE_racine(RUBRIQUES){id_rubrique}{tout}>#SET{id_racine,#ID_RUBRIQUE}
-	<BOUCLE_parent(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur}}{tout}>
+<BOUCLE_racine(RUBRIQUES){id_rubrique}{tout}>#SET{id_racine,#ID_RUBRIQUE}#SET{id_secteur,#ID_SECTEUR}
+	<BOUCLE_parent(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur,#GET{id_secteur}}}{tout}>
 		#SET{id_racine,#ID_RUBRIQUE}
-		<BOUCLE_parent2(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur}}{tout}>
+		<BOUCLE_parent2(RUBRIQUES){id_enfant}{id_rubrique!=#ENV{id_secteur,#GET{id_secteur}}}{tout}>
 			#SET{id_racine,#ID_RUBRIQUE}
 			<BOUCLE_rec(BOUCLE_parent2)></BOUCLE_rec>
 		</BOUCLE_parent2>
 	</BOUCLE_parent>
 </BOUCLE_racine>
-
+<B_extra2_rubrique>
+<div class="liste articles">
+    <ul class="liste-items">
 <BOUCLE_extra2_rubrique(RUBRIQUES){id_rubrique=#GET{id_racine}}{tout}>
-	<B_articles_rubrique>
-	<div class="liste articles">
-		<ul class="liste-items">
-			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par date}{inverse} {lang}{0,10}>
-			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE" title="#TITRE">[(#TITRE|couper{45})]</a></li>
-			</BOUCLE_articles_rubrique>
-		</ul>
-	</div>
-	</B_articles_rubrique>
-	<B_rubriques>
-	<div class="liste articles">
-		<ul class="liste-items">		
-		<BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}{lang}>
-			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div>  <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a></li>
-		</BOUCLE_rubriques>
-		</ul>
-	</div>		
-	</B_rubriques>
-	<//B_articles_rubrique>
+#SET{compteur_boucle,#COMPTEUR_BOUCLE}
+     <B_articles_rubrique>
+    <li class="item[(#ID_RUBRIQUE|=={#ENV{id_rubrique}}|oui)on] first"><div class="square">&nbsp;</div>
+          <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a>
+          #SET{first,oui}
+          [(#ID_RUBRIQUE|=={#ENV{id_rubrique}}|oui)<ul>]
+        <BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par titre} {lang}>
+        [(#ID_RUBRIQUE|=={#ENV{id_rubrique}}|oui)<li class="item[ (#EXPOSE)]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE" title="#TITRE">[(#TITRE|couper{45})]</a></li>]
+        </BOUCLE_articles_rubrique>
+        [(#ID_RUBRIQUE|=={#ENV{id_rubrique}}|oui)</ul>]  
+    </li>   
+    </B_articles_rubrique>
+    <BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}{lang}>
+    	<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|et{#GET{first}|non}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]">
+    	    <div class="square">&nbsp;</div>  <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a>
+             <B_articles_rubrique2>
+                  <ul>
+                <BOUCLE_articles_rubrique2(ARTICLES){id_rubrique} {id_rubrique=#ENV{id_rubrique}}{par titre}{pagination}{lang}>
+                <li class="item[ (#EXPOSE)]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE" title="#TITRE">[(#TITRE|couper{45})]</a></li>
+                </BOUCLE_articles_rubrique2>
+                </ul>
+                [<p class="pagination">(#PAGINATION)</p>]
+                  <ul>
+            </B_articles_rubrique2>    	        
+    	    </li>
+    </BOUCLE_rubriques>
+
 </BOUCLE_extra2_rubrique>
+    </ul>
+</div>
+</B_extra2_rubrique>

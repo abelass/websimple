@@ -1,12 +1,1 @@
-<BOUCLE_extra2_article(ARTICLES){id_article}>
-	[(#REM) Articles dans la meme rubrique ]
-	<B_articles_rubrique>
-	<div class="liste articles">
-		<ul class="liste-items">
-			<BOUCLE_articles_rubrique(ARTICLES){id_rubrique} {par num titre, titre}>
-			<li class="item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]"><div class="square">&nbsp;</div> <a href="#URL_ARTICLE">#TITRE</a></li>
-			</BOUCLE_articles_rubrique>
-		</ul>
-	</div>
-	</B_articles_rubrique>
-</BOUCLE_extra2_article>
+<INCLURE{fond=extra2/rubrique,id_article,id_rubrique,env}/>
