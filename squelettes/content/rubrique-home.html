@@ -1,3 +1,15 @@
+<BOUCLE_rub(RUBRIQUES){id_rubrique}{tout}>
+<article class="content-principal">
+    <header class="cartouche invisible">
+        <h1 class="h1 #EDIT{titre}">#TITRE</h1>
+    </header>
+
+    [<section class="#EDIT{texte} chapo">
+        [(#LOGO_RUBRIQUE|image_reduire{200,200})]
+        (#TEXTE)    
+    </section>]
+</article>
+
 <nav class="menu rubriques">
 	<ul class="menu-items menu-liste home">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{par ordre}>
@@ -15,3 +27,4 @@
     </BOUCLE_content>
 	</ul>
 </nav>
+</BOUCLE_rub>
