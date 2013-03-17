@@ -516,7 +516,7 @@ div.close{
 
 #mon_panier{
 	position:fixed;	
-	right:1em;
+	left:1em;
 	top: 1em;	
 	z-index:700;
 	width : 20em;
