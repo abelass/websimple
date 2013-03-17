@@ -42,6 +42,7 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
 	margin-top:1em;
 	text-align:center;
 	position:relative;
+	z-index:500;
 }
 
 .container {
@@ -93,6 +94,8 @@ body { width:1000px; background:transparent; margin: 0 	0 0 17.5em;}
     width: 100%;
     min-height: 40em
 }
+
+.home .content-principal{text-align:center; font-size:1.2em;font-weight: bold}
 
 .extra2{
 	float: left;
@@ -225,7 +228,9 @@ ul.home li.item{
 	}  
 	 
 .extra2 .liste-items li.last{
-	border-bottom:none;
+	border-bottom:#FFFFFF 0.2em solid;
+	border-bottom-right-radius: 0.5em;
+	behavior: url(/PIE.htc);
 	}   
     
 ul.home li.end{
@@ -248,6 +253,16 @@ ul.home li.end{
 	border-right:#FFFFFF 0.2em solid;	
 
 }
+
+.extra2 .liste-items .item  li{
+	border-left:#FFFFFF 0.1em dotted;
+	border-bottom:#FFFFFF 0.1em dotted;
+	padding-left:0.5em;
+	border-right:none;
+	background:none;
+	
+}
+
 
 .extra2 .liste-items .item a{
 	/*position:absolute; */
