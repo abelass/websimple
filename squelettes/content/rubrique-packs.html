@@ -8,15 +8,4 @@
             (#TEXTE)
          </section>]
     </article>
-        <B_packs>
-        <section class="container_pack">
-            <BOUCLE_packs(ARTICLES){id_rubrique}{par num titre}>
-                <aside class="pack">
-                    <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE}/>
-                    <h2><a href="#URL_ARTICLE" title="#TITRE">#TITRE</a></h2>
-                    <div class="texte">#INTRODUCTION</div>
-                </aside>
-            </BOUCLE_packs>
-        </section>
-        </B_packs>
 </BOUCLE_content>
