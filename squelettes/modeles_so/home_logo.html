@@ -1,0 +1,9 @@
+<div class="titre">
+    <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]" title="[(#TITRE|textebrut)]">#TITRE</a>
+</div>
+
+[(#LOGO_RUBRIQUE|image_passe_partout{174,130}
+            |image_recadre{172,125}
+            |inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
+
+            
