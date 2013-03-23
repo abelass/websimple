@@ -1,15 +1,15 @@
 [(#REM) Diaporama des logos des sites ]
 [(#SET{fx,[(#ENV{fx,fade})]})]
-[(#SET{duree,[(#ENV{duree,5000})]})]
+[(#SET{duree,[(#ENV{duree,4000})]})]
 [(#SET{largeur,[(#ENV{largeur,210})]})]
-[(#SET{hauteur,[(#ENV{hauteur,135})]})]
+[(#SET{hauteur,[(#ENV{hauteur,115})]})]
 [(#SET{afficher_nom_site,#ENV{afficher_nom_site}})]
 
 <script type="text/javascript">/*<!#EVAL{chr(91)}CDATA#EVAL{chr(91)}*/
 jQuery(document).ready(function() {
 	$('#sjcycle_sites').cycle({ 
 		fx:'#GET{fx}',
-		speed:1500, 
+		speed:5000, 
 		timeout:[(#GET{duree})],
 		pause:1
 	});
@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
    <div id="sjcycle_sites">
 <BOUCLE_sites(SITES){!par date}{0,10}>
       [<div class="sjcycle_sites_img">
-         <a href="#URL_SITE">(#LOGO_SITE|
+         <a href="#URL_RUBRIQUE">(#LOGO_SITE|
             |image_passe_partout{#GET{largeur},#GET{hauteur}}
             |image_recadre{#GET{largeur},#GET{hauteur}}
             |inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})</a>
