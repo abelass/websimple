@@ -3,18 +3,14 @@
     <header class="cartouche invisible">
         <h1 class="h1 #EDIT{titre}">#TITRE</h1>
     </header>
-
-    [<section class="#EDIT{texte} chapo">
-        [(#LOGO_RUBRIQUE|image_reduire{200,200})]
-        (#TEXTE)    
-    </section>]
 </article>
 <nav class="menu rubriques">
 	<ul class="menu-items menu-liste home box_menu">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{par ordre}>
-        [<li class="#COMPTEUR_BOUCLE item[ (#TYPE_LIEN)] menu-entree[ (#COMPTEUR_BOUCLE|modulo{3}|=={0}|oui)end]">
+        [<li class="#COMPTEUR_BOUCLE item[ (#TYPE_LIEN)] menu-entree">
             (#ID_OBJET|generer_modele{#OBJET,modeles_so/home[_(#TYPE_LIEN)],#ARRAY{url,#URL}})</li>]
     </BOUCLE_content>
 	</ul>
 </nav>
 </BOUCLE_rub>
+<br class="nettoyeur"/>
