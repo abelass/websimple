@@ -24,39 +24,49 @@ h2, .h2{font-size:2em}
 
 /*Layout*/
 html{width:100%; background: #63b362;margin:0 auto;}
-body { width:800px;background:transparent; margin: 0 	0 0 17.5em;}
+body {
+	background:#ffffff;
+	border-radius: 1em;
+	max-width:1100px;
+	min-width:940;
+	width: auto;
+	/*margin: 0 	0 0 17.5em;*/
+	margin : 0 auto;
+	position:relative;
+	}
  	
 .page {
-	position: relative; 
-	width: 100%; 
-	margin: 3em 0; 
-	padding: 50px 1.5em; 
-	text-align: left;
-	border-radius: 3.5em;
-	behavior: url(/PIE.htc);
-	padding: 0 1.5em;
-	box-shadow: none;
-	border: 1px solid transparent;
+ 	border: 1px solid transparent;
+    box-shadow: none;
+    margin: 3em auto;
+    width: 747px;
+    padding: 0 2em;
+    position: relative;
+    text-align: left;
 	}
 
 #header{
 	margin-top:1em;
 	text-align:center;
-	position:relative;
-	z-index:500;
+	position:absolute;
+	top:-4em;
+	left:0;
+	z-index:90;
+	width:100%;
 }
 
 .container {
 	background-color:#63b362;
 	border-radius: 0.8em;
 	behavior: url(/PIE.htc);
-    margin: 1.2em 6em 6em 6em;
+    margin: 1.2em 0 6em 0;
 
 }
 
 .home .container {
 	background-color:#FFFFFF;
 	border: 0px none;
+	margin-top:10em;
 }
 
 .content-principal{
@@ -93,7 +103,8 @@ body { width:800px;background:transparent; margin: 0 	0 0 17.5em;}
 
 .home .content {
     width: 100%;
-    min-height: 40em
+    min-height: 47em;
+     margin: 0;
 }
 
 .home .content-principal{text-align:center; font-size:1.2em;font-weight: bold}
@@ -114,7 +125,7 @@ body { width:800px;background:transparent; margin: 0 	0 0 17.5em;}
 	top:0;
 	bottom:0;
 	left:0;
-	z-index:100;
+	z-index:50;
 	width:42em;
 	margin:0;
 	padding:0;
@@ -138,19 +149,26 @@ body { width:800px;background:transparent; margin: 0 	0 0 17.5em;}
 
 
 #nom_site_spip{
-	font-size:13em; 
-	text-align: center;
-	line-height:110px;
-	letter-spacing: 0.1em;
-	
+ 	font-size: 11.7em;
+    letter-spacing: 0.1em;
+    line-height: 110px;
+    text-align: center;
+    width:100%;
+    background:#63B362;
+   	border-radius: 0.05em;
+    behavior: url(/PIE.htc);
+    padding: 0 0.1em;
+    
 }
+
+#nom_site_spip a{    color: #ffffff;}
 
 #slogan_site_spip{
 	font-size:3.5em;
 	letter-spacing: 0.1em;
 	line-height: normal;
 	color:#63B362;
-	margin-top:0.3em;
+	margin-top:0.6em;
 }
 
 h1.h1{
@@ -182,10 +200,6 @@ h1.h1{
     border-bottom: 0px ;
 }
 
-ul.home {
-	overflow: hidden;
-	padding-left:1em;
-}
 
 #extra2 .liste-items{
     /*background-color: #D3E9D2;*/
@@ -200,18 +214,24 @@ ul.home {
 	z-index:200
 }
 
+ul.home {
+	overflow: hidden;
+	padding:0;
+}
+
+
 ul.box_menu li.item{
 	position:relative;
 	background: none repeat scroll 0 0 #63B362;
     border-radius: 0.4em;
     behavior: url(/PIE.htc);
     float: left;
-    height: 6.3em;
-    margin: 0 1.2em 0.5em 0;
+    margin: 0 0.12em 0.3em 0.12em;
     padding: 0;
     text-align: center;
-    width: 7.3em;
-    font-size:1.8em;
+    height:244px;
+    width: 244px;
+    font-size:2.5em;
     overflow:hidden;}
     	
  ul.box_menu li.item ul{
@@ -231,7 +251,7 @@ ul.box_menu li.item:hover .titre{
 }
 
  ul.box_menu li.item li{
-  	line-height:1.8em;
+  	line-height:2.3em;
   	
  }   
         
@@ -255,7 +275,7 @@ ul.box_menu li.end{
 }
 
 .box_menu .item .titre{
-	line-height:2em;
+	line-height:2.3em;
 }
 
 ul.box_menu li.descriptif .titre{
@@ -521,12 +541,13 @@ aside.prix {
 	
 
 .tools{
-	padding:0.2em;
-    font-size:1.2em;
-    color:#63B362;
-    text-align:right;	
-	float:right;
-	width:10%}
+    color: #63B362;
+    font-size: 1.2em;
+    padding: 0.2em;
+    position: absolute;
+    right: 1em;
+    text-align: right;
+    width: 8%;}
 /*Liens*/
 a {
     color: #63b362;
@@ -587,7 +608,7 @@ div.close{
 	left:1em;
 	top: 1em;	
 	z-index:700;
-	width : 20em;
+	width : -20%;
 	cursor:move;
 }
 #panier_wrap{
