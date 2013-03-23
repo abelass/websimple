@@ -7,7 +7,7 @@
 <nav class="menu rubriques">
 	<ul class="menu-items menu-liste home box_menu">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_RUBRIQUE}{par ordre}>
-        [<li class="#COMPTEUR_BOUCLE item[ (#TYPE_LIEN)] menu-entree">
+        [<li class="item[ (#TYPE_LIEN)] menu-entree">
             (#ID_OBJET|generer_modele{#OBJET,modeles_so/home[_(#TYPE_LIEN)],#ARRAY{url,#URL}})</li>]
     </BOUCLE_content>
 	</ul>

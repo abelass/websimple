@@ -246,7 +246,7 @@ ul.box_menu li.item{
  
 ul.box_menu li.item ul a{color:#f9ed72;}
  
-ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img, ul.box_menu li.site_slider:hover #sjcycle_sites{
+ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img, ul.box_menu li.site_slider:hover #sjcycle_sites, #sjcycle_sites a:focus,#sjcycle_sites a:hover{
 	opacity:1;
 	filter: alpha(opacity = 100);
 }
@@ -266,7 +266,7 @@ ul.box_menu li.site_slider{
 }
 
 ul.box_menu li.site_slider #sjcycle_sites{
-	margin-left:0.5em;
+	margin-left:0.35em;
 	text-align: center;
 	background : url("images/screen.png") no-repeat scroll 0 0.1em #63B362;
 	z-index:50;
