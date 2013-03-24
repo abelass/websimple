@@ -3,7 +3,7 @@
 <section class="liste sites">
 [<p class="pagination">(#PAGINATION)</p>]
 	<ul>
-		<BOUCLE_sites(SITES) {id_rubrique} {!par date}{pagination}>
+		<BOUCLE_sites(SITES)  {!par date}{pagination}>
 		<li class="item hentry">
 		    <article>
 			<h3><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT}|parametre_url{lang,#LANG})]">#NOM_SITE</a></h3>
