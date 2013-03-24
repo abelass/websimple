@@ -3,7 +3,9 @@
     [(#REM)Bouton ajouter panier]
     <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,env,expl= (<:htva:>),ajax}/>
     [(#REM)Les Contenus liés]
-    <INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#ID_ARTICLE,type_lien=utilise_par_site,class=last,env}/>
+    #SET{id_article,#ID_ARTICLE}
+    [(#ID_TRAD|>{0}|oui)#SET{id_article,#ID_TRAD}]
+    <INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,class=last,env}/>
 </aside>
 
 

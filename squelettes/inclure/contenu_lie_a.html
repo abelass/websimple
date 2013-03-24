@@ -3,7 +3,15 @@
     <h2><:websimple:site_utilise:></h2>
     <ul>
     <BOUCLE_sites_lies(SELECTION_OBJETS){objet}{id_objet}{type_lien ?}{par ordre_objet,titre}>
-    [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#ID_OBJET_DEST|generer_modele{#OBJET_DEST,modeles_so/contenu_lie,#ARRAY{
+    #SET{id_objet_dest,#ID_OBJET}
+        <BOUCLE_trad(ARTICLES){id_trad=#ID_OBJET_DEST}{si #OBJET|=={article}}{lang}>
+            #SET{id_objet_dest,#ID_ARTICLE}
+        </BOUCLE_trad>
+        <BOUCLE_rubrique(RUBRIQUES){id_trad=#ID_OBJET_DEST}{tout}{si #OBJET|=={rubrique}}{lang}>
+            #SET{id_objet_dest,#ID_RUBRIQUE}
+        </BOUCLE_rubrique>
+        <//B_trad>    
+    [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#GET{id_objet_dest}|generer_modele{#OBJET_DEST,modeles_so/contenu_lie,#ARRAY{
         url,#URL 
         }})</li>]
     </BOUCLE_sites_lies>
