@@ -220,6 +220,7 @@ ul.home {
 
 
 ul.box_menu li.item{
+	font-family: 'GoodDogRegular', Arial, sans-serif;
 	position:relative;
 	background: none repeat scroll 0 0 #63B362;
     border-radius: 0.4em;
@@ -246,13 +247,39 @@ ul.box_menu li.item{
  
 ul.box_menu li.item ul a{color:#f9ed72;}
  
-ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img, ul.box_menu li.site_slider:hover #sjcycle_sites, #sjcycle_sites a:focus,#sjcycle_sites a:hover{
+ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img, ul.box_menu li.site_slider:hover #sjcycle_sites, #sjcycle_sites a:focus,#sjcycle_sites a:hover,ul.box_menu li.item:hover dt, ul.box_menu li.item:hover dd{
 	opacity:1;
 	filter: alpha(opacity = 100);
 }
 
 ul.box_menu li.item:hover .titre{
 	background:#99cc66;
+}
+
+ul.box_menu dl {
+	background:#e93eda;
+
+	height:	170px;
+	text-align:left;
+	padding:0.3em 0 0 0.2em;
+	margin:0}
+	
+ul.box_menu dt, ul.box_menu dd{
+	opacity:0.1;
+	filter: alpha(opacity = 10);
+}	
+
+ul.box_menu dl dt{font-weight:normal; font-size:0.9em}
+
+ul.box_menu dl p {
+    font-size: 0.6em;
+	margin:0;
+	padding:0;
+}
+
+ul.box_menu dd {
+    padding-left: 0em;
+    margin:0.3em 0 0 0;
 }
 
  ul.box_menu li.item li{
@@ -283,9 +310,6 @@ ul.box_menu li.logo{
 ul.box_menu li.logo img{
 	opacity:0.5;
 	margin:0;
-	position:absolute;
-	left:-0.01em;
-	top:1em;
 	float:none;
 	padding :0}
 	
@@ -303,26 +327,31 @@ ul.box_menu li.descriptif .titre{
 	visibility: hidden;
 }
 
-ul.box_menu li.logo .titre{
-	position:absolute;
-	z-index:50;
-	width:100%;}
+
+
 
 ul.box_menu li .text{
- 	opacity:0.5;
- 	filter: alpha(opacity = 50);
+	background-color: #969583;
+	height:	170px;
+ 	opacity:1;
+ 	filter: alpha(opacity = 100);
+ 	line-height: 0.8em;
 }
+
 	
 ul.box_menu li .text p{
-	font-size:0.5em;
-	text-align:left;
-	padding:0.5em;
+	font-size:0.7em;
+	color:white;
+	text-align:center;
+	padding:2em 0.3em;
 }
 
 ul.box_menu li.descriptif .text p{
-	font-size:0.8em;
-	text-align:center;
+
+	color:#FFFFFF;
+	font-size:1em;
 	padding:0.5em;
+	line-height: 0.8em;
 }
 
 
