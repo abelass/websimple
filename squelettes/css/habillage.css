@@ -208,6 +208,7 @@ h1.h1{
    
  }
 
+
 .home .menu{
 	position:absolute;
 	z-index:200
@@ -235,21 +236,27 @@ ul.box_menu li.item{
     overflow:hidden;}
     	
  ul.box_menu li.item ul{
- 	opacity:0.5;
- 	filter: alpha(opacity = 50);
- 	background:#eec831;
+
+ 	background:none;
  	padding-bottom:1em;
  }
  
- ul.box_menu li.item ul li.row_1{background:#f9ed72;}
+  ul.box_menu li.item ul li.row_1{
+  	background:#f1d142;
+  	}
+ ul.box_menu li.item:hover  ul li.row_1{background:#f9ed72;}
   
  ul.box_menu li.item ul li.row_1 a{color:#eec831;} 
  
-ul.box_menu li.item ul a{color:#f9ed72;}
+ ul.box_menu li.item ul li.row_2{background:#edc831;}
+  ul.box_menu li.item:hover  ul li.row_2{background:#edc831;}
  
-ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img, ul.box_menu li.site_slider:hover #sjcycle_sites, #sjcycle_sites a:focus,#sjcycle_sites a:hover,ul.box_menu li.item:hover dt, ul.box_menu li.item:hover dd{
+ ul.box_menu li.item ul li.row_2 a{color:#f9ed72;}
+ 
+ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text, ul.box_menu li.item:hover img,ul.box_menu li.item:hover dt, ul.box_menu li.item:hover dd, ul.box_menu li.item:hover dl{
 	opacity:1;
 	filter: alpha(opacity = 100);
+	background-color: #63B362;
 }
 
 ul.box_menu li.item:hover .titre{
@@ -292,16 +299,41 @@ ul.box_menu li.site_slider{
 	
 }
 
-ul.box_menu li.site_slider #sjcycle_sites{
-	margin-left:0.35em;
+ul.box_menu li.site_slider .slider{
 	text-align: center;
-	background : url("images/screen.png") no-repeat scroll 0 0.1em #63B362;
-	z-index:50;
- 	opacity:0.5;
- 	filter: alpha(opacity = 50);	
+	background-color:#7ca2ed;
+	padding-left:0.4em
+}
+
+ul.box_menu li.site_slider #sjcycle_sites{
+	background-image: url("images/screen.png");
+	background-repeat:no-repeat;
+	background-position: 0 0.1em ;	
+	opacity:0.2;
+	filter: alpha(opacity = 20);
+}
+
+ul.box_menu li.site_slider:hover .slider{
+		background-color:#64b362;
+}
+
+ul.box_menu li.site_slider:hover #sjcycle_sites,ul.box_menu li.site_slider:hover #sjcycle_sites a:hover{
+
+	opacity:1;
+	filter: alpha(opacity = 100);
 }
   
-ul.box_menu li.site_slider #sjcycle_sites img{padding:0.3em 0.2em}
+ ul.box_menu li.site_slider #sjcycle_sites a{
+
+}
+  
+ul.box_menu li.site_slider #sjcycle_sites img{
+		opacity:2;
+	filter: alpha(opacity = 20);
+	position:relative;
+	top:0.3em;
+	left:0.14em;
+	}
         
 ul.box_menu li.logo{
 
