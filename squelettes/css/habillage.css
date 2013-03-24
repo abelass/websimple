@@ -345,7 +345,39 @@ ul.box_menu li.logo img{
 	float:none;
 	padding :0}
 	
+ul.box_menu li.logo_auteurs .images{
+	margin:0;
+	padding :0}	
 	
+ul.box_menu li.logo_auteurs .image{
+	float:left;
+	width:50%;}	
+	
+img.desaturate{
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: url(images/desaturate.svg#greyscale);
+filter: grayscale(100%);
+filter: gray;
+}
+
+ul.box_menu li.item:hover img.desaturate{
+-webkit-filter: grayscale(0%);
+-moz-filter: grayscale(0%);
+-ms-filter: grayscale(0%);
+-o-filter: grayscale(0%);
+filter: none;
+filter: grayscale(0%);
+background-color:#64b362;
+}
+
+ul.box_menu li.logo_auteurs hover
+		
+.image_1{}
+
+.image_2{}
 	
 ul.box_menu li.end{
 	margin-right:0
