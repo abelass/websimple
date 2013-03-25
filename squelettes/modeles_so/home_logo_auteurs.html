@@ -1,12 +1,13 @@
+#CACHE{3600}
 <div class="titre">
     <a href="[(#URL|sinon{#ID_OBJET|generer_url_entite{#OBJET}})]" title="[(#TITRE|textebrut)]">#TITRE</a>
 </div>
-#SET{largeur,122}
-#SET{hauteur,193}
+#SET{largeur,105}
+#SET{hauteur,162}
 #SET{rotation,0}
 <B_auteur>
     <div class="images">
-<BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{par nom}{0,2}>
+<BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{par hasard}{0,2}>
    #SET{compteur,#COMPTEUR_BOUCLE}
    <B_portraits>
     <div class="image image_#GET{compteur}">
