@@ -1,0 +1,22 @@
+[(#REM)
+
+	Charger les css de forms
+
+]#CACHE{0}
+#HTTP_HEADER{'Content-Type: text/css'}
+
+.extra1 {
+<BOUCLE_auteur(AUTEURS){statut=0minirezo}{id_auteur=1}{tout}{par hasard}{0,1}>
+    <BOUCLE_portraits(DOCUMENTS documents_liens){id_auteur}{tout}{par hasard}{0,1}>
+        background-image : url([(#FICHIER|image_reduire{300,900}|lien_absolue|extraire_attribut{src})]) ;
+    </BOUCLE_portraits>
+</BOUCLE_auteur>
+      background-repeat:no-repeat;
+      background-position: left top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+      
+      height:100%;
+}
