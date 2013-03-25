@@ -16,29 +16,32 @@
 		[(#ENV{titre}|!={non}|oui)<h1 class="h1 #EDIT{titre}">#TITRE</h1>]
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
-	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
-	[<section class="#EDIT{texte} texte surlignable">
-			[(#LOGO_ARTICLE|image_reduire{200,200})]
-			(#TEXTE|image_reduire{300,0})</section>
-		]
-	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
-	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
-
-    <section class="options_packs">
-        <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
-     
-     <BOUCLE_fonctionnalits(RUBRIQUES){id_rubrique!=#ID_RUBRIQUE}{id_trad=7}{lang}>
-        <a class="h2" href="#URL_RUBRIQUE" title="#TITRE"><:websimple:ajouter_fonctionnalites:></a>
-     </BOUCLE_fonctionnalits>
-    </section>
-	[(#REM) Gestion du portfolio et des documents ]
-	[(#INCLURE{fond=inclure/documents,id_article})]
-	
-	<footer>
-		[<aside class="notes"><h2><:info_notes:></h2>(#NOTES)</aside>]
-		[(#REM) inclure de partage RS ]
-		[(#REM) bloc precedent/suivant en guise de <nav></nav> ]
+	<section class="body_content">
+    	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
+    	[<section class="#EDIT{texte} texte surlignable">
+    			[(#LOGO_ARTICLE|image_reduire{200,200})]
+    			(#TEXTE|image_reduire{300,0})</section>
+    		]
+    	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
+    	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
+    
+        <section class="options_packs">
+            <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
+        </section>
+    	[(#REM) Gestion du portfolio et des documents ]
+    	[(#INCLURE{fond=inclure/documents,id_article})]
+    	
+    	<footer>
+    		[<aside class="notes"><h2><:info_notes:></h2>(#NOTES)</aside>]
+    		[(#REM) inclure de partage RS ]
+    		[(#REM) bloc precedent/suivant en guise de <nav></nav> ]
 	</footer>
+	</section>
+	<aside class="more">       
+         <BOUCLE_fonctionnalits(RUBRIQUES){id_rubrique!=#ID_RUBRIQUE}{id_trad=7}{lang}>
+            <a class="h2" href="#URL_RUBRIQUE" title="#TITRE"><:websimple:ajouter_fonctionnalites:></a>
+         </BOUCLE_fonctionnalits>
+    </aside>       
 </article>
 
 [(#REM) Petition :

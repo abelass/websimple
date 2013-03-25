@@ -17,7 +17,7 @@ body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', 
 
 extra2 h3{font-size:1em}
 
-h1, .h1{font-size:2.5em}
+h1, .h1{font-size:2.5em; color:#f9ee72; text-align:left;}
 
 h2, .h2{font-size:2em}
 
@@ -41,7 +41,7 @@ body {
  	border: none;
     box-shadow: none;
     margin: 8em auto;
-    width: 747px;
+    width: 756px;
     padding: 0 2em;
     position: relative;
     text-align: left;
@@ -56,11 +56,12 @@ body {
 }
 
 .container {
-	background-color:#63b362;
+	background-color:#ffffff;
 	border-radius: 0.8em;
+	position:relative;
+	top: -1.5em;
+    margin: 0 0 6em 0;
 	behavior: url(/PIE.htc);
-    margin: 1.2em 0 6em 0;
-
 }
 
 .home .container {
@@ -69,9 +70,7 @@ body {
 	margin-top:0;
 }
 
-.content-principal{
-	padding: 1em 0 3em 0.5em; 
-	}
+
 .cartouche{
 	margin:0;
 	text-align:center;
@@ -79,12 +78,15 @@ body {
 
 
 .content {
-	background-color:#FFFFFF;
+	background-color:#e9c832;
 	float: right;
 	font-family: Helvetica, Arial, sans-serif;	
-	border-radius:7px;
-	margin:1%;
-	width:64%
+	border-radius:1em;
+	margin:0;
+	width:64%;
+	padding: 1em 0.5em 3em 0.5em; 
+	behavior: url(/PIE.htc);
+	position:relative;
 }
 
 .content p, .content dl{	font-size:1.2em;}
@@ -94,14 +96,26 @@ body {
 	padding-left: 0.75em;
 	}
 	
-.content .home a{font-family: "GoodDogRegular", "Arial", sans-serif;}
-
-.chapo{
-	font-weight:normal;
+.content .home a{
+	font-family: "GoodDogRegular", "Arial", sans-serif;
+	padding: 0; 
+	}
 	
+.content .content-principal{
+
+}
+
+.chapo, .body_content{
+	margin:0 1em;
+	padding:1em;
+	background:#FFFFFF;
+	font-weight:normal;
+	border-radius: 1em;
+	behavior: url(/PIE.htc);	
 }
 
 .home .content {
+	background-color:#FFFFFF;
     width: 100%;
     min-height: 47em;
      margin: 0;
@@ -114,9 +128,9 @@ body {
 	clear:none;
     position: relative;
     z-index: 150;
+    width:33%;
 }
 
-.extra2 li a{font-size:2em}
 
 #extra2 h3{margin:0.5em}
 
@@ -188,21 +202,6 @@ h1.h1{
     border-bottom: 0 none;
     border-top: 0 none;
 }
-
-#nav li{
-	display:inline;
-	margin:0 5px;
-	
-}
-#nav ul{
-	margin-top:0px;
-	
-}
-
-.menu-items {
-    border-bottom: 0px ;
-}
-
 
 #extra2 .liste-items{
     /*background-color: #D3E9D2;*/
@@ -450,7 +449,7 @@ ul.box_menu li.logo_auteurs:hover img{
 ul.box_menu li.end{
 	margin-right:0
 }
-/*Home dfecriptif*/
+/*Home descriptif*/
 
 ul.box_menu li.descriptif .titre{
 	visibility: hidden;
@@ -469,75 +468,7 @@ ul.box_menu li.descriptif .text p{
 	line-height: 0.8em;
 }
 
-/*extra2 menu vertical*/
-.extra2 .liste-items li.on{
-	background-color:transparent;
-	border-right:none;
-	border-top:#FFFFFF 0.1em solid;
-	border-bottom:#FFFFFF 0.1em solid;
-	font-weight: normal;
-	}   
-    
-    
-.extra2 .liste-items li.first{
-	border-top:none;
-	border-radius: 0.4em 0 0 0 ;
-	}  
-	 
-.extra2 .liste-items li.last{
-	border-bottom:#FFFFFF 0.2em solid;
-	border-bottom-right-radius: 0.5em;
-	}   
-    
-
-  
-.extra2 .liste-items .item{
-	position:relative;
-    /* Fallback for web browsers that doesn't support RGBa */
-	background: rgb(255, 255, 255);
-	/* RGBa with 0.6 opacity */
-	background: rgba(255, 255, 255, 0.6);
-	/* For IE 5.5 - 7*/	
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff);	
-	/* For IE 8*/	
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff)";		
-	border-bottom: 0px none;
-	margin-left:0;
-	padding-left:0.1em;
-	border-right:#FFFFFF 0.2em solid;	
-
-}
-
-.extra2 .liste-items .item  li{
-	border-left:#FFFFFF 0.1em dotted;
-	border-bottom:#FFFFFF 0.1em dotted;
-	padding-left:0.5em;
-	border-right:none;
-	background:none;
-	
-}
-
-
-.extra2 .liste-items .item a{
-	/*position:absolute; */
-	z-index: 300; }
-
-.square{
-	float:left;
-	height:1em;
-	width : 1em;
-	background-color:#FFFFFF;
-	border: 1px solid #FFFFFF;
-	border-radius: 0.3em;
-	behavior: url(/PIE.htc);
-	margin-right:0.2em;
-	
-}
-
-.liste-items{
-	border-top: 0px none;
-}
-
+/*Menu horizontal*/
 
 .hornav {
     background-color: transparent;
@@ -547,55 +478,69 @@ ul.box_menu li.descriptif .text p{
 }
 
 #header .hornav {
-    margin-left: 25%;
-    width: 75%;
+    margin: 0;
+    width: 100%;
     margin-top:1em;
+
 }
 
-.hornav .on {
-    background: none;
-	/*opacity:0.4;*/
-	/*filter: alpha(opacity = 40);*/
-	font-weight:normal;
+.hornav .menu-items {
+	margin-top:1em;
+	background-color:#63b262;
+    border-radius:0.4em;
+    behavior: url(/PIE.htc);
 }
 
-.hornav a:hover{
-	opacity:0.4;
-	filter: alpha(opacity = 40);
-	text-decoration:none;
-	font-weight:normal;
-}
-.hornav a:active{
-	opacity:0.4;
-	bfilter: alpha(opacity = 40);
-	text-decoration:none;
-	font-weight:normal;
+.hornav .menu-items .item{
+	border-radius:0.4em;
+  	behavior: url(/PIE.htc);
+	background-color:#63b262;
 }
 
-/* Barre de navigation top*/
+#nav li{
+	display:inline;
+	margin:0;
+	padding:0.1em 1em 0 1em;
+}
+
+
+.menu-items {
+    border-bottom: 0px ;
+}
+
+.hornav .menu-items  .on {
+  background-color:#99CC66;
+
+}
+
+.hornav .item a:focus,.hornav .item a:hover,.hornav .item a:active{
+  background-color:transparent;
+}
+
+
+.hornav .item:focus,.hornav .item:hover,.hornav .item:active{
+  background-color:#99CC66;
+}
+
 .menuder li { 
-float: left;
-padding: 0px;
-width: auto;
+	float: left;
+	padding: 0px;
+	width: auto;
 }
 
-.menuder a { 
-width: auto;
-}
+.menuder a { width: auto;}
 
 .hornav .item a { 
-font-weight:bold;
-padding: 0.2em;	
-color: #63B362;
+	font-weight:bold;
+	padding: 0.2em 0.1em;	
+	color: #FFFFFF;
 }
 
 
-.menuder li:hover { 
-background:white;
-}
+.menuder li:hover { background:white;}
 
 .menuder, .menuder ul {
-    border-color: #63B362;
+    border-color: none;
     border-image: none;
     border-style: solid;
     border-width: 1px 0;
@@ -603,10 +548,43 @@ background:white;
 }
 
 .menuder li ul{
-    z-index:2000;	
+    z-index:600;	
 }
 
 
+
+/*extra2 menu vertical*/
+
+#extra2 .box_menu{
+	margin: 0 0 2em 0;
+	}
+
+
+#extra2 ul.box_menu li.item ul {padding-bottom:0}   
+ 
+#extra2 ul.box_menu li.item{
+	background-color:#99CC66;
+	height:auto;
+	float: none;
+	margin:0;
+    	}
+    	
+ ul.submenu {
+ 	border-radius:0.4em;
+ 	text-align:center;
+	background-color:#64b362;
+	font-size:2.5em;
+	behavior: url(/PIE.htc);
+	}   
+ 
+
+
+
+.liste-items{
+	border-top: 0px none;
+}
+
+/*Menu Horizontal*/
 
 
 .liste{padding-bottom:2.5em}
