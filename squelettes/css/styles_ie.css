@@ -1,20 +1,11 @@
-.extra2 .liste-items .item{background-color:transparent;}
-
-.extra2 .liste-items .on{
-	/* For IE 5.5 - 7*/	
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#1963B362, endColorstr=#1963B362);	
-	/* For IE 8*/	
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1963B362, endColorstr=#1963B362)";	
-}
-
-
+/*
 #extra1 {
     position: absolute;
     float:left;
     z-index:10;
 
 }
-
+*/
 .page{position:relative;z-index:11}
 
 
@@ -24,12 +15,3 @@
 	left:0;
 }
 
-
-
-.formulaire_menu_lang {
-    margin-left: 6em;
-    padding: 0.2em;
-    position: absolute;
-    top: 0;
-	left:0;
-}
