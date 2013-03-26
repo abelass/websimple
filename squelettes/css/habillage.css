@@ -19,7 +19,7 @@ extra2 h3{font-size:1em}
 
 h1, .h1{
 	font-size: 3.5em ;
-	color:#e9c832; 
+	color:#eec831; 
 	text-align:left;
 	line-height:2em;
 	margin-bottom:0;
@@ -76,6 +76,7 @@ body {
 	background-color:#FFFFFF;
 	border: 0px none;
 	margin-top:0;
+	padding-left:1em;
 }
 
 
@@ -275,7 +276,7 @@ ul.box_menu li.item:hover ul, ul.box_menu li.item:hover .text,ul.box_menu li.ite
  } 
 
 ul.box_menu li .text{
-	background-color: #969583;
+	background-color: #aaa99d;
 	height:	164px;
  	opacity:1;
  	filter: alpha(opacity = 100);
@@ -296,12 +297,13 @@ ul.box_menu li .text p{
 /*Home Packs*/
  ul.box_menu li.item ul{
 	height:164px;
- 	background:none;
+ 	background:#eec831;
  	padding-bottom:1em;
+ 	opacity:0.35;
+ 	filter: alpha(opacity = 35);
  }
  
 ul.box_menu li.item:hover ul{
- 	background:#edc831;
  	border-bottom-left-radius: 0.4em;
  	border-bottom-right-radius: 0.4em;	
  	padding-bottom:0;
@@ -323,17 +325,11 @@ ul.box_menu li.item:hover ul{
  ul.box_menu li.item ul li.row_2 a,#extra2 .box_menu li.item:hover  ul li.row_2 a  {color:#f9ed72;}
  
   ul.box_menu li.item ul li.row_1{
-  	background:#f1d142;
+  	background:#f9ed72;
   	}
  ul.box_menu li.item:hover  ul li.row_1, ul.box_menu li.item  ul li.on{background:#f9ed72;}
   
  ul.box_menu li.item ul li.row_1 a,ul.box_menu li.item  ul li.on a {color:#eec831;} 
- 
-
- 
-
- 
-
 
 ul.box_menu li.item:hover .titre{
 	background:#99cc66;
@@ -343,7 +339,7 @@ ul.box_menu li.item:hover .titre{
 
 /*Home Actus*/
 ul.box_menu dl {
-	background:#e93eda;
+	background:#be914a;
 	text-align:left;
 	padding:0.5em 0.3em 0.3em 0.3em;
 	margin:0;
@@ -352,8 +348,8 @@ ul.box_menu dl {
  	border-bottom-right-radius: 0.4em;}
 	
 ul.box_menu dt, ul.box_menu dd{
-	opacity:0.1;
-	filter: alpha(opacity = 10);
+	opacity:0.09;
+	filter: alpha(opacity = 9);
 }	
 
 ul.box_menu dl dt{font-weight:normal; font-size:0.8em;}
@@ -389,8 +385,8 @@ ul.box_menu li.site_slider .sjcycle_sites{
 	background-image: url("images/screen.png");
 	background-repeat:no-repeat;
 	background-position: 0 0.1em ;	
-	opacity:0.2;
-	filter: alpha(opacity = 20);
+	opacity:0.1;
+	filter: alpha(opacity = 10);
 }
 
 ul.box_menu li.site_slider:hover .slider,ul.box_menu li.site_slider:hover  .sjcycle_sites{
@@ -571,8 +567,6 @@ ul.box_menu li.descriptif .text p{
     z-index:600;	
 }
 
-
-
 /*extra2 menu vertical*/
 
 #extra2 .box_menu{
@@ -598,8 +592,6 @@ ul.box_menu li.descriptif .text p{
 	}   
  
 
-
-
 .liste-items{
 	border-top: 0px none;
 }
@@ -623,20 +615,34 @@ ul.box_menu li.descriptif .text p{
 aside.right,.options section.prix{
 	float:right; 
 	width:30%;
-	border-left:#63b362 2px solid;
-	border-bottom:#63b362 4px solid;
-	border-top-right-radius: 12px;	
-	border-bottom-left-radius: 12px;
-	background-color:#eeeeee;
-	margin:0 0 1% 1%
+	border:#f9ed72 4px solid;	
+	border-radius: 0.4em;	
+	background-color:#eec831;
+	margin:0 0 1% 1%;
+	behavior: url(/PIE.htc);
 	
 }
 
+
 aside.right h2,.options section.prix h2{
+	color:#f9ed72;
+	font-weight:bold;
 	font-size:1.5em;
 	line-height: normal;
     margin: 0.5em 0;
 }
+
+aside.right a{color:#f9ed72}
+
+aside.right ul{
+
+	font-size:1.1em;
+	}
+aside.right li{
+
+	border-radius:0.4em;
+	behavior: url(/PIE.htc);
+	}	
 aside.right section{
 	margin:0 5%;
 	border-bottom:#63b362 2px dotted;
@@ -659,14 +665,19 @@ aside.contenu_lie{float:right;}
 
 .spip_documents_center {
     clear: none;
-
 }
 
 .container_pack{overflow:hidden;}
 
 .pack{float:left; width:48%; margin : 0 1%}
 
-
+aside.more {text-align:center; margin-top:1.5em}
+aside.more .h2{
+	background:#eec831; 
+	padding:0.2em 2em;
+	border-radius:0.4em;
+	behavior: url(/PIE.htc);
+	}
 /*Listes*/
 .content .liste{padding:0 1em;}
 
@@ -692,23 +703,7 @@ aside.contenu_lie{float:right;}
     text-align: right;
     float:right;
     width: 5em}
-/*Liens*/
-a {
-    color: #63b362;
-    text-decoration: none;
-}
 
-a:focus, a:hover, a:active { 
-	background:transparent;
-	color: #63b362;
-	opacity:0.4;
-   filter: alpha(opacity = 40);
-   text-decoration:none;
-}
-
-ul.home a, .extra2 a, #footer a {
-	color:#FFFFFF;
-}
 
 /*options*/
 .options dt, .aide{cursor: pointer;}
@@ -863,3 +858,21 @@ aside.prix {
 .control_box div{cursor:pointer;width:24px;height:24px}
 .control_box .off{background:url(images/not_move.png) no-repeat;}
 .control_box .on{background:url(images/move.png) no-repeat;}
+
+/*Liens*/
+a {
+    color: #eec831;
+    text-decoration: none;
+}
+
+a:focus, a:hover, a:active { 
+	background:transparent;
+	color: #eec831 ;
+	opacity:0.4;
+   filter: alpha(opacity = 40);
+   text-decoration:none;
+}
+
+ul.home a, .extra2 a, #footer a {
+	color:#FFFFFF;
+}
