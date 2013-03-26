@@ -1,6 +1,5 @@
 <BOUCLE_content(MOTS) {id_mot} {doublons}>
 [(#REM) Fil d'Ariane ]
-<nav id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="sep"> &gt; </span><span><:mots_clefs:></span><BOUCLE_ariane(GROUPES_MOTS){id_groupe}> &gt; [(#TITRE|couper{80})]</BOUCLE_ariane>[<span class="sep"> &gt; </span><strong class="on">(#TITRE|couper{80})</strong>]</nav>
 
 <article class="content-principal">
 
@@ -8,7 +7,10 @@
       [(#LOGO_MOT|image_reduire{200,200})]
       <h1 class="h1 #EDIT{titre}">#TITRE</h1>
   </header>
-
+    [(#REM)Le panier]
+    <aside id="mon_panier" class="fenetre_container">
+       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,env}
+    </aside> 
   [<section class="#EDIT{texte} chapo">(#TEXTE)</section>]
 
   [(#REM) Articles lies au mot-cle ]

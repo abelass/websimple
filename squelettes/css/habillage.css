@@ -17,7 +17,15 @@ body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', 
 
 extra2 h3{font-size:1em}
 
-h1, .h1{font-size:2.5em; color:#f9ee72; text-align:left;}
+h1, .h1{
+	font-size: 3.5em ;
+	color:#e9c832; 
+	text-align:left;
+	line-height:2em;
+	margin-bottom:0;
+	padding:0.2em 0 0 0;
+	font-weight:bold;	
+	}
 
 h2, .h2{font-size:2em}
 
@@ -78,13 +86,13 @@ body {
 
 
 .content {
-	background-color:#e9c832;
+	background-color:#f9ee72;
 	float: right;
 	font-family: Helvetica, Arial, sans-serif;	
 	border-radius:1em;
 	margin:0;
-	width:64%;
-	padding: 1em 0.5em 3em 0.5em; 
+	width:61%;
+	padding: 0 1.3em 3em 1.3em; 
 	behavior: url(/PIE.htc);
 	position:relative;
 }
@@ -108,7 +116,7 @@ body {
 }
 
 .chapo, .body_content{
-	margin:0 1em;
+	margin:0;
 	padding:1em;
 	background:#FFFFFF;
 	font-weight:normal;
@@ -165,7 +173,7 @@ body {
 
 
 #nom_site_spip{
- 	font-size: 11.8em;
+ 	font-size: 11em;
     letter-spacing: 0.1em;
     line-height: 110px;
     text-align: center;
@@ -178,6 +186,9 @@ body {
     
 }
 
+.accueil .h1{
+	padding:0;
+}
 #nom_site_spip a{    color: #ffffff;}
 
 #slogan_site_spip{
@@ -188,12 +199,6 @@ body {
 	margin-top:0.6em;
 }
 
-h1.h1{
-	font-size: 2.5em ;
-    line-height: normal;
-    padding: 0.01em  0.3em;  
-	font-weight:bold;	
-}
 
 
 /*Menus*/
@@ -303,17 +308,7 @@ ul.box_menu li.item:hover ul{
  	
  }
  
- 
-  ul.box_menu li.item ul li.row_1{
-  	background:#f1d142;
-  	}
- ul.box_menu li.item:hover  ul li.row_1{background:#f9ed72;}
-  
- ul.box_menu li.item ul li.row_1 a{color:#eec831;} 
- 
-
- 
- ul.box_menu li.item ul li.row_2{
+  ul.box_menu li.item ul li.row_2{
  	background:#edc831;
  	border-bottom-left-radius: 0.4em;
  	border-bottom-right-radius: 0.4em;
@@ -325,7 +320,18 @@ ul.box_menu li.item:hover ul{
  	border-bottom-right-radius: 0.4em;	
   	}
  
- ul.box_menu li.item ul li.row_2 a{color:#f9ed72;}
+ ul.box_menu li.item ul li.row_2 a,#extra2 .box_menu li.item:hover  ul li.row_2 a  {color:#f9ed72;}
+ 
+  ul.box_menu li.item ul li.row_1{
+  	background:#f1d142;
+  	}
+ ul.box_menu li.item:hover  ul li.row_1, ul.box_menu li.item  ul li.on{background:#f9ed72;}
+  
+ ul.box_menu li.item ul li.row_1 a,ul.box_menu li.item  ul li.on a {color:#eec831;} 
+ 
+
+ 
+
  
 
 
@@ -759,16 +765,26 @@ div.close{
 .fenetre_container{position:relative;}
 
 .fenetre{position:absolute;width:20%;}	
-/*Panier*/
+
+/*Le Panier*/
 
 #mon_panier{
-	position:fixed;	
-	left:1em;
+	position:absolute;	
+	right:1em;
 	top: 1em;	
 	z-index:700;
 	width : -20%;
 	cursor:move;
 }
+
+#mon_panier h2,#mon_panier .h2{
+	background-color:#eec831; 
+	color:#FFFFFF;
+	padding:0 1em 0 0.1em;
+	line-height: normal;
+	}
+
+.details{display:none}
 #panier_wrap{
 	color:#63b362;
 	background:#ffffff;

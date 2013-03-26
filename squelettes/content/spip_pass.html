@@ -1,6 +1,9 @@
 <div class="content-principal">
 	<h1 class="h1 spip">#NOM_SITE_SPIP</h1>
-
+    [(#REM)Le panier]
+    <aside id="mon_panier" class="fenetre_container">
+       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
+    </aside> 
 	<div class="pass">
 		[(#ENV{p}|non)
 			#FORMULAIRE_OUBLI

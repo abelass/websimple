@@ -1,11 +1,13 @@
 [(#REM) Fil d'Ariane ]
-<nav id="hierarchie"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="sep"> &gt; </span><strong class="on"><:plan_site:></strong></nav>
 
 <article class="content-principal">
 	<header class="cartouche">
 		<h1 class="h1"><:plan_site:></h1>
 	</header>
-
+    [(#REM)Le panier]
+    <aside id="mon_panier" class="fenetre_container">
+       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
+    </aside> 
 <BOUCLE_secteurs(RUBRIQUES) {racine} {par titre}>
 
 	<h2 class="h2"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
