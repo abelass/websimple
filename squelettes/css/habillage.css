@@ -681,27 +681,7 @@ aside.contenu_lie{float:right;}
 	border-left: 0.2em solid #FFFFFF;
 	}
 	
-.liste_objets_precieux  {
-	font-size:80%
-	}
-	
-.liste_objets_precieux  dd{
-	margin-bottom:0.1em;
-}
 
-.liste_objets_precieux dl{
-	margin-bottom:0.8em;
-}
-
-.pack .vente .ajouter_au_panier { 
-height:auto;
-}
-
-aside.prix {
-    margin-right: -1em;
-    padding: 1em;
-	}
-	
 
 .tools{
     color: #63B362;
@@ -751,6 +731,7 @@ ul.home a, .extra2 a, #footer a {
 	border-radius:5px;
 	left:0;
 	width:100%;
+	behavior: url(/PIE.htc);
 }
 div.close{
 	font-weight:bold; 
@@ -778,20 +759,92 @@ div.close{
 }
 
 #mon_panier h2,#mon_panier .h2{
-	background-color:#eec831; 
-	color:#FFFFFF;
+	background: url(images/panier.png)no-repeat 99% 0.1em #EEC831;
+    color: #FFFFFF;
+    line-height: normal;
+    margin: 1.2em 0 0 0;
 	padding:0 1em 0 0.1em;
-	line-height: normal;
+    width: 4.3em;
+    border-radius: 0.1em;
+    behavior: url(/PIE.htc);
 	}
 
-.details{display:none}
-#panier_wrap{
-	color:#63b362;
-	background:#ffffff;
-	border:#63b362 2px solid;
-  	border-radius:5px;
-	position: absolute;
+.details{
+	/*display:none;*/
+	text-align:right;
+	background-color: #EEC831 ;
+	width:22.5em;
+	position:absolute;
+	right:0;
+	margin-top:-0.4em;
+	padding:0.5em;
+	border-radius: 0.4em;
+    behavior: url(/PIE.htc);
 	}
+	
+.details section.prix{
+   margin-left: 14.9em;
+    width: 7.6em;
+	}
+.liste_objets_precieux  {
+	font-size:80%;
+	}
+	
+.liste_objets_precieux  dd{
+	margin-bottom:0.1em;
+}
+
+.liste_objets_precieux dl{
+	margin-bottom:0.8em;
+}
+
+.details .vente .ajouter_au_panier { 
+height:2em;
+}
+
+
+aside.prix {
+    margin-right: -1em;
+    padding: 1em;
+	}
+	
+	
+#panier_wrap{
+
+	background: #EEC831 ;
+	border:none;
+		margin-bottom:0.4em
+
+}
+
+#panier_wrap tbody tr:nth-child(2n) td, tbody tr.even td {
+	background:#f9ed72;
+}
+
+#panier_wrap .formulaire_spip {
+	background:#EEC831;
+	border:none;
+}
+
+#panier_wrap .continuer, .annuler, .submit {
+    background-color: #f9ed72;
+	border : #e5e5e5 2px solid;
+	margin:0.1em;
+    padding : 0.1em;
+    border-radius: 0.4em;
+    behavior: url(/PIE.htc);
+    width:auto;
+}
+
+#panier_wrap .continuer:hover, .annuler:hover, #mon_panier .submit:hover{
+	background:#EEC831; 
+}
+
+#panier_wrap a{color:#000000; font-weight:bold}
+	
+#panier_wrap .formulaire_spip .boutons {
+    margin-top: 0;
+}
 
 #panier_wrap h2{
 	color:#63b362;

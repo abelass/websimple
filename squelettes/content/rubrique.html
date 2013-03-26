@@ -4,9 +4,7 @@
 		<h1 class="h1 #EDIT{titre}">#TITRE</1>
 	</header>
     [(#REM)Le panier]
-    <aside id="mon_panier" class="fenetre_container">
-       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-    </aside> 
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 
 </article>
 

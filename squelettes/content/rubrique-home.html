@@ -5,9 +5,7 @@
     </header>
 </article>
     [(#REM)Le panier]
-    <aside id="mon_panier" class="fenetre_container">
-       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-    </aside> 
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 <nav class="menu rubriques">
 	<ul class="menu-items menu-liste home box_menu">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_TRAD}{par ordre}>

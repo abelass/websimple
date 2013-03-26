@@ -8,9 +8,7 @@
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
 	[(#REM)Le panier]
-	<aside id="mon_panier" class="fenetre_container">
-       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-    </aside> 
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 	<section class="body_content">
 	    <aside class="right">
         [(#REM)Les Contenus liés]

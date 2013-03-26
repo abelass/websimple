@@ -3,10 +3,8 @@
 <header class="cartouche">
     <h1 class="h1"><:poster_message:></h1>
 </header>
-[(#REM)Le panier]
-<aside id="mon_panier" class="fenetre_container">
-   #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-</aside> 
+    [(#REM)Le panier]
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 <section class="resume articles">
     <h2 class="h2"><:en_reponse:></h2>
 

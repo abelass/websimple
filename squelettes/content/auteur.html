@@ -6,9 +6,7 @@
 			<h1 class="h1 #EDIT{qui} fn">#NOM</h1>
 		</header>
         [(#REM)Le panier]
-        <aside id="mon_panier" class="fenetre_container">
-           #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-        </aside> 	
+         #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}	
 		[<div class="#EDIT{bio} texte bio">(#BIO)</div>]
 		[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="url spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 	</section>[(#REM) / vcard]

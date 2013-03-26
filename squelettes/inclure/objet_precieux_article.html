@@ -8,7 +8,7 @@
 
 <BOUCLE_art(ARTICLES){id_article=#ID_OBJET}>
 <dl>
-   <dt class="row_[(#COMPTEUR_BOUCLE|alterner{odd, even})]"><a href="#URL_ARTICLE">#TITRE</a></dt>
+   <dt class="row_[(#COMPTEUR_BOUCLE|alterner{odd, even})]"><h3>#TITRE</h3></dt>
         <dd class="prix">
             [(#ENV{prix})] [(#ID_ARTICLE|devise_defaut|traduire_devise)] ([(#TAXE|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
        </dd>       

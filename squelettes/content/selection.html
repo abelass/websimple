@@ -2,9 +2,7 @@
         <h1><:websimple:envoi_commande:></h1>
     </header>
     [(#REM)Le panier]
-    <aside id="mon_panier" class="fenetre_container">
-       #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,env}
-    </aside> 
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 <BOUCLE_contact(CONTACTS){id_auteur=#SESSION{id_auteur}}{id_auteur>0}{0,1}>
  [(#ENV{message}|=={ok}|non)
     [<div id="abonne_coord" class="ajax">  
