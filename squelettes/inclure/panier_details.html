@@ -27,7 +27,9 @@
             </BOUCLE_objets_add>
         </div>
     </section>
+    #SET{contenu,ok}
     </B_objets_precieux>
+
     <B_ispanier>
     <div id="panier_wrap">
         #SET{retour,#SELF|parametre_url{retour,ok}}
@@ -41,7 +43,9 @@
             <//B_article_suitepanier>
         </BOUCLE_ispanier>
     </div>
+    #SET{contenu,ok}
     </B_ispanier>
+    [(#GET{contenu}|non)<strong><:paniers:panier_vide:></strong>]
     </div>
 </BOUCLE_cond>
 <div></div>

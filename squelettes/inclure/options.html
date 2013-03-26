@@ -37,7 +37,7 @@
         [(#GET{faq}|=={faq}|non)</a>]
         </dt>     
         [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},titre=non,env,id_article_base=#ID_OBJET_DEST})]        
+            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},titre=non,env,id_article_base=#ID_OBJET_DEST,panier=non})]        
         </dd>]
     </BOUCLE_article_pack_base>
 </BOUCLE_pack_base>
