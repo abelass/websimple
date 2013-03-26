@@ -760,14 +760,14 @@ div.close{
 
 #mon_panier h2,#mon_panier .h2{
 	background: url(images/panier.png)no-repeat 99% 0.1em #EEC831;
-    color: #FFFFFF;
     line-height: normal;
     margin: 1.2em 0 0 0;
-	padding:0 1em 0 0.1em;
     width: 4.3em;
     border-radius: 0.1em;
     behavior: url(/PIE.htc);
 	}
+
+#mon_panier h2 a{padding:0 1em 0 0.1em;    color: #FFFFFF;}
 
 .details{
 	/*display:none;*/
@@ -777,7 +777,7 @@ div.close{
 	position:absolute;
 	right:0;
 	margin-top:-0.4em;
-	padding:0.5em;
+	padding:0.5em 0.5em 1.5em 0.5em;
 	border-radius: 0.4em;
     behavior: url(/PIE.htc);
 	}

@@ -1,7 +1,26 @@
 #CACHE{3600}
 <aside id="mon_panier" class="fenetre_container">
-     <h2><:paniers:titre_panier:></h2>
-     <div class="details ajax">
-        <INCLURE{fond=inclure/panier_details,env,ajax=mon_panier}/>
-    </div>
+     <h2><a class="ajax panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a></h2>
+      
+       <INCLURE{fond=inclure/panier_details,env,ajax=mon_panier}/>
+     
 </aside> 
+
+[(#REM) ouvrir et fermer le panier]
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+          $("#mon_panier h2").mouseover(function() {
+            if($("#mon_panier .details").length!=0){
+              $("#mon_panier .details").toggle('slow');
+            } 
+            else ajaxReload('mon_panier', {
+                args:{
+                    voir:'oui',objet:'#ENV{objet}',id_objet:'#ENV{id_objet}'
+                    }
+                  }
+                );
+       $(this).toggleClass('open');  
+  });
+        
+});    
+</script>
