@@ -5,7 +5,9 @@
 	</header>
     [(#REM)Le panier]
      #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
-
+        [<section class="#EDIT{texte} chapo">
+            (#TEXTE)
+         </section>]
 </article>
 
 
