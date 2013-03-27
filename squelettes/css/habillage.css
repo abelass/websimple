@@ -21,9 +21,9 @@ h1, .h1{
 	font-size: 3.5em ;
 	color:#eec831; 
 	text-align:left;
-	line-height:2em;
+	line-height:1.2em;
 	margin-bottom:0;
-	padding:0.2em 0 0 0;
+	padding:0.62em 0 0.3em 0;
 	font-weight:bold;	
 	}
 
@@ -117,7 +117,9 @@ body {
 }
 
 .chapo, .body_content{
-	margin:0;
+	margin:0 0 1.3em 0;
+	min-height:20em;
+	height:auto;
 	padding:1em;
 	background:#FFFFFF;
 	font-weight:normal;
@@ -595,6 +597,8 @@ ul.box_menu li.descriptif .text p{
 #extra2 ul.box_menu li.item li a{color:#F9ED72}
 
 #extra2 ul.box_menu li.item li.on a,#extra2 ul.box_menu li.item li.on:hover a,#extra2 ul.box_menu li.item li.on:focus a,#extra2 ul.box_menu li.item li.on:active a{color:#EDC831}
+
+#extra2 img{border-radius:0.8em;behavior: url(/PIE.htc);}
 
  ul.submenu {
  	border-radius:0.4em;

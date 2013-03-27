@@ -1,4 +1,4 @@
-<BOUCLE_content(SITES){id_syndic}>
+<BOUCLE_content(SITES){id_syndic}{si #ENV{reload}|non}>
 <article class="content-principal">
      [(#REM)Le panier]
      #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
@@ -19,3 +19,7 @@
 
 [<section class="notes"><hr />(#NOTES)</section>]
 </BOUCLE_content>
+[(#ENV{reload}|oui)
+ <INCLURE{fond=content/#ENV{type-page},env} /> 
+]
+<//B_content>
