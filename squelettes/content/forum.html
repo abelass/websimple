@@ -1,10 +1,9 @@
 <article class="content-principal">
-
+    [(#REM)Le panier]
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 <header class="cartouche">
     <h1 class="h1"><:poster_message:></h1>
 </header>
-    [(#REM)Le panier]
-     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
 <section class="resume articles">
     <h2 class="h2"><:en_reponse:></h2>
 

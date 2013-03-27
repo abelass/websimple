@@ -1,12 +1,39 @@
 [(#REM) Puis on les affiche]
 <B_articles>
-<nav class="liste articles">
-    <ul>
-        <BOUCLE_articles(ARTICLES) {id_rubrique}{!par num titre,titre}>
-                <li class="item hentry">
-                    <a href="#URL_ARTICLE">#TITRE</a>
-                </li>                                                           
-        </BOUCLE_articles>
-    </ul>
-</nav>
+    [(#TOTAL_BOUCLE|>{1}|oui)
+        #SET{liste,oui}
+        <nav class="menu-items menu_fonctionnalites">
+        <ul>]
+
+            <BOUCLE_articles(ARTICLES) {id_rubrique}{!par num titre,titre}>
+                    [(#TOTAL_BOUCLE|>{1}|oui)
+                    <li class="item hentry">
+                        <a href="#URL_ARTICLE">#TITRE</a>
+                    </li>]
+                    [(#TOTAL_BOUCLE|>{1}|non)
+                     <article class="content-principal">
+                        <div class="chapo">
+                        [<section class="#EDIT{texte} texte surlignable">
+                                (#TEXTE|image_reduire{500,0})</section>
+                            ]
+                        [<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
+                        [<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
+                    
+                        [(#REM) Gestion du portfolio et des documents ]
+                        [(#INCLURE{fond=inclure/documents,id_article})]
+                        
+                        <footer>
+                            [<aside class="notes"><h2><:info_notes:></h2>(#NOTES)</aside>]
+                            [(#REM) inclure de partage RS ]
+                            [(#REM) bloc precedent/suivant en guise de <nav></nav> ]
+                        </footer>
+                        </div>
+                    </article>
+                     <br class="nettoyeur"/>
+                     ]                                                           
+            </BOUCLE_articles>
+        [(#GET{liste}|oui)
+            </ul>
+            </nav>
+        ]
 </B_articles>

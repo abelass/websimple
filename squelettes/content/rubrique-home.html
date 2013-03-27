@@ -5,7 +5,7 @@
     </header>
 </article>
 <nav class="menu rubriques">
-	<ul class="menu-items menu-liste home box_menu">
+	<ul class="menu-liste home box_menu">
     <BOUCLE_content(SELECTION_OBJETS){objet_dest=rubrique}{id_objet_dest=#ID_TRAD}{par ordre}>
         #SET{id_objet,#ID_OBJET}
         <BOUCLE_trad(ARTICLES){id_trad=#ID_OBJET}{si #OBJET|=={article}}{lang}>

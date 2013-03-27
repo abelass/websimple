@@ -2,15 +2,15 @@
  #SET{id_article,#ID_ARTICLE}
     [(#ID_TRAD|>{0}|oui)#SET{id_article,#ID_TRAD}]
 <article class="content-principal">
+    [(#REM)Le panier]
+    [(#ENV{panier}|!={non}|oui)
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
+     ]
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 		[(#ENV{titre}|!={non}|oui)<h1 class="h1 #EDIT{titre}">#TITRE</h1>]
 		[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 	</header>
-	[(#REM)Le panier]
-	[(#ENV{panier}|!={non}|oui)
-     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
-     ]
 	<section class="body_content">
 	    [<aside class="right">
         [(#REM)Les Contenus liés]

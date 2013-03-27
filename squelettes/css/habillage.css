@@ -76,7 +76,7 @@ body {
 	background-color:#FFFFFF;
 	border: 0px none;
 	margin-top:0;
-	padding-left:1em;
+	padding-left:0;
 }
 
 
@@ -92,8 +92,8 @@ body {
 	font-family: Helvetica, Arial, sans-serif;	
 	border-radius:1em;
 	margin:0;
-	width:61%;
-	padding: 0 0 3em 0; 
+	width:65%;
+	padding: 0 ;
 	behavior: url(/PIE.htc);
 	position:relative;
 }
@@ -621,6 +621,18 @@ ul.box_menu li.descriptif .text p{
     background: none ;
 }
 
+/*Menu content*/
+
+.content .menu-items {
+	font-size:2em;
+	border-radius:0.4em;
+	background:#99CC66;
+	font-family: 'GoodDogRegular', Arial, sans-serif;
+	behavior: url(/PIE.htc);
+}
+
+.content .menu-items a{color:#FFFFFF}
+
 /*Formulaires*/
 
 /*Colonne droite*/
@@ -774,12 +786,13 @@ div.close{
 /*Le Panier*/
 
 #mon_panier{
-	position:absolute;	
+	position:relative;	
 	right:1em;
 	top: 1em;	
 	z-index:700;
 	width : -20%;
 	cursor:move;
+	float:right;
 }
 
 #mon_panier h2,#mon_panier .h2{
