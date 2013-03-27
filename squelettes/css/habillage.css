@@ -583,14 +583,18 @@ ul.box_menu li.descriptif .text p{
 	margin:0;
     	}
     	
- ul.submenu {
- 	border-radius:0.4em;
- 	text-align:center;
-	background-color:#64b362;
-	font-size:2.5em;
-	behavior: url(/PIE.htc);
-	}   
- 
+#extra2 ul.box_menu li.item ul{opacity:1;filter: alpha(opacity =100);}
+
+
+#extra2 ul.box_menu li.item li{background:#EDC831}
+
+#extra2 ul.box_menu li.item li.on{background:#F9ED72}
+
+
+#extra2 ul.box_menu li.item li a{color:#F9ED72}
+
+#extra2 ul.box_menu li.item li.on a,#extra2 ul.box_menu li.item li.on:hover a,#extra2 ul.box_menu li.item li.on:focus a,#extra2 ul.box_menu li.item li.on:active a{color:#EDC831}
+
 
 .liste-items{
 	border-top: 0px none;
@@ -615,28 +619,30 @@ ul.box_menu li.descriptif .text p{
 aside.right,.options section.prix{
 	float:right; 
 	width:30%;
-	border:#f9ed72 4px solid;	
+	background:#EEC831;	
 	border-radius: 0.4em;	
-	background-color:#eec831;
 	margin:0 0 1% 1%;
 	behavior: url(/PIE.htc);
-	
+	padding:0.5em;
 }
 
 
 aside.right h2,.options section.prix h2{
-	color:#f9ed72;
+	color:#EEC831;
 	font-weight:bold;
-	font-size:1.5em;
+	font-size:1.3em;
 	line-height: normal;
-    margin: 0.5em 0;
+    margin: 0  0 0.5em 0;
 }
 
-aside.right a{color:#f9ed72}
+aside.right a{color:#EEC831}
 
 aside.right ul{
-
+	background:#FFFFFF;
 	font-size:1.1em;
+	border-radius: 0.2em;
+	padding:0.3em;
+	behavior: url(/PIE.htc);
 	}
 aside.right li{
 
@@ -644,18 +650,31 @@ aside.right li{
 	behavior: url(/PIE.htc);
 	}	
 aside.right section{
-	margin:0 5%;
-	border-bottom:#63b362 2px dotted;
+	padding:0.3em;
+	border-radius: 0.4em;	
+	background:#f9ed72;
+	behavior: url(/PIE.htc);
 	}
 aside.right section.last{
 	border-bottom:none;
 }	
 .options section.prix{
-	border-top-right-radius: 0;	
-	border-top:#63b362 2px solid;
-	border-top-left-radius: 12px;	
+	position:relative;
 	width:20%;
-	padding:0 2%;	
+	padding:0.5em;	
+	height:auto;
+}
+
+.options section.prix h2{
+	display:none;
+}
+
+.options section.prix .liste_objets_precieux{
+	background:#f9ed72;
+	border-radius: 0.2em;
+	padding:0.3em;
+	behavior: url(/PIE.htc);
+	height:auto;
 }
 /*Contenus liées*/
 
@@ -695,7 +714,7 @@ aside.more .h2{
 
 
 .tools{
-    color: #63B362;
+    color: #000000;
     font-size: 1.2em;
     padding: 0.2em;
     position: relative;
@@ -704,6 +723,7 @@ aside.more .h2{
     float:right;
     width: 5em}
 
+.login{margin-top:1em}
 
 /*options*/
 .options dt, .aide{cursor: pointer;}
@@ -764,7 +784,9 @@ div.close{
 
 #mon_panier h2 a{padding:0 1em 0 0.1em;    color: #FFFFFF;}
 
-.details{
+
+
+#mon_panier .details{
 	/*display:none;*/
 	text-align:right;
 	background-color: #EEC831 ;
@@ -777,9 +799,9 @@ div.close{
     behavior: url(/PIE.htc);
 	}
 	
-.details section.prix{
-   margin-left: 14.9em;
-    width: 7.6em;
+#mon_panier .prix{
+   	clear:both;
+    
 	}
 .liste_objets_precieux  {
 	font-size:80%;
@@ -793,8 +815,11 @@ div.close{
 	margin-bottom:0.8em;
 }
 
-.details .vente .ajouter_au_panier { 
-height:2em;
+.details .vente .ajouter_au_panier, .compris_pack { 
+	float:right;
+	width:auto;
+	height:auto;
+	font-weight:bold;
 }
 
 
@@ -873,6 +898,10 @@ a:focus, a:hover, a:active {
    text-decoration:none;
 }
 
+
+a[hreflang]:after {
+    content: none;
+}
 ul.home a, .extra2 a, #footer a {
 	color:#FFFFFF;
 }
