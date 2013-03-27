@@ -5,18 +5,12 @@
         </header>
     [(#REM)Le panier]
      #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}      
-        [(#REM)Le panier]
-        <aside id="mon_panier" class="fenetre_container">
-           #INCLURE{fond=inclure/mon_panier,env,ajax=mon_panier,objet=article,id_objet=#GET{id_article},env}
-        </aside>         
+        
         [<section class="#EDIT{texte} chapo">
-            [(#LOGO_RUBRIQUE|image_reduire{200,200})]
             (#TEXTE)
          </section>]
     </article>
-        <B_packs>
-        <section class="container_pack">
+        <section class="container_fonctionnalites>
             <INCLURE{fond=inclure/fonctionnalites,env,id_rubrique}/>
         </section>
-        </B_packs>
 </BOUCLE_content>
