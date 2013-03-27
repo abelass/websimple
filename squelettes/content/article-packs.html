@@ -12,10 +12,10 @@
      #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
      ]
 	<section class="body_content">
-	    <aside class="right">
+	    [<aside class="right">
         [(#REM)Les Contenus liés]
-            <INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,class=last,env}/>
-        </aside>
+            (#INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,env})
+        </aside>]
     	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
     	[<section class="#EDIT{texte} texte surlignable">
     			[(#LOGO_ARTICLE|image_reduire{200,200})]
