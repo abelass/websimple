@@ -7,7 +7,7 @@
 <h2><:websimple:pack_compose_par:></h2>
 <dl class="[(#GET{faq,flottable}) options]">  
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest}{objet=article}{objet_dest}{type_lien !IN utilise_pack,hebergement,pack_base}{par ordre}>
-    <INCLURE{fond=inclure/inc-options_details,id_article=#ID_OBJET,faq=#GET{faq},env}/>
+    <INCLURE{fond=inclure/inc-options_details,id_article=#ID_OBJET,faq=#GET{faq},titre,env}/>
 </BOUCLE_objets>
 </dl>
 </B_objets>
