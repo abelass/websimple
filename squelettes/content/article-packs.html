@@ -1,4 +1,4 @@
-<BOUCLE_content(ARTICLES){id_article}>
+<BOUCLE_content(ARTICLES){id_article} {si #ENV{reload}|non}>
  #SET{id_article,#ID_ARTICLE}
     [(#ID_TRAD|>{0}|oui)#SET{id_article,#ID_TRAD}]
 <article class="content-principal">
@@ -56,5 +56,9 @@ NB : pour desactiver les forums de l'article, supprimez simplement la ligne ci-d
     #SET{retour,#PARAMETRES_FORUM|url_reponse_forum}
     <INCLURE{fond=inclure/forum,id_article,repondre_url=#GET{retour},repondre_titre=<:repondre_article:>} />
     ]
+]
+</BOUCLE_content>
+[(#ENV{reload}|oui)
+ <INCLURE{fond=content/#ENV{type-page},env} /> 
 ]
 </BOUCLE_content>

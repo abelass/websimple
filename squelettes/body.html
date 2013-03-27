@@ -19,7 +19,7 @@
 		<header id="header"><INCLURE{fond=header/#ENV{type-page},env} /></header>	
 		<section class="container" id="container" role="main">
 			<section class="content" id="content">
-			    <INCLURE{fond=content/#ENV{type-page},env,ajax} />
+			    <INCLURE{fond=content/#ENV{type-page},env,ajax=content} />	
 			</section>
 			    [(#ENV{composition}|=={home}|non)
 			     <aside class="extra2 col" id="extra2">

@@ -7,21 +7,19 @@
 		</BOUCLE_parent2>
 	</BOUCLE_parent>
 </BOUCLE_racine>
-<B_extra2_rubrique>
 
-<INCLURE{fond=inclure/menu_packs,id_rubrique}{id_trad=3}/>
 
-<BOUCLE_extra2_rubrique(RUBRIQUES){id_rubrique=#GET{id_racine}}{tout}>
-#SET{compteur_boucle,#COMPTEUR_BOUCLE}
-    <B_rubriques>
+<INCLURE{fond=inclure/menu_packs,id_rubrique,id_trad=3,lang,id_article}/>
+
+
+
+<B_rubriques>
     <ul class="menu-items submenu">
-    <BOUCLE_rubriques(RUBRIQUES){id_parent}{tout}{lang}>
+    <BOUCLE_rubriques(RUBRIQUES){id_parent=#GET{id_racine}}{tout}>
     	<li class="item sub_item">
-    	    <a href="#URL_RUBRIQUE" title="#TITRE">[(#TITRE|couper{50})]</a>       
+    	    <a class="mouseover" href="#URL_RUBRIQUE" title="#TITRE" data-target="rubrique-#ID_RUBRIQUE-#COMPOSITION">[(#TITRE|couper{50})]</a>       
     	 </li>
     </BOUCLE_rubriques>
     </ul>
-    </B_rubriques>
-</BOUCLE_extra2_rubrique>
-    
-</B_extra2_rubrique>
+</B_rubriques>
+
