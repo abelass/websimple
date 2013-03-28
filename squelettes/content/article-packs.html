@@ -27,7 +27,7 @@
         	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
     
             <section class="options_packs">
-                <INCLURE{fond=inclure/options,id_objet_dest=#ID_ARTICLE,objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
+                <INCLURE{fond=inclure/options,id_objet_dest=#GET{id_article},objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
             </section>
         	[(#REM) Gestion du portfolio et des documents ]
         	[(#INCLURE{fond=inclure/documents,id_article})]
