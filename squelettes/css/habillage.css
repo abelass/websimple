@@ -119,8 +119,6 @@ body {
 
 .chapo, .body_content{
 	margin:0 0 1.3em 0;
-	min-height:20em;
-	height:auto;
 	padding:1em;
 	background:#FFFFFF;
 	font-weight:normal;
