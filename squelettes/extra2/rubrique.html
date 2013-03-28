@@ -15,7 +15,7 @@
 
 <B_rubriques>
     <ul class="menu-items submenu">
-    <BOUCLE_rubriques(RUBRIQUES){id_parent=#GET{id_racine}}{id_trad!=24}{tout}>
+    <BOUCLE_rubriques(RUBRIQUES){id_parent=#GET{id_racine}}{id_trad!=24}{tout}{par num titre,titre}>
     	<li class="item sub_item">
     	    <a class="mouseover" href="#URL_RUBRIQUE" title="#TITRE" data-target="rubrique-#ID_RUBRIQUE-#COMPOSITION">[(#TITRE|couper{50})]</a>       
     	 </li>
