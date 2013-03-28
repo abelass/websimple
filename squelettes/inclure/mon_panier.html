@@ -1,6 +1,6 @@
 #CACHE{3600}
 <aside id="mon_panier" class="fenetre_container">
-     <h2 class="#ENV{objet}_#ID_OBJET"><a class="ajax panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a></h2>
+     <h2 class="#ENV{objet}_#ID_OBJET"><a class="panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a></h2>
       
        <INCLURE{fond=inclure/panier_details,env,ajax=mon_panier}/>
      
@@ -9,7 +9,7 @@
 [(#REM) ouvrir et fermer le panier]
 <script type="text/javascript">
     jQuery(document).ready(function(){
-          $("#mon_panier h2.#ENV{objet}_#ID_OBJET").mouseover(function() {
+          /*$("#mon_panier h2.#ENV{objet}_#ID_OBJET").mouseover(function() {
             if($("#mon_panier .details").length!=0){
               $("#mon_panier .details").toggle(1000);
             } 
@@ -20,6 +20,20 @@
                   }
                 );
        $('#mon_panier').toggleClass('panier_open');  
+  });*/
+    $("#mon_panier h2.#ENV{objet}_#ID_OBJET").click(function() {
+
+            if($("#mon_panier .details").length!=0){
+              $("#mon_panier .details").toggle(1000);
+            } 
+            else ajaxReload('mon_panier', {
+                args:{
+                    voir:'oui',objet:'#ENV{objet}',id_objet:'#ENV{id_objet}'
+                    }
+                  }
+                );
+       $('#mon_panier').toggleClass('panier_open');  
+       return false;
   });
 });    
 </script>
