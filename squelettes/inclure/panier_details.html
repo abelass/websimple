@@ -1,15 +1,16 @@
 #SET{utilises,#ARRAY}
+
 <BOUCLE_cond(CONDITION){si  #ENV{voir}|oui}>
     <div class="details ajax">    
     <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest=#ENV{id_article_base}}{objet_dest=#ENV{objet}}{type_lien IN compris_pack,pack_base}{par ordre}>
     #SET{utilises,#GET{utilises}|push{#ID_OBJET}}
     </BOUCLE_objets>
-    
+
     <B_objets_precieux>
     <section class="prix">
     
         <div class="vente liste_objets_precieux">
-            <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet}{objet}>
+            <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet=#ENV{id_objet,113}}{objet=#ENV{objet,article}}>
             #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
             [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
             [(#PRIX|>{0}|?{#SET{ttc,oui},#SET{ttc,''})}]   
