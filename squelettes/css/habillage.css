@@ -56,7 +56,6 @@ body {
 	}
 
 #header{
-	top:-5em;
 	text-align:center;
 	position:relative;
 	z-index:90;
@@ -67,8 +66,7 @@ body {
 	background-color:#ffffff;
 	border-radius: 0.8em;
 	position:relative;
-	top: -1.5em;
-    margin: 0 0 6em 0;
+    margin: 3em 0 6em 0;
 	behavior: url(/PIE.htc);
 }
 
@@ -77,6 +75,7 @@ body {
 	border: 0px none;
 	margin-top:0;
 	padding-left:0;
+	top: 7em;
 }
 
 
@@ -176,17 +175,16 @@ body {
 
 
 #nom_site_spip{
- 	font-size: 11em;
-    letter-spacing: 0.1em;
-    line-height: 110px;
+	line-height:0px;
     text-align: center;
     width:100%;
     background:#63B362;
     border: #FFFFFF 2px solid;
-   	border-radius: 0.05em;
+   	border-radius: 0.15em;
     behavior: url(/PIE.htc);
-    padding: 0 0.1em;
-    
+    padding: 0.1em 0;
+    position:absolute;
+    top :-2em;
 }
 
 .accueil .h1{
@@ -199,7 +197,8 @@ body {
 	letter-spacing: 0.1em;
 	line-height: normal;
 	color:#63B362;
-	margin-top:0.6em;
+	position:relative;
+	top:2em;
 }
 
 
@@ -301,8 +300,7 @@ ul.box_menu li .text p{
 	height:164px;
  	background:#eec831;
  	padding-bottom:1em;
- 	opacity:0.35;
- 	filter: alpha(opacity = 35);
+
  }
  
 ul.box_menu li.item:hover ul{
@@ -327,7 +325,7 @@ ul.box_menu li.item:hover ul{
  ul.box_menu li.item ul li.row_2 a,#extra2 .box_menu li.item:hover  ul li.row_2 a  {color:#f9ed72;}
  
   ul.box_menu li.item ul li.row_1{
-  	background:#f9ed72;
+  	background:#f1d142;
   	}
  ul.box_menu li.item:hover  ul li.row_1, ul.box_menu li.item  ul li.on{background:#f9ed72;}
   
@@ -498,12 +496,12 @@ ul.box_menu li.descriptif .text p{
 #header .hornav {
     margin: 0;
     width: 100%;
-    margin-top:1em;
+    margin-top:0.6em;
 
 }
 
 .hornav .menu-items {
-	margin-top:1em;
+	margin-top:0;
 	background-color:#63b262;
     border-radius:0.4em;
     behavior: url(/PIE.htc);
