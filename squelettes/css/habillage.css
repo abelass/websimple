@@ -206,8 +206,6 @@ body {
 
 /*Menus*/
 
-
-
 .extra2.liste-items, extra2.liste-items .item {
     border-bottom: 0 none;
     border-top: 0 none;
@@ -650,8 +648,49 @@ ul.box_menu li.citation .text p{
 	behavior: url(/PIE.htc);
 }
 
+.content .menu-items li.item{
+	clear:both;
+}
+
 .content .menu-items a{color:#FFFFFF}
 
+.content .menu-items .pagination{
+	padding-top:1em;
+	font-size:0.6em;
+}
+
+/*Menu Site*/
+
+.content .menu_sites {padding-bottom:1em;}
+.content .menu_sites li.item{
+	font-size: 0.5em;
+	font-family: Helvetica, Arial, sans-serif;	
+}
+
+.content .menu_sites h3{
+	padding:0.3em;
+	margin-bottom:0;
+	text-align:center;
+	background:#EDC831;
+	border-radius:0.4em;
+	border-bottom-right-radius:0em;
+	border-bottom-left-radius:0em;	
+	height:auto;	
+	behavior: url(/PIE.htc);	
+}
+
+.content .menu_sites .introduction{
+	padding:0.5em;
+	background:#F9ED72;
+	border-radius:0.4em;
+	border-top-right-radius:0em;
+	border-top-left-radius:0em;	
+	height:auto;
+	min-height:80px;
+	behavior: url(/PIE.htc);
+}
+
+.content .menu_sites .spip_logos{margin-bottom:0.5em;}
 /*Formulaires*/
 
 /*Colonne droite*/
@@ -663,7 +702,7 @@ aside.right,.options section.prix{
 	border-radius: 0.4em;	
 	margin:0 0 1% 1%;
 	behavior: url(/PIE.htc);
-	padding:0.5em;
+	padding:0.5em 0.5em 0 0.5em;
 }
 
 
@@ -677,7 +716,7 @@ aside.right h2,.options section.prix h2{
 
 aside.right a{color:#EEC831}
 
-aside.right ul{
+aside.right ul,aside.right section.prix .vente{
 	background:#FFFFFF;
 	font-size:1.1em;
 	border-radius: 0.2em;
@@ -694,6 +733,7 @@ aside.right section{
 	border-radius: 0.4em;	
 	background:#f9ed72;
 	behavior: url(/PIE.htc);
+	margin-bottom:0.5em;
 	}
 aside.right section.last{
 	border-bottom:none;

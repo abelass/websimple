@@ -5,23 +5,14 @@
 
 <B_objets_precieux>
 <section class="prix">
-    <h2><:paniers:titre_panier:></h2>
+    <h2><:paniers:prix:></h2>
     <div class="vente liste_objets_precieux">
         <BOUCLE_objets_precieux(PRIX_OBJETS){id_objet}{objet}>
         #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
         [(#PRIX|>{0}|?{#SET{ttc,oui},#SET{ttc,''})}]   
-            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env,ajax}/>
+        [(#GET{prix_ht})] [(#ENV{id_objet}|devise_defaut|traduire_devise)] ([(#GET{taxe}|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
         </BOUCLE_objets_precieux>
-        <BOUCLE_objets_add(SELECTION_OBJETS){objet_dest=#OBJET}{id_objet_dest=#ID_OBJET}{type_lien=hebergement}>
-        #SET{prix_ht,''}
-        #SET{taxe,''}
-        <BOUCLE_objets_precieux_add(PRIX_OBJETS){id_objet}{objet}>
-            #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
-        [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
-            <INCLURE{fond=inclure/objet_precieux_#OBJET,id_objet,prix=#GET{prix_ht},taxe=#GET{taxe},id_prix_objet,id_declinaison,ttc=#GET{ttc},utilises=#GET{utilises},env}/>
-        </BOUCLE_objets_precieux_add>
-        </BOUCLE_objets_add>
     </div>
 </section>
 </B_objets_precieux>

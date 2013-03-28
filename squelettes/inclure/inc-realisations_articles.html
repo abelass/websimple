@@ -20,7 +20,7 @@
 
 [(#REM) Puis on les affiche]
 <B_articles>
-<section class="liste articles">
+<section class="menu-items menu_sites">
 [<p class="pagination">(#PAGINATION)</p>]
 	<ul>
 		<BOUCLE_articles(ARTICLES) {id_article IN #GET{id_article}}{!par date}{pagination}>
@@ -32,9 +32,9 @@
 					<div class="thumbnails">
 						<a href="#URL_ARTICLE">[(#LOGO_ARTICLE|=={''}|?
 							{
-							[(#CHEMIN{styles/images/Portfolio.png}|image_reduire{120,90}|inserer_attribut{class,spip_logos})]
+							[(#CHEMIN{styles/images/Portfolio.png}|image_reduire{120,90}|inserer_attribut{class,spip_logos}|inserer_attribut{alt,#TITRE})]
 							,
-							[(#LOGO_ARTICLE|image_reduire{120,90})]
+							[(#LOGO_ARTICLE|image_reduire{120,90}|inserer_attribut{alt,#TITRE})]
 							})]</a>
 					</div>
 					<div class="introduction entry-content">									
