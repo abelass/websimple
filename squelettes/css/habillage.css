@@ -298,9 +298,6 @@ ul.box_menu li .text p{
 /*Home Packs*/
  ul.box_menu li.item ul{
 	height:164px;
- 	background:#eec831;
- 	padding-bottom:1em;
-
  }
  
 ul.box_menu li.item:hover ul{
@@ -338,7 +335,7 @@ ul.box_menu li.item:hover .titre{
 }
 
 /*Home Actus*/
-ul.box_menu dl {
+ul.box_menu dl, ul.box_menu li.citation .text {
 	background:#be914a;
 	text-align:left;
 	padding:0.5em 0.3em 0.3em 0.3em;
@@ -350,6 +347,12 @@ ul.box_menu dl {
 ul.box_menu dt, ul.box_menu dd{
 	opacity:0.09;
 	filter: alpha(opacity = 9);
+}	
+
+ul.box_menu li.citation .text{
+	height:164px;
+	opacity:0.50;
+	filter: alpha(opacity = 50);
 }	
 
 ul.box_menu dl dt{font-weight:normal; font-size:0.8em;}
@@ -482,6 +485,21 @@ ul.box_menu li.descriptif .text p{
 	font-size:1em;
 	padding:0.5em;
 	line-height: 0.8em;
+}
+
+
+/*Home Citation*/
+ul.box_menu li.citation .text{
+	padding:0;
+}
+
+ul.box_menu li.citation .text p{
+
+	color:#FFFFFF;
+	font-size:1em;
+	padding:0.5em 0.5em 0 0.5em;
+	line-height: 0.8em;
+	
 }
 
 /*Menu horizontal*/
