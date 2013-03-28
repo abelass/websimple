@@ -5,7 +5,7 @@
         <nav class="menu-items menu_fonctionnalites">
         <ul>]
 
-            <BOUCLE_articles(ARTICLES) {id_rubrique}{!par num titre,titre}>
+            <BOUCLE_articles(ARTICLES) {id_rubrique}{par num titre,titre}>
                     [(#TOTAL_BOUCLE|>{1}|oui)
                     <li class="item hentry">
                         <a href="#URL_ARTICLE">#TITRE</a>
