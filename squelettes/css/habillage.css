@@ -69,6 +69,8 @@ body {
     margin: 0em 0 6em 0;
 	behavior: url(/PIE.htc);
 	top:-3em;
+	height:auto;
+	min-height: 38em;
 }
 
 .home .container {
@@ -333,7 +335,7 @@ ul.box_menu li.item:hover .titre{
 
 /*Home Actus*/
 ul.box_menu dl, ul.box_menu li.citation .text {
-	background:#be914a;
+	background:#e61cd4;
 	text-align:left;
 	padding:0.5em 0.3em 0.3em 0.3em;
 	margin:0;
@@ -487,8 +489,21 @@ ul.box_menu li.descriptif .text p{
 
 /*Home Citation*/
 ul.box_menu li.citation .text{
-	padding:0;
+	opacity:1;
+	color:#FFFFFF;
+	font-size:0.8em;
+	padding:0.5em;
 }
+
+ul.box_menu li.citation .text div{
+	opacity:0.5;
+	filter: alpha(opacity = 50);
+	text-align:center;
+
+}
+ul.box_menu li.citation .text small{opacity:0.5;	filter: alpha(opacity = 50);}
+
+ul.box_menu li.citation:hover .text div, ul.box_menu li.citation:hover .text small{opacity:1;	filter: alpha(opacity = 100);}
 
 ul.box_menu li.citation .text p{
 
@@ -638,7 +653,7 @@ ul.box_menu li.citation .text p{
 
 /*Menu content*/
 
-.content .menu-items {
+.content .menu-items, .content #comments {
 	font-size:2em;
 	border-radius:0.4em;
 	background:#99CC66;
@@ -646,6 +661,19 @@ ul.box_menu li.citation .text p{
 	behavior: url(/PIE.htc);
 }
 
+.content #comments ul {
+	font-family:Helvetica, Arial, sans-serif;
+	padding:0 1em;
+	
+}
+
+.content #comments h2{
+	font-size:1.2em;
+	padding: 0 0.5em;}
+
+.content #comments .comment-item{
+	font-size:12px;
+}
 .content .menu-items li.item{
 	clear:both;
 }
@@ -657,6 +685,11 @@ ul.box_menu li.citation .text p{
 	font-size:0.6em;
 }
 
+
+.content .liste_articles_syndic{
+	font-size:1.2em;
+	margin:0;
+}
 /*Menu Site*/
 
 .content .menu_sites {padding-bottom:1em;}
@@ -850,6 +883,7 @@ div.close{
 	width : -20%;
 	cursor:move;
 	float:right;
+	margin-left:1em;
 }
 
 #mon_panier h2,#mon_panier .h2{
@@ -950,6 +984,19 @@ aside.prix {
   line-height:normal;
   margin-bottom: 0.2em;
 	}
+	
+.formulaire_panier thead th, .formulaire_panier .emplette td{
+	padding:0.1em;
+}
+
+/* Si on ajoute des images dans une description, on centre l'aligement */
+
+.formulaire_panier .total_ttc td{
+	padding:0.2em 0.5em;
+}
+.formulaire_panier .taxes td{
+	padding:0.2em 0.5em;
+}
 
 /*panneau move*/	
 .panneau{height:1.5em; background:#e5e5e5;clear:both;text-align:center}

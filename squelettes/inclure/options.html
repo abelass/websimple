@@ -18,28 +18,13 @@
 <BOUCLE_pack_base(SELECTION_OBJETS){id_objet_dest}{objet_dest}{type_lien=pack_base}{par ordre}>
 #SET{compteur,#COMPTEUR_BOUCLE}
     #SET{articles,#ARRAY}
+    <B_article_pack_base>
+    <ul> 
     <BOUCLE_article_pack_base(ARTICLES){id_article=#ID_OBJET}{si #OBJET|=={article}|oui}>
-       #SET{articles_env,#ENV{fonct_compris}|explode{-}}
-       #SET{articles_enlever,#GET{articles_env}|array_diff{#LISTE{#ID_ARTICLE}}|implode{-}}       
-       [(#ID_ARTICLE|in_array{#GET{articles_env}}|non)
-            #SET{articles,#GET{articles_env}|push{#ID_ARTICLE}|implode{-}}
-            ]
-        <dt class="row">
-                #SET{id_article,''}
-                 [(#GET{faq}|=={faq}|?{
-                     #SET{id_article,#ID_ARTICLE}
-                      <span class="open">-</span>
-                     ,
-                     <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
-                 })]
-                <span class="close">+</span>
-            <span class="#EDIT{titre} titre">#TITRE</span>
-        [(#GET{faq}|=={faq}|non)</a>]
-        </dt>     
-        [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
-            [(#INCLURE{fond=content/article-packs,env,id_article=#GET{id_article},titre=non,env,id_article_base=#ID_OBJET_DEST,panier=non})]        
-        </dd>]
+      <li><a href="#URL_ARTICE">#TITRE</a></li> 
     </BOUCLE_article_pack_base>
+    </ul>   
+    </Barticle_pack_base>    
 </BOUCLE_pack_base>
 </dl>
 <br class="nettoyeur"/>
