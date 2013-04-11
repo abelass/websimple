@@ -801,8 +801,8 @@ aside.contenu_lie{float:right;}
 
 .pack{float:left; width:48%; margin : 0 1%}
 
-aside.more {text-align:center; margin-top:1.5em}
-aside.more .h2{
+aside.more, section.hyperlien {text-align:center; margin-top:1.5em}
+aside.more .h2, section.hyperlien .h2{
 	background:#eec831; 
 	padding:0.2em 2em;
 	border-radius:0.4em;
@@ -1017,12 +1017,12 @@ a {
 }
 
 a:focus, a:hover, a:active { 
-	background:transparent;
 	color: #eec831 ;
 	opacity:0.4;
    filter: alpha(opacity = 40);
    text-decoration:none;
 }
+
 
 
 a[hreflang]:after {
