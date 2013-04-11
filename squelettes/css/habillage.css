@@ -1023,7 +1023,11 @@ a:focus, a:hover, a:active {
    text-decoration:none;
 }
 
+.logo_site a:focus,.logo_site a:hover,.logo_site a:active { 
+	opacity:1;
+   filter: alpha(opacity = 100);
 
+}
 
 a[hreflang]:after {
     content: none;
