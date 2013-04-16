@@ -1,3 +1,4 @@
+
 #SET{utilises,#ARRAY}
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest=#ENV{id_article_base}}{objet_dest=#ENV{objet}}{type_lien IN compris_pack,pack_base}{par ordre}>
 #SET{utilises,#GET{utilises}|push{#ID_OBJET}}
@@ -12,7 +13,18 @@
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
         [(#PRIX|>{0}|?{#SET{ttc,oui},#SET{ttc,''})}]   
         [(#GET{prix_ht})] [(#ENV{id_objet}|devise_defaut|traduire_devise)] ([(#GET{taxe}|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
+        #SET{retour,#SELF|parametre_url{retour,ok}}
+        <a class="ajax nohistory plus" href="#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}}" title="<:paniers:action_ajouter:>">[(#CHEMIN{images/plus.png}|image_reduire{15})]</a>
         </BOUCLE_objets_precieux>
+     
     </div>
 </section>
 </B_objets_precieux>
+
+ [(#ENV{retour}|oui)
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        ajaxReload('mon_panier', { });
+        });      
+</script>
+]  

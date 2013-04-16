@@ -1,13 +1,10 @@
 <BOUCLE_content(ARTICLES){id_article}{si #ENV{reload}|non}>
-
-[<aside class="prix">
-    (#INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE,expl= (<:htva:>)})
-</aside>]
-
+ #SET{id_article,#ID_ARTICLE}
+    [(#ID_TRAD|>{0}|oui)#SET{id_article,#ID_TRAD}]
 
 <article class="content-principal">
     [(#REM)Le panier]
-     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
+        <INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env,ajax=mon_panier}/>
 	<header class="cartouche">
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
@@ -16,7 +13,7 @@
     <section class="body_content">
         [<aside class="right">
         [(#REM)Les prix]
-        <INCLURE{fond=inclure/prix,id_objet=#GET{id_article},objet=article}/>
+        <INCLURE{fond=inclure/prix,id_objet=#GET{id_article},objet=article,ajax}/>
         [(#REM)Les Contenus liés]
             (#INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,env})
         </aside>]        

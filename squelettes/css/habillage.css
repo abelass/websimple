@@ -887,15 +887,23 @@ div.close{
 }
 
 #mon_panier h2,#mon_panier .h2{
-	background: url(images/panier.png)no-repeat 99% 0.1em #EEC831;
+		background:  #EEC831;
     line-height: normal;
     margin: 1.2em 0 0 0;
     width: 4.3em;
     border-radius: 0.1em;
     behavior: url(/PIE.htc);
 	}
+	
+#mon_panier h2 .compteur{
+	width:26px;	background: url(images/panier.png) 0 0.2em no-repeat;
+	display:block;
+	float:right; 
+	text-align:center;
+	line-height:2.1em;
+	font-size:0.6em;}	
 
-#mon_panier h2 a{padding:0 1em 0 0.1em;    color: #FFFFFF;}
+#mon_panier h2 a{padding:0 1em 0 0.1em;    color: #FFFFFF}
 
 
 
@@ -941,7 +949,8 @@ aside.prix {
     padding: 1em;
 	}
 	
-	
+.vente img{top:0.1em ;right:0.1em}	
+.vente a.plus{float:right}
 #panier_wrap{
 
 	background: #EEC831 ;
