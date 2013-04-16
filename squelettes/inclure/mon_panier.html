@@ -2,7 +2,6 @@
 <aside id="mon_panier" class="fenetre_container">
      <h2 class="#ENV{objet}_#ID_OBJET"><a class="panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a><span class="compteur"><INCLURE{fond=inclure/compteur_panier}/></span></h2>
        <INCLURE{fond=inclure/panier_details,env,ajax=mon_panier}/>
-     
 </aside> 
 
 [(#REM) ouvrir et fermer le panier]

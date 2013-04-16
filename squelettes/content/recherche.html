@@ -1,7 +1,7 @@
 [(#REM) Fil d'Ariane ]
 <article class="content-principal">
     [(#REM)Le panier]
-     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}    
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env,ajax=mon_panier}    
 	[<header class="cartouche">
 		<h1 class="h1"><:resultats_recherche:></h1>
 		<p class="soustitre">&#171;&nbsp;(#RECHERCHE)&nbsp;&#187;</p>

@@ -1,5 +1,4 @@
 #SET{utilises,#ARRAY}
-
 <BOUCLE_cond(CONDITION){si  #ENV{voir}|oui}>
     <div class="details ajax">    
     <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest=#ENV{id_article_base}}{objet_dest=#ENV{objet}}{type_lien IN compris_pack,pack_base}{par ordre}>
@@ -39,8 +38,8 @@
             <BOUCLE_article_suitepanier(ARTICLES){id_rubrique=-1}>
                [(#PAGE|=={suitepanier}|oui)<div class="texte #EDIT{texte}">#TEXTE</div>]
             </BOUCLE_article_suitepanier>
-            [(#VAL{#URL_PAGE{selection}#abonne_coord}|lien_ou_expose{<:shop:passer_la_commande:>,'',continuer})]
-            <//B_article_suitepanier>
+            [(#VAL{#URL_PAGE{selection}#abonne_coord}|lien_ou_expose{<:shop:passer_la_commande:>*,'',continuer})]
+            <div class="explication">*<:websimple:explication_commande_court:></div>
         </BOUCLE_ispanier>
     </div>
     #SET{contenu,ok}
@@ -49,5 +48,5 @@
     </div>
     <br class="nettoyeur"/>
 </BOUCLE_cond>
-<div></div>
+  <br class="invisible"/>
 <//B_cond>
