@@ -1,7 +1,7 @@
 <BOUCLE_content(SITES){id_syndic}{si #ENV{reload}|non}>
 <article class="content-principal">
      [(#REM)Le panier]
-     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env}
+     #INCLURE{fond=inclure/mon_panier,env,objet=article,id_objet=#GET{id_article},env,ajax=mon_panier}
     <header class="cartouche">
         <h1 class="h1 #EDIT{nom_site}">#NOM_SITE</h1>
     </header>
