@@ -18,13 +18,13 @@
             [(#REM)Les Contenus liés]
                 (#INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,env})
             </aside>]
-        	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</section>]
+        	[<section class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{400,0})</section>]
         	[<section class="#EDIT{texte} texte surlignable">
         			[(#LOGO_ARTICLE|image_reduire{200,200})]
-        			(#TEXTE|image_reduire{300,0})</section>
+        			(#TEXTE|image_reduire{400,0})</section>
         		]
         	[<section class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></section>]
-        	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</section>]
+        	[<section class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{400,0})</section>]
     
             <section class="options_packs">
                 <INCLURE{fond=inclure/options,id_objet_dest=#GET{id_article},objet_dest=article,url=#URL_ARTICLE,env,ajax,id_article_base=#ID_ARTICLE}/>
