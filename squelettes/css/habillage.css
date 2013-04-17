@@ -918,6 +918,9 @@ div.close{
 	padding:0.5em 0.5em 1.5em 0.5em;
 	border-radius: 0.4em;
     behavior: url(/PIE.htc);
+    max-height:30em;
+    height:auto;
+    overflow:auto;
 	}
 	
 #mon_panier .prix{
