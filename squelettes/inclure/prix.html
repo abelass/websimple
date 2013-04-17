@@ -9,7 +9,7 @@
 #SET{id_objet_dest,#LISTE{#ENV{id_article_base}}}
 #SET{id_objet_dest,#GET{id_objet_dest}|array_merge{#GET{exclus}}}
 #SET{utilises,#ARRAY}
-[(#REM)Les produits d'un pack ou dans le panier]
+[(#REM)Les produits compris dans un pack présent ou contenu dans le panier]
 <BOUCLE_objets(SELECTION_OBJETS){id_objet_dest IN #GET{id_objet_dest}}{objet_dest=#ENV{objet}}{type_lien IN compris_pack,pack_base}{par ordre}>
 #SET{utilises,#GET{utilises}|push{#ID_OBJET}}
 </BOUCLE_objets>
