@@ -954,6 +954,7 @@ aside.prix {
 	
 .vente img{top:0.1em ;right:0.1em}	
 .vente a.plus{float:right}
+.vente .utilise{text-decoration: line-through}
 #panier_wrap{
 
 	background: #EEC831 ;
