@@ -907,7 +907,7 @@ div.close{
 
 
 
-#mon_panier .details{
+#mon_panier .details, #extra2 .details, #abonne_login{
 	/*display:none;*/
 	text-align:right;
 	background-color: #EEC831 ;
@@ -923,7 +923,17 @@ div.close{
     overflow:auto;
 	}
 	
-#mon_panier .prix{
+#extra2 .details, #abonne_login{
+	width:95%;
+	margin:0;
+	border-radius: 1em;
+    behavior: url(/PIE.htc);
+	position:relative;
+	max-height:auto;
+	text-align:center;
+	padding-bottom:0.5em	}
+	
+#mon_panier .prix, #extra2 .prix {
    	clear:both;
     
 	}
@@ -967,7 +977,7 @@ aside.prix {
 	background:#f9ed72;
 }
 
-#panier_wrap .formulaire_spip {
+#panier_wrap .formulaire_spip, #extra2 .formulaire_spip {
 	background:#EEC831;
 	border:none;
 }
