@@ -1,6 +1,6 @@
 <article class="content-principal">
     <header class="cartouche">
-        <h1><:websimple:envoi_commande:></h1>
+        <h1><:websimple:envoi_commande:>*</h1>
     </header>
 <BOUCLE_contact(CONTACTS){id_auteur=#SESSION{id_auteur}}{id_auteur>0}{0,1}>
  [(#ENV{message}|=={ok}|non)
@@ -32,4 +32,5 @@
     ]   
     </div>
 <//B_contact>
+<p class="explication">*<:websimple:explication_commande_court:></p>
 </article>
