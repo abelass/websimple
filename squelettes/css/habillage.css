@@ -936,7 +936,7 @@ div.close{
 	border-radius: 1em;
     behavior: url(/PIE.htc);
 	position:relative;
-	max-height:auto;
+	max-height:none;
 	text-align:center;
 	padding-bottom:0.5em	}
 	
@@ -970,7 +970,7 @@ aside.prix {
 	}
 	
 .vente img{top:0.1em ;right:0.1em}	
-.vente a.plus{float:right}
+.vente a.plus, .vente img{float:right}
 .vente .utilise{text-decoration: line-through}
 #panier_wrap{
 
