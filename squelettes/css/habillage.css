@@ -724,6 +724,13 @@ ul.box_menu li.citation .text p{
 .content .menu_sites .spip_logos{margin-bottom:0.5em;}
 /*Formulaires*/
 
+.reponse_formulaire_ok{
+	background: #F9EE72;
+	border: #EDC831 3px solid;
+	border-radius:0.8em;
+	border-radius:0.4em;	
+	}
+
 /*Colonne droite*/
 
 aside.right,.options section.prix{
