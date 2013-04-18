@@ -6,19 +6,34 @@
         #SET{exclus,#GET{exclus}|push{#ID_OBJET}}
         </BOUCLE_article>
     </BOUCLE_panier>
+#SET{id_objet_dest,#LISTE{#ENV{id_article_base}}}
+#SET{id_objet_dest,#GET{id_objet_dest}|array_merge{#GET{exclus}}}
+#SET{utilises,#ARRAY}
+[(#REM)Les produits compris dans le pack présent ou contenu dans le panier ou compris dans un pack sélectionné]
+<BOUCLE_objets(SELECTION_OBJETS){id_objet_dest IN #GET{id_objet_dest}}
+{objet_dest=#ENV{objet}}{type_lien IN compris_pack,pack_base}{par ordre}>
+#SET{utilises,#GET{utilises}|push{#ID_OBJET}}
+    <BOUCLE_objets_deps(SELECTION_OBJETS)
+    {id_objet_dest=#ID_OBJET}{objet_dest=#OBJET_DEST}{type_lien IN compris_pack,pack_base}{par ordre}>
+    #SET{utilises,#GET{utilises}|push{#ID_OBJET}}
+        <BOUCLE_re(BOUCLE_objets_deps)> </BOUCLE_re>
+    </BOUCLE_objets_deps>
+</BOUCLE_objets>
 
 <BOUCLE_art(ARTICLES){id_article=#ID_OBJET}>
 #SET{titre,#TITRE}
+[(#ID_OBJET|in_array{#GET{utilises}}|oui)#SET{utilise,oui}]
 <BOUCLE_trad(ARTICLES){traduction}{lang=#ENV{lang}}>
     #SET{titre,#TITRE}
 </BOUCLE_trad>
 <div>
+
         [(#ID_ARTICLE|in_array{#ENV{utilises}}|ou{#ENV{panier}|=={non}}|?{
             <div class="compris_pack">
             <:websimple:compris_pack:>
             ,
             <div class="ajouter_au_panier">
-            [(#ID_ARTICLE|in_array{#GET{exclus}}|?{
+            [(#GET{utilise}|ou{#ID_OBJET|in_array{#GET{exclus}}}|oui|?{
                [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi)] <img src="[(#CHEMIN{images/tick_16.png})]" alt="ok"/> 
                 ,
 
