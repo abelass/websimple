@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    jQuery(document).ready(function(){
+   [(#ENV**{message_ok}|oui)
+       jQuery(document).ready(function(){
         ajaxReload('mon_panier', { });
         });
-       [(#ENV**{message_ok}|oui)
-        $(.content-principal .formulaire_spip').attr("style","position: absolute; top: 55%; left: 0; font-size: 150%;background:transparent;border:none;display:none;width: 96%;text-align:center;z-index:1");
+        $('.content-principal .formulaire_spip').attr("style","position: absolute; top: 0; left: 0; font-size: 150%;background:transparent;border:none;display:none;width: 100%;text-align:center;z-index:1;padding:0");
          $('.formulaire_spip').show(2200);
         ]        
 </script>
