@@ -931,14 +931,16 @@ div.close{
 	}
 	
 #extra2 .details, #abonne_login{
-	width:95%;
+	width:93%;
 	margin:0;
 	border-radius: 1em;
     behavior: url(/PIE.htc);
 	position:relative;
 	max-height:none;
 	text-align:center;
-	padding-bottom:0.5em	}
+	padding-bottom:0.5em;
+	margin-bottom:2em;
+		}
 	
 #mon_panier .prix, #extra2 .prix {
    	clear:both;
