@@ -34,10 +34,10 @@
             ,
             <div class="ajouter_au_panier">
             [(#GET{utilise}|ou{#ID_OBJET|in_array{#GET{exclus}}}|oui|?{
-               [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi)] <img src="[(#CHEMIN{images/tick_16.png})]" alt="ok"/> 
+               [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi) ] <img src="[(#CHEMIN{images/tick_16.png})]" alt="ok"/> 
                 ,
 
-            #SET{retour,#SELF|parametre_url{retour,ok}}
+            #SET{retour,#SELF|parametre_url{retour,ok}|parametre_url{action,''}}
             [(#BOUTON_ACTION{<:websimple:action_ajouter:> [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi)] [(#ENV{prix})] [(#ID_ARTICLE|devise_defaut|traduire_devise)] ([(#TAXE|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})]),#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})]          
                 })]
  
@@ -48,10 +48,10 @@
 </div>
 </BOUCLE_art>
 </B_art>
-[(#ENV{retour}|oui)
+[(#ENV{retour}|=={ok}|oui)
 <script type="text/javascript">
-    jQuery(document).ready(function(){
-        ajaxReload('mon_panier', { });
+    $(function(){
+        ajaxReload('mon_panier', {args:{voir:'oui',action:''},history:false });
         });      
 </script>
 ]

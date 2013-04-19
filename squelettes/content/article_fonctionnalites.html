@@ -13,7 +13,7 @@
     <section class="body_content">
         [<aside class="right">
         [(#REM)Les prix]
-        <INCLURE{fond=inclure/prix,id_objet=#GET{id_article},id_article_base=#GET{id_article},objet=article,ajax}/>
+        <INCLURE{fond=inclure/prix,id_objet=#GET{id_article},id_article_base=#GET{id_article},objet=article,ajax=prix}/>
         [(#REM)Les Contenus liés]
             (#INCLURE{fond=inclure/contenu_lie,objet_dest=article,id_objet_dest=#GET{id_article},type_lien=utilise_par_site,env})
         </aside>]        
