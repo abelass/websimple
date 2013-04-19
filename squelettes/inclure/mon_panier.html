@@ -7,18 +7,6 @@
 [(#REM) ouvrir et fermer le panier]
 <script type="text/javascript">
     jQuery(document).ready(function(){
-          /*$("#mon_panier h2.#ENV{objet}_#ID_OBJET").mouseover(function() {
-            if($("#mon_panier .details").length!=0){
-              $("#mon_panier .details").toggle(1000);
-            } 
-            else ajaxReload('mon_panier', {
-                args:{
-                    voir:'oui',objet:'#ENV{objet}',id_objet:'#ENV{id_objet}'
-                    }
-                  }
-                );
-       $('#mon_panier').toggleClass('panier_open');  
-  });*/
     $("#mon_panier h2.#ENV{objet}_#ID_OBJET").click(function() {
 
             if($("#mon_panier .details").length!=0){
