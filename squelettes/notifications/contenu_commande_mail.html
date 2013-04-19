@@ -20,9 +20,9 @@
 <p><:commandes:commande_numero:>#REFERENCE</p>
 <p><:commandes:commande_date:> : #DATE</p>
 <p><:commandes:modifier_commande_statut:> [(#STATUT|commandes_lister_statuts)]</p>
-
 <p><:commandes:details_commande:></p>
-<INCLURE{fond=inclure/commande,commande=#ARRAY{details,#ENV**{options}|table_valeur{commande}},statut=#STATUT,format_envoi=#ENV{format_envoi}}>
+[(#ENV**{options}|table_valeur{commande}|non)#SET{id_commande,#ID_COMMANDE}]
+<INCLURE{fond=inclure/commande,commande=#ARRAY{details,#ENV**{options}|table_valeur{commande}},statut=#STATUT,format_envoi=#ENV{format_envoi},id_commande=#GET{id_commande}}>
 
 <hr />
 
