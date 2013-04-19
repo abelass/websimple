@@ -5,6 +5,7 @@ function notifications_commande_vendeur_destinataires_dist($id_commande, $option
 	include_spip('inc/config');
 	$config = lire_config('commandes');
 	return $config['vendeur_'.$config['vendeur']];	
+    
 
 }
 
