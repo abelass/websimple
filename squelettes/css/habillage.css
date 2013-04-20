@@ -12,6 +12,88 @@
 
 }
 
+@-webkit-keyframes panierRemplis{
+        0%   {
+          top:0px;
+        }
+        16% {
+          top:2.5px;}        
+        33% {
+          top:5px;} 
+        49% {
+          top:7.5px;}           
+        66% {
+          top:10px;}
+        72% {
+          top:12.5px;} 
+        86% {
+          top:13.5px;}                    
+        100% {
+          top:15px;.
+          } 
+    } 
+    @-moz-keyframes panierRemplis{
+        0%   {
+          top:0px;
+        }
+        16% {
+          top:2.5px;}        
+        33% {
+          top:5px;} 
+        49% {
+          top:7.5px;}           
+        66% {
+          top:10px;}
+        72% {
+          top:12.5px;} 
+        86% {
+          top:13.5px;}                    
+        100% {
+          top:15px;.
+          } 
+    } 
+     @-ms-keyframes panierRemplis{
+        0%   {
+          top:0px;
+        }
+        16% {
+          top:2.5px;}        
+        33% {
+          top:5px;} 
+        49% {
+          top:7.5px;}           
+        66% {
+          top:10px;}
+        72% {
+          top:12.5px;} 
+        86% {
+          top:13.5px;}                    
+        100% {
+          top:15px;.
+          } .. 
+    } 
+         @keyframes panierRemplis{
+        0%   {
+          top:0px;
+        }
+        16% {
+          top:2.5px;}        
+        33% {
+          top:5px;} 
+        49% {
+          top:7.5px;}           
+        66% {
+          top:10px;}
+        72% {
+          top:12.5px;} 
+        86% {
+          top:13.5px;}                    
+        100% {
+          top:15px;.
+          } 
+                                                
+          }    
+
 /* Titraille / Intertitres */
 body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;}
 
@@ -894,21 +976,40 @@ div.close{
 }
 
 #mon_panier h2,#mon_panier .h2{
-		background:  #EEC831;
+	background:  #EEC831;
     line-height: normal;
     margin: 1.2em 0 0 0;
-    width: 4.3em;
     border-radius: 0.1em;
     behavior: url(/PIE.htc);
+    position:relative;
+    z-index:200;
 	}
 	
+.down{display:none;}
+
+.panier_remplis .down{
+	display: inline;
+    position: absolute;
+    right: 26px;
+    top: 15px;
+    z-index: 100;
+    -webkit-animation: panierRemplis 2s  0s infinite;
+    -moz-animation: panierRemplis 2s  0s infinite;
+    -ms-animation: panierRemplis 2s  0s infinite;
+    -o-animation: panierRemplis 2s  0s infinite;
+    animation: panierRemplis 2s  0s infinite;
+    }
+
+
 #mon_panier h2 .compteur{
 	width:26px;	background: url(images/panier.png) 0 0.2em no-repeat;
 	display:block;
 	float:right; 
 	text-align:center;
 	line-height:2.1em;
-	font-size:0.6em;}	
+	font-size:0.6em;
+    height:26px;	
+	}	
 
 #mon_panier h2 a{padding:0 1em 0 0.1em;    color: #FFFFFF}
 
