@@ -1,6 +1,6 @@
 #CACHE{0}
 <aside id="mon_panier" class="fenetre_container">
-     <h2 class="#ENV{objet}_#ID_OBJET"><a class="panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a><span class="compteur"><INCLURE{fond=inclure/compteur_panier}/></span></h2>
+     <h2 class="#ENV{objet}_#ID_OBJET"><a class="panier" href="[(#SELF|parametre_url{voir,#ENV{voir}|?{'',oui}})]"><:paniers:titre_panier:></a><span class="compteur"><INCLURE{fond=inclure/compteur_panier,session}/></span></h2>
        <INCLURE{fond=inclure/panier_details,env,ajax=mon_panier_details}/>
 </aside> 
 

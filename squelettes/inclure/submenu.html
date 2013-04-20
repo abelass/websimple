@@ -1,12 +1,12 @@
-<ul class="menu-items submenu">
-    <li class="item sub_item">
-        <a class="mouseover" href="#URL_RUBRIQUE{#ENV{id_rubrique}}" title="<:websimple:realisations_sites:>" data-target="rubrique-#ID_RUBRIQUE-realisations"><:websimple:realisations_sites:></a>       
-     </li>
-    <li class="item sub_item">
-        <a class="mouseover ajax" href="[(#URL_RUBRIQUE{#ENV{id_rubrique}}|parametre_url{id_groupe,9})]" title="<:websimple:realisations_developpements:>" data-target="rubrique-#ID_RUBRIQUE-realisations-9"><:websimple:realisations_developpements:></a>       
-     </li>
-
-</ul>
+<B_rubriques>
+    <ul class="menu-items submenu">
+    <BOUCLE_rubriques(RUBRIQUES){id_parent}{id_trad!=24}{tout}{par num titre,titre}>
+        <li class="item sub_item">
+            <a class="mouseover ajax" href="#URL_RUBRIQUE" title="#TITRE" data-target="rubrique-#ID_RUBRIQUE-#COMPOSITION">[(#TITRE|couper{50})]</a>       
+         </li>
+    </BOUCLE_rubriques>
+    </ul>
+</B_rubriques>
 
 <script type="text/javascript">
 $(function() { 
