@@ -94,6 +94,87 @@
                                                 
           }    
 
+@-webkit-keyframes panierRemplisUp{
+        0%   {
+          top:14px;
+        }
+        16% {
+          top:13.5px;}        
+        33% {
+          top:12.5px;} 
+        49% {
+          top:10px;}           
+        66% {
+          top:7.5px;}
+        72% {
+          top:5px;} 
+        86% {
+          top:2.5px;}                    
+        100% {
+          top:0px;.
+          } 
+    } 
+    @-moz-keyframes panierRemplisUp{
+        0%   {
+          top:14px;
+        }
+        16% {
+          top:13.5px;}        
+        33% {
+          top:12.5px;} 
+        49% {
+          top:10px;}           
+        66% {
+          top:7.5px;}
+        72% {
+          top:5px;} 
+        86% {
+          top:2.5px;}                    
+        100% {
+          top:0px;.
+          } 
+    } 
+     @-ms-keyframes panierRemplisUp{
+        0%   {
+          top:14px;
+        }
+        16% {
+          top:13.5px;}        
+        33% {
+          top:12.5px;} 
+        49% {
+          top:10px;}           
+        66% {
+          top:7.5px;}
+        72% {
+          top:5px;} 
+        86% {
+          top:2.5px;}                    
+        100% {
+          top:0px;.
+          }  
+    } 
+         @keyframes panierRemplisUp{
+        0%   {
+          top:14px;
+        }
+        16% {
+          top:13.5px;}        
+        33% {
+          top:12.5px;} 
+        49% {
+          top:10px;}           
+        66% {
+          top:7.5px;}
+        72% {
+          top:5px;} 
+        86% {
+          top:2.5px;}                    
+        100% {
+          top:0px;.
+          }                                  
+          }   
+
 /* Titraille / Intertitres */
 body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 { font-family: 'GoodDogRegular', Arial, sans-serif;}
 
@@ -970,12 +1051,12 @@ div.close{
 	top: 1em;	
 	z-index:700;
 	width : -20%;
-	cursor:move;
 	float:right;
 	margin-left:1em;
 }
 
 #mon_panier h2,#mon_panier .h2{
+	cursor:pointer;
 	background:  #EEC831;
     line-height: normal;
     margin: 1.2em 0 0 0;
@@ -985,7 +1066,7 @@ div.close{
     z-index:200;
 	}
 	
-.down{display:none;}
+
 
 .panier_remplis .down{
 	display: inline;
@@ -1000,7 +1081,28 @@ div.close{
     animation: panierRemplis 2s  0s infinite;
     }
 
+.panier_open .up{
+	display: inline;
+    position: absolute;
+    right: 26px;
+    top: 15px;
+    z-index: 100;
+    -webkit-animation: panierRemplisUp 2s  0s infinite;
+    -moz-animation: panierRemplisUp 2s  0s infinite;
+    -ms-animation: panierRemplisUp 2s  0s infinite;
+    -o-animation: panierRemplisUp 2s  0s infinite;
+    animation: panierRemplisUp 2s  0s infinite;
+    }
 
+
+.down,.up,.panier_open .down{
+	display:none;
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    -o-animation: none;
+    animation: none;	
+	}
 #mon_panier h2 .compteur{
 	width:26px;	background: url(images/panier.png) 0 0.2em no-repeat;
 	display:block;
