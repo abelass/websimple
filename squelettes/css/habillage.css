@@ -586,15 +586,28 @@ ul.box_menu li.logo_auteurs .images{
 	filter: alpha(opacity = 50);
 	margin:0;
 	padding :0;
-	height:	164px;
+
 	
 	}	
 	
+.images .image, .portraits .image{
+		float:left;
+		height:	164px;
+}
+
+.portraits .wrapper{min-height:164px;height:auto; width:430px;margin-bottom:2em}
+
+.portraits .wrapper .details{width:300px;}
+.portraits .wrapper_1 .image, .portraits .wrapper_2 .details{float:left}
+
+ .portraits .wrapper_2 .details{text-align:right}
+
+.portraits .wrapper_2 .image, .portraits .wrapper_1 .details{float:right}
 ul.box_menu li.logo_auteurs .image{
-	float:left;
 	height:164px;
 	overflow:hidden;
 	z-index:20}	
+
 	
 ul.box_menu li.logo_auteurs img{
 	-webkit-filter: grayscale(100%);
@@ -623,13 +636,14 @@ ul.box_menu li.logo_auteurs:hover img{
 }
 
 
-.image_1{padding-right:17px;}
+ul.box_menu .image_1{padding-right:17px;}
 
-.image_2{padding-left:17px;}
+ul.box_menu .image_2{padding-left:17px;}
 	
 ul.box_menu li.end{
 	margin-right:0
 }
+
 /*Home descriptif*/
 
 ul.box_menu li.descriptif .titre{
