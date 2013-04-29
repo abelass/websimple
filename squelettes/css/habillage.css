@@ -1270,7 +1270,7 @@ aside.prix {
 .control_box .on{background:url(images/move.png) no-repeat;}
 
 /*Liens*/
-a {
+a, a.spip_out {
     color: #eec831;
     text-decoration: none;
 }
