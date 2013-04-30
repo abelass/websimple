@@ -15,10 +15,10 @@
 [(#INCLURE{fond=inclure/documents,id_rubrique})]
 
 <B_articles>
-<nav class="liste articles">
+<nav class="menu-items menu articles menu_sites">
     #ANCRE_PAGINATION
-    <ul class="liste-items">
-        <BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
+    <ul>
+        <BOUCLE_articles(ARTICLES){id_rubrique} {lang} {!par date} {pagination 5}>
         <INCLURE{fond=inclure/prix,objet=article,id_objet=#ID_ARTICLE}/>
         #INCLURE{fond=inclure/article-resume,id_article}
         </BOUCLE_articles>
@@ -29,17 +29,17 @@
 
     [(#REM) Si aucun article, affiche un plan de la rubrique ]
     <B_sous_rubriques>
-    <nav class="menu rubriques">
-        <ul class="menu-liste">
+    <nav class="menu menu-items rubriques">
+        <ul>
             <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
-            <li class="menu-entree">
+            <li  class="item hentry">
                 <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
 
                 [(#REM) Une boucle recursive pour le mini plan]
                 <B_miniplan>
                 <ul class="menu-liste">
                     <BOUCLE_miniplan(RUBRIQUES) {id_parent} {par num titre, titre}>
-                    <li class="menu-entree">
+                    <li class="item hentry">
                         <a href="#URL_RUBRIQUE">[(#TITRE)]</a>
                         <BOUCLE_m2(BOUCLE_miniplan)></BOUCLE_m2>
                     </li>

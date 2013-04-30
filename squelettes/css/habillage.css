@@ -868,6 +868,17 @@ ul.submenu li.last{
 
 .content .menu-items a{color:#FFFFFF}
 
+.meta-publi{
+	background:#EDC831;
+	padding:0.2em;
+	margin:0.2em;
+	border-radius:0.4em;
+	behavior: url(/PIE.htc);	
+	}
+
+.content .articles .introduction{font-size:0.9em}
+.content .menu-items .meta-publi a{font-weight:bold}
+
 .content .menu-items .pagination{
 	padding-top:1em;
 	font-size:0.6em;
