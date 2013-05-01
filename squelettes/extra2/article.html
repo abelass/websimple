@@ -2,3 +2,9 @@
 
 <INCLURE{fond=extra2/rubrique,id_article,id_rubrique,env,id_trad=#GET{id_trad}}/>
 
+<BOUCLE_content(ARTICLES){id_article}>
+<div class="logo_site">
+[<a class="mediabox" href="[(#LOGO_ARTICLE|extraire_attribut{src})]">(#LOGO_ARTICLE|image_reduire{245,*}|inserer_attribut{alt,#TITRE})</a>]
+</div>
+</BOUCLE_content>
+
