@@ -11,7 +11,13 @@
 
 <INCLURE{fond=inclure/menu_packs,id_rubrique,id_trad=3,lang,id_article}/>
 
-
+<BOUCLE_content(ARTICLES){id_article}>
+<div class="logo_site">
+[<a class="mediabox" href="[(#LOGO_ARTICLE|extraire_attribut{src})]">(#LOGO_ARTICLE|image_reduire{245,*}|inserer_attribut{alt,#TITRE})</a>]
+</div>
+</BOUCLE_content>
+<br class="nettoyeur"/>
+</B_content>
 <INCLURE{fond=inclure/submenu,id_parent=#GET{id_racine},lang,env,ajax}/>
 
 
