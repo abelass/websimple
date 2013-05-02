@@ -2,7 +2,7 @@
     <ul class="menu-items submenu">
     <BOUCLE_rubriques(RUBRIQUES){id_parent}{id_trad!=24}{tout}{par num titre,titre}>
         <li class="item sub_item[ (#EXPOSE)][(#COMPTEUR_BOUCLE|=={1}|oui) first][(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui) last]">
-            <a class="mouseover ajax" href="[(#URL_RUBRIQUE|parametre_url{id_rubrique,#ID_RUBRIQUE})]" title="#TITRE" data-target="rubrique-#ID_RUBRIQUE-#COMPOSITION" data-meta_title="[(#TITRE|supprimer_numero) - ]#NOM_SITE_SPIP" data-meta_description="[(#INTRODUCTION|supprimer_tags|texte_script)]">[(#TITRE|couper{50})]</a>       
+            <a class="mouseover ajax" href="[(#URL_RUBRIQUE|parametre_url{id_rubrique,#ID_RUBRIQUE})]" title="#TITRE" data-target="rubrique-#ID_RUBRIQUE-#COMPOSITION-[(#ID_TRAD|=={0}|?{#ID_RUBRIQUE,#ID_TRAD})] data-meta_title="[(#TITRE|supprimer_numero) - ]#NOM_SITE_SPIP" data-meta_description="[(#INTRODUCTION|supprimer_tags|texte_script)]">[(#TITRE|couper{50})]</a>       
          </li>
     </BOUCLE_rubriques>
     </ul>
@@ -15,7 +15,7 @@ $(function() {
         var objet=attr[0];
         var id_objet=attr[1];
         var composition=attr[2];
-        var id_groupe=attr[3];      
+        var id_trad=attr[3];
         var id=objet+'_'+id_objet;
         var title=$(this).attr('data-meta_title');
         var description=$(this).attr('data-meta_description'); 
@@ -32,7 +32,7 @@ $(function() {
                        id_rubrique:id_objet,
                        composition:composition,
                        reload:'oui',
-                       id_groupe:id_groupe
+                       id_trad:id_trad
                         }
                  }
             );
