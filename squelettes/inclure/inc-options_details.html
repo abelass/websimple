@@ -30,7 +30,7 @@
                          <a  class="closed" id="link_#ID_ARTICLE" data-target="float" data-base="#ID_OBJET_DEST"  href="[(#ENV{url}|parametre_url{fonct_compris,#GET{articles}}|parametre_url{id_article_base,#ID_OBJET_DEST})]">
                      })]
                     <span class="close">+</span>
-                <span class="titre">[(#ENV{titre,#TITRE}|extraire_multi|supprimer_numero)][#LANG]</span>
+                <span class="titre">[(#ENV{titre,#TITRE}|extraire_multi|supprimer_numero)] [#LANG]</span>
                 [(#ENV{faq}|=={faq}|non)</a>]
             </dt>     
             [(#GET{id_article}|oui)<dd class="introduction"  id="article_#ID_ARTICLE">
