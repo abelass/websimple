@@ -977,7 +977,7 @@ aside.right section.last{
 }	
 .options section.prix{
 	position:relative;
-	width:20%;
+	width:auto;
 	padding:0.5em;	
 	height:auto;
 }
