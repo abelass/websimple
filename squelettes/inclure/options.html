@@ -21,7 +21,13 @@
     <B_article_pack_base>
     <ul> 
     <BOUCLE_article_pack_base(ARTICLES){id_article=#ID_OBJET}{si #OBJET|=={article}|oui}>
-      <li><a href="#URL_ARTICLE">#TITRE</a></li> 
+        <BOUCLE_trad(ARTICLES){traduction}{lang}>
+            <li><a href="#URL_ARTICLE">#TITRE</a></li> 
+        </BOUCLE_trad> 
+            <BOUCLE_or(ARTICLES){traduction}{origine_traduction}>
+                <li><a href="#URL_ARTICLE">#TITRE</a></li> 
+            </BOUCLE_or>           
+        <//B_trad>      
     </BOUCLE_article_pack_base>
     </ul>   
     </Barticle_pack_base>    
