@@ -312,14 +312,15 @@ body {
 #extra2 h3{margin:0.5em}
 
 .extra1{
-	position: fixed;
+	display:none
+	/*position: fixed;
 	top:0;
 	left:0;
 	z-index:50;
 	width:42%;
 	height:100%;
 	margin:0;
-	padding:0;
+	padding:0;*/
 	}
 
 
