@@ -1007,7 +1007,22 @@ aside.contenu_lie{float:right;}
 
 .pack{float:left; width:48%; margin : 0 1%}
 
-aside.more, section.hyperlien {text-align:center; margin-top:1.5em}
+aside.more{
+	text-align:center; margin-top:1.5em
+	}
+section.hyperlien {
+	
+	border-radius:0.8em;
+	text-align:left;
+	font-size:1.2em;
+	padding:0.8em;
+	font-weight:bold;
+	margin-bottom:0.5em;
+	background:#ffffff;
+	behavior: url(/PIE.htc);
+	
+	}
+	
 aside.more .h2, section.hyperlien .h2{
 	background:#eec831; 
 	padding:0.2em 2em;
