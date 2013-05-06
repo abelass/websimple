@@ -5,11 +5,11 @@
 <dl>
 <BOUCLE_article(ARTICLES){id_rubrique}{lang}{!par date}{0,1}>
     <dt class="row_#COMPTEUR_BOUCLE">
-        <a href="#URL_ARTICLE" title="[(#TITRE|textebrut)]">[(#TITRE|couper{15})]</a>
+        <a href="#URL_ARTICLE" title="[(#TITRE|textebrut)]">[(#TITRE|couper{20})]</a>
         </dt>
     <dd>
-        <a href="#URL_ARTICLE" title="[(#TITRE|textebrut)]">[(#LOGO_ARTICLE|image_reduire{75})]</a>
-        #INTRODUCTION{100}
+        <a href="#URL_ARTICLE" title="[(#TITRE|textebrut)]">[(#LOGO_ARTICLE|image_reduire{50})]</a>
+        [<p>(#INTRODUCTION|couper{130})</p>]
     </dd>
 </BOUCLE_article>
 </dl>
