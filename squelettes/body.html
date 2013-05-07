@@ -4,7 +4,7 @@
 </aside> 
 <aside class="tools">
     [(#CONFIG{multilingue/menu_langue}|oui)#SET{select,_select}]
-    <INCLURE{fond=inclure/menu_langues,env}/>
+    <INCLURE{fond=inclure/menu_langues,env,ajax=langues}/>
     <div class="login">
         [<span class="sep">
         (#SESSION{id_auteur}|oui)</span><a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>][<span class="sep">

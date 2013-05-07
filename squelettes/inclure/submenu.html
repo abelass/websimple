@@ -25,7 +25,10 @@ $(function() {
                 {callback:function(){
                     $('title').html(title);
                     $('meta[name=description]').replaceWith('<meta name="description" content="'+description+'">'); 
-                    $('link[rel=canonical]').replaceWith('<link href="#URL_SITE_SPIP/'+canonical+'" rel="canonical">');                                        
+                    $('link[rel=canonical]').replaceWith('<link href="#URL_SITE_SPIP/'+canonical+'" rel="canonical">');
+                    ajaxReload('langues',{
+                        args:{id_rubrique:id_objet,id_article:''}
+                    })                                        
                 },
                  args:{
                        'type-page':objet,
