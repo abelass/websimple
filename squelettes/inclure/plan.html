@@ -23,7 +23,12 @@
             <header class="cartouche">
                 <h1 class="h1 #EDIT{titre}">#TITRE</h1>
                  [<a href="#URL_RUBRIQUE">voir en ligne</a>]
-               [<a href="#URL_ECRIRE{rubrique,id_rubrique=#ID_RUBRIQUE}">éditer en ligne</a>]      
+               [<a href="#URL_ECRIRE{rubrique,id_rubrique=#ID_RUBRIQUE}">éditer en ligne</a>]
+            <B_trad_rub>    
+            Translations:           
+               <BOUCLE_trad_rub(RUBRIQUES) {traduction}{tout}{lang!=#LANG}>
+               [<a href="#URL_RUBRIQUE">#LANG</a>]
+               </BOUCLE_trad_rub>     
             </header>
         
             [<section class="#EDIT{descriptif} chapo surlignable">(#DESCRIPTIF|image_reduire{500,0})</section>]
@@ -39,7 +44,12 @@
 				<header class="cartouche">
                  <h1 class="h1 #EDIT{titre}">#TITRE</h1>
                  [<a href="#URL_ARTICLE">voir en ligne</a>]                          
-                 [<a href="#URL_ECRIRE{article,id_article=#ID_ARTICLE}">éditer en ligne</a>]                   
+                 [<a href="#URL_ECRIRE{article,id_article=#ID_ARTICLE}">éditer en ligne</a>] 
+            <B_trad_art>    
+            Translations:                  
+                <BOUCLE_trad_art(ARTICLES) {traduction}{tout}{lang!=#LANG}>
+               [<a href="#URL_ARTICLE">#LANG</a>]
+               </BOUCLE_trad_art>                    
                 </header>
             
                 [<section class="#EDIT{descriptif} chapo surlignable">(#DESCRIPTIF|image_reduire{500,0})</section>]
