@@ -1012,26 +1012,21 @@ aside.more{
 	text-align:center; margin-top:1.5em
 	}
 section.hyperlien {
-	
+	padding:0.8em;
 	border-radius:0.8em;
 	text-align:left;
 	margin-bottom:0.5em;
-	background:#EEC831;
+
+	background:#ffffff;
 	behavior: url(/PIE.htc);
-	padding:0 0.8em;
-	
-	}
-section.hyperlien a{color:#F9EE72}	
-
-section.hyperlien.news a{color:#EEC831}	
-
-section.hyperlien.news {
-	padding:0.8em;
 	font-size:1.2em;
 	font-weight:bold;
-	margin-bottom:0.5em;
-	background:#ffffff;
-	
+	}
+section.hyperlien.site a{color:#F9EE72}	
+
+section.hyperlien.site {
+	padding:0 0.8em;
+	background:#EEC831;
 	}
 	
 aside.more .h2, section.hyperlien.news .h2{
