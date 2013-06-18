@@ -8,7 +8,7 @@
   <section class="body_content">   
     [<aside class="right">
         [(#REM)Les Contenus liés]
-        (#INCLURE{fond=inclure/contenu_lie_a,objet=site,id_objet=#ID_SYNDIC,env})
+        (#INCLURE{fond=inclure/contenu_lie_a,objet=site,id_objet=#ID_SYNDIC,type_lien=utilise_par_site,env})
     </aside> ] 
       [<section class="#EDIT{descriptif} chapo">(#DESCRIPTIF)</section>]
       [<section class="#EDIT{url_site} hyperlien site"><a href="#URL_SITE" class="spip_out h2">(#URL_SITE|couper{80})</a></section>]
