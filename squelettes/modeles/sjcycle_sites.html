@@ -1,5 +1,6 @@
 [(#REM) Diaporama des logos des sites ]
 [(#SET{fx,[(#ENV{fx,fade})]})]
+[(#SET{transition,[(#ENV{transition,4000})]})]
 [(#SET{duree,[(#ENV{duree,4000})]})]
 [(#SET{largeur,[(#ENV{largeur,210})]})]
 [(#SET{hauteur,[(#ENV{hauteur,115})]})]
@@ -9,8 +10,8 @@
 jQuery(document).ready(function() {
 	$('#sjcycle_sites').cycle({ 
 		fx:'#GET{fx}',
-		speed:5000, 
-		timeout:[(#GET{duree})],
+		speed:[(#GET{duree})], 
+		timeout:[(#GET{transition})],
 		pause:1
 	});
 });
