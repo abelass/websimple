@@ -40,7 +40,7 @@
                 ,
 
             #SET{retour,#SELF|parametre_url{retour,ok}|parametre_url{action,''}}
-            [(#BOUTON_ACTION{<:websimple:action_ajouter:> [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi)] [(#ENV{prix})] [(#ID_ARTICLE|devise_defaut|traduire_devise)] ([(#TAXE|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})]),#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})]          
+            [(#BOUTON_ACTION{<:websimple:action_ajouter:> [(#ENV{titre,#GET{titre}}|supprimer_numero|extraire_multi)] [(#ENV{prix}|filtres_prix_formater)]  ([(#TAXE|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})]),#URL_ACTION_AUTEUR{remplir_panier,prix_objet-#ID_PRIX_OBJET,#GET{retour}},ajax})]          
                 })]
  
             })]

@@ -32,7 +32,7 @@
         #SET{prix_ht,#PRIX_HT*{prix_objet,#ID_PRIX_OBJET}}
         [(#SET{taxe,[(#PRIX*{prix_objet,#ID_PRIX_OBJET}|moins{#GET{prix_ht}})]})]  
         [(#PRIX|>{0}|?{#SET{ttc,oui},#SET{ttc,''})}]   
-        [<span[(#GET{utilise}|oui) class="utilise"]>(#GET{prix_ht})] [(#ENV{id_objet}|devise_defaut|traduire_devise)</span> ]([(#GET{taxe}|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
+        [<span[(#GET{utilise}|oui) class="utilise"]>(#GET{prix_ht}|filtres_prix_formater) </span> ]([(#GET{taxe}|=={0}|?{<:shopprix:ttc:>,<:shopprix:htva:>})])
                 #SET{retour,#SELF|parametre_url{retour,ok}}
         [(#GET{utilise}|ou{#ID_OBJET|in_array{#GET{exclus}}}|oui|?{
             <img src="[(#CHEMIN{images/tick_16.png})]" alt="ok"/> ,
