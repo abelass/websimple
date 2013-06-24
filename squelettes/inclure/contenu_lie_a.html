@@ -11,7 +11,7 @@
             #SET{id_objet_dest,#ID_RUBRIQUE}
         </BOUCLE_rubrique>
         <//B_trad>    
-    [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#GET{id_objet_dest}|generer_modele{#OBJET_DEST,modeles_so/contenu_lie,#ARRAY{url,#URL}})</li>]
+    [<li[(#COMPTEUR_BOUCLE|=={1}|oui) class="first"]>(#GET{id_objet_dest}|generer_modele{#OBJET_DEST,modeles_so/contenu_lie})</li>]
     </BOUCLE_sites_lies>
     </ul>
 </section>
