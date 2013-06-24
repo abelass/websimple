@@ -934,7 +934,7 @@ ul.submenu li.last{
 
 aside.right,.options section.prix{
 	float:right; 
-	width:30%;
+	width:32%;
 	background:#EEC831;	
 	border-radius: 0.4em;	
 	margin:0 0 1% 1%;
@@ -1034,6 +1034,9 @@ aside.more .h2, section.hyperlien.news .h2{
 	border-radius:0.4em;
 	behavior: url(/PIE.htc);
 	}
+.extra2 .logo_site{text-align:center;}
+
+.extra2 .logo_site .spip_logos{float:none;}
 /*Listes*/
 .content .liste{padding:0 1em;}
 
